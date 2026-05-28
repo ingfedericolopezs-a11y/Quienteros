@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segmentos Productivos | Quinteros S.A.</title>
+    <meta name="description" content="13 segmentos productivos atendidos por Quinteros: flotillas, petróleo y gas, minería, siderurgia, agro, cementos, alimentos, construcción, ferrocarril y más.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <span data-i18n="home-topbar"><i class="fa-solid fa-industry"></i>&nbsp; Más de 85 años de trayectoria industrial en Colombia</span>
+            <div class="topbar-links">
+                <a href="mailto:info@quinteros.co"><i class="fa-solid fa-envelope"></i> info@quinteros.co</a>
+                <a href="tel:+576017436830"><i class="fa-solid fa-phone"></i> (601) 743 6830</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros S.A. Logo" loading="lazy">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item" data-i18n="inicio">INICIO</a>
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="nuestra-compania">NUESTRA COMPAÑÍA <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="nuestra-compania.html" data-i18n="sobre-nosotros">SOBRE NOSOTROS</a>
+                        <a href="noticias.html" data-i18n="noticias">NOTICIAS</a>
+                        <a href="multimedia.html" data-i18n="multimedia">MULTIMEDIA</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-hacemos">QUÉ HACEMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="aliados.html" data-i18n="aliados">ALIADOS DE NEGOCIO</a>
+                        <a href="modelo-de-negocio.html" data-i18n="modelo-negocio">MODELO DE NEGOCIO</a>
+                        <a href="estudios-de-mercado.html" data-i18n="estudios-mercado">ESTUDIOS DE MERCADO</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-solucionamos">QUÉ SOLUCIONAMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="segmentos-productivos.html" data-i18n="segmentos" class="active">SEGMENTOS PRODUCTIVOS</a>
+                        <a href="campos-de-experiencia.html" data-i18n="campos">CAMPOS DE EXPERIENCIA</a>
+                        <a href="aliados.html" data-i18n="marcas">NUESTRAS MARCAS</a>
+                        <a href="soluciones.html" data-i18n="soluciones">NUESTRAS SOLUCIONES</a>
+                    </div>
+                </div>
+                <a href="donde-comprar.html" class="nav-item" data-i18n="donde-comprar">DÓNDE COMPRAR</a>
+                <a href="contacto.html" class="nav-item" data-i18n="contactenos">CONTÁCTENOS</a>
+                <div class="nav-dropdown language-selector">
+                    <button class="nav-item dropdown-toggle"><span data-i18n="idioma">IDIOMA:</span> <span id="currentLang">🇪🇸</span> <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <button class="lang-btn" data-lang="es">🇪🇸 ESPAÑOL</button>
+                        <button class="lang-btn" data-lang="en">🇺🇸 ENGLISH</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_230489932.jpg'); padding: 130px 0 100px;">
+        <div class="cta-band-overlay"></div>
+        <div class="container cta-band-content">
+            <h1 style="font-size: 48px; color: white; margin-bottom: 15px;" data-i18n="sp-titulo">Segmentos Productivos</h1>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.9); max-width: 800px;" data-i18n="sp-subtitulo">Trabajamos con los más importantes sectores de la industria, aquellos que sobresalen por su alto grado de tecnología e ingeniería. Sus procesos son nuestra obsesión, su optimización nuestra meta.</p>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section style="background: white; padding: 60px 0;">
+        <div class="container" style="text-align: center; max-width: 860px; margin: 0 auto;">
+            <div class="section-badge-center" data-i18n="sp-badge">Industrias Atendidas</div>
+            <h2 style="font-size: 32px; color: var(--dark); margin: 16px 0 20px;" data-i18n="sp-intro-titulo">13 Sectores Estratégicos</h2>
+            <div class="divider-center"></div>
+            <p style="font-size: 16px; color: var(--text); line-height: 1.8; margin-top: 24px;" data-i18n="sp-intro-desc">Quinteros enfoca su atención en los sectores industriales caracterizados por avanzados requerimientos de tecnología e ingeniería, con énfasis en la optimización de procesos.</p>
+        </div>
+    </section>
+
+    <!-- Segmentos Grid -->
+    <section style="background: var(--light); padding: 60px 0 100px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+
+                <!-- 1. Flotillas -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-truck"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg1">Flotillas de Transporte</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg1-desc">Soluciones integrales para flotas de carga, transporte de pasajeros y vehículos comerciales pesados.</p>
+                </div>
+
+                <!-- 2. Petróleo y Gas -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-oil-well"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg2">Petróleo y Gas</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg2-desc">Componentes especializados para exploración, perforación, producción y refinación de hidrocarburos.</p>
+                </div>
+
+                <!-- 3. Minería -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-mountain"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg3">Minería</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg3-desc">Maquinaria y componentes para minería subterránea, a cielo abierto y procesamiento de minerales.</p>
+                </div>
+
+                <!-- 4. Siderurgia -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg4">Siderurgia</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg4-desc">Soluciones para la producción y transformación de acero, hierro y otros materiales metálicos.</p>
+                </div>
+
+                <!-- 5. Ingenios y Agro -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-wheat-awn"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg5">Ingenios y Agrícola</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg5-desc">Maquinaria agrícola, ingenios azucareros y procesamiento de productos del campo.</p>
+                </div>
+
+                <!-- 6. Cementos -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-cube"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg6">Cementos y Agregados</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg6-desc">Plantas de cemento, hormigoneras y procesamiento de agregados para construcción.</p>
+                </div>
+
+                <!-- 7. Papel y Madera -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-tree"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg7">Papel y Madera</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg7-desc">Industria papelera, aserraderos y procesamiento de productos forestales y derivados.</p>
+                </div>
+
+                <!-- 8. Alimentos -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-utensils"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg8">Alimentos y Bebidas</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg8-desc">Procesamiento de alimentos, embotelladoras y plantas de bebidas con altos estándares de higiene.</p>
+                </div>
+
+                <!-- 9. Acueductos -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-droplet"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg9">Acueductos</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg9-desc">Sistemas de tratamiento, distribución y bombeo de agua potable y residual.</p>
+                </div>
+
+                <!-- 10. Puertos -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-anchor"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg10">Puertos y Marinas</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg10-desc">Equipos portuarios, grúas, montacargas y embarcaciones para operación marítima.</p>
+                </div>
+
+                <!-- 11. Construcción -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-helmet-safety"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg11">Construcción</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg11-desc">Equipos pesados, maquinaria de construcción y herramientas para proyectos de infraestructura.</p>
+                </div>
+
+                <!-- 12. Ferrocarril -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-train"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg12">Ferrocarril</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg12-desc">Componentes ferroviarios para locomotoras, vagones y sistemas de transporte sobre rieles.</p>
+                </div>
+
+                <!-- 13. Otras -->
+                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-industry"></i></div>
+                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg13">Otras Industrias</h3>
+                    </div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg13-desc">Atendemos múltiples sectores adicionales con soluciones a medida según necesidades específicas.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_175182809.jpg');">
+        <div class="cta-band-overlay"></div>
+        <div class="container cta-band-content">
+            <h2 data-i18n="cta-titulo">¿Necesita asesoría técnica especializada?</h2>
+            <p data-i18n="cta-desc">Nuestro equipo de expertos está listo para ayudarle a encontrar la solución ideal para su industria.</p>
+            <a href="contacto.html" class="btn-cta-band" data-i18n="cta-btn">Contactar Ahora <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros Logo" class="footer-logo" loading="lazy">
+                    <p data-i18n="footer-desc">Soluciones integrales para el sector productivo y automotriz. Más de 85 años de respaldo industrial en Colombia.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/quinteros" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCI9B12Jei4zk40jR9xewqIg" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-nav">Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="nuestra-compania.html">Nuestra Compañía</a>
+                    <a href="soluciones.html">Soluciones</a>
+                    <a href="aliados.html">Marcas y Aliados</a>
+                    <a href="donde-comprar.html">Dónde Comprar</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-solutions">Soluciones</h4>
+                    <a href="campos-de-experiencia.html">Transmisión de Potencia</a>
+                    <a href="campos-de-experiencia.html">Soluciones Hidráulicas</a>
+                    <a href="campos-de-experiencia.html">Transferencia de Fluidos</a>
+                    <a href="campos-de-experiencia.html">Herramientas Industriales</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-contact">Contacto</h4>
+                    <p><i class="fa-solid fa-location-dot"></i>&nbsp; Cll. 30A #6-22, Bogotá</p>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp; (601) 743 6830</p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp; info@quinteros.co</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Quinteros S.A. Todos los derechos reservados. &nbsp;|&nbsp; Bogotá, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

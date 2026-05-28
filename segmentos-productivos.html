@@ -93,125 +93,253 @@
     </section>
 
     <!-- Segmentos Grid -->
-    <section style="background: var(--light); padding: 60px 0 100px;">
+    <style>
+        .seg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+        .seg-card {
+            position: relative;
+            height: 320px;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s;
+        }
+        .seg-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15,17,20,0.30) 0%, rgba(15,17,20,0.55) 50%, rgba(15,17,20,0.92) 100%);
+            transition: opacity 0.5s;
+            z-index: 1;
+        }
+        .seg-card.red-tint::before {
+            background: linear-gradient(180deg, rgba(232,75,55,0.30) 0%, rgba(232,75,55,0.40) 40%, rgba(180,42,28,0.92) 100%);
+        }
+        .seg-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 25px 60px rgba(0,0,0,0.25); }
+        .seg-card:hover::before { opacity: 0.85; }
+        .seg-card-content {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+        }
+        .seg-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255,255,255,0.18);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.25);
+            transition: transform 0.4s, background 0.4s;
+        }
+        .seg-card:hover .seg-icon { transform: scale(1.1) rotate(-5deg); background: rgba(255,255,255,0.30); }
+        .seg-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: white;
+            margin: 0 0 10px;
+            line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+        .seg-desc {
+            font-size: 13px;
+            color: rgba(255,255,255,0.92);
+            line-height: 1.6;
+            margin: 0;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s, opacity 0.4s, margin 0.4s;
+        }
+        .seg-card:hover .seg-desc { max-height: 120px; opacity: 1; margin-top: 6px; }
+        .seg-bottom { transition: transform 0.4s; }
+        .seg-card:hover .seg-bottom { transform: translateY(-2px); }
+        .seg-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border: 1px solid rgba(255,255,255,0.20);
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <section style="background: linear-gradient(180deg, var(--light) 0%, white 100%); padding: 60px 0 100px;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+            <div class="seg-grid">
 
                 <!-- 1. Flotillas -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-truck"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg1">Flotillas de Transporte</h3>
+                <div class="seg-card" style="background-image: url('optimized/shutterstock_260598251.jpg');">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-truck"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag1">Transporte</span>
+                            <h3 class="seg-title" data-i18n="sp-seg1">Flotillas de Transporte</h3>
+                            <p class="seg-desc" data-i18n="sp-seg1-desc">Soluciones integrales para flotas de carga, transporte de pasajeros y vehículos comerciales pesados.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg1-desc">Soluciones integrales para flotas de carga, transporte de pasajeros y vehículos comerciales pesados.</p>
                 </div>
 
                 <!-- 2. Petróleo y Gas -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-oil-well"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg2">Petróleo y Gas</h3>
+                <div class="seg-card red-tint" style="background-image: url('optimized/shutterstock_115685029.jpg');">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-oil-well"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag2">Energía</span>
+                            <h3 class="seg-title" data-i18n="sp-seg2">Petróleo y Gas</h3>
+                            <p class="seg-desc" data-i18n="sp-seg2-desc">Componentes especializados para exploración, perforación, producción y refinación de hidrocarburos.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg2-desc">Componentes especializados para exploración, perforación, producción y refinación de hidrocarburos.</p>
                 </div>
 
                 <!-- 3. Minería -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-mountain"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg3">Minería</h3>
+                <div class="seg-card" style="background-image: url('optimized/shutterstock_141409537.jpg');">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-mountain"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag3">Recursos</span>
+                            <h3 class="seg-title" data-i18n="sp-seg3">Minería</h3>
+                            <p class="seg-desc" data-i18n="sp-seg3-desc">Maquinaria y componentes para minería subterránea, a cielo abierto y procesamiento de minerales.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg3-desc">Maquinaria y componentes para minería subterránea, a cielo abierto y procesamiento de minerales.</p>
                 </div>
 
                 <!-- 4. Siderurgia -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-fire-flame-curved"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg4">Siderurgia</h3>
+                <div class="seg-card red-tint" style="background-image: url('optimized/shutterstock_134184635.jpg');">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag4">Metalurgia</span>
+                            <h3 class="seg-title" data-i18n="sp-seg4">Siderurgia</h3>
+                            <p class="seg-desc" data-i18n="sp-seg4-desc">Soluciones para la producción y transformación de acero, hierro y otros materiales metálicos.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg4-desc">Soluciones para la producción y transformación de acero, hierro y otros materiales metálicos.</p>
                 </div>
 
                 <!-- 5. Ingenios y Agro -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-wheat-awn"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg5">Ingenios y Agrícola</h3>
+                <div class="seg-card" style="background-image: url('optimized/shutterstock_188389784.jpg');">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag5">Agro</span>
+                            <h3 class="seg-title" data-i18n="sp-seg5">Ingenios y Agrícola</h3>
+                            <p class="seg-desc" data-i18n="sp-seg5-desc">Maquinaria agrícola, ingenios azucareros y procesamiento de productos del campo.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg5-desc">Maquinaria agrícola, ingenios azucareros y procesamiento de productos del campo.</p>
                 </div>
 
                 <!-- 6. Cementos -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-cube"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg6">Cementos y Agregados</h3>
+                <div class="seg-card red-tint" style="background-image: url('optimized/shutterstock_115685029.jpg'); background-position: right center;">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-cube"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag6">Materiales</span>
+                            <h3 class="seg-title" data-i18n="sp-seg6">Cementos y Agregados</h3>
+                            <p class="seg-desc" data-i18n="sp-seg6-desc">Plantas de cemento, hormigoneras y procesamiento de agregados para construcción.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg6-desc">Plantas de cemento, hormigoneras y procesamiento de agregados para construcción.</p>
                 </div>
 
                 <!-- 7. Papel y Madera -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-tree"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg7">Papel y Madera</h3>
+                <div class="seg-card" style="background-image: url('optimized/shutterstock_113089669.jpg');">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-tree"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag7">Forestal</span>
+                            <h3 class="seg-title" data-i18n="sp-seg7">Papel y Madera</h3>
+                            <p class="seg-desc" data-i18n="sp-seg7-desc">Industria papelera, aserraderos y procesamiento de productos forestales y derivados.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg7-desc">Industria papelera, aserraderos y procesamiento de productos forestales y derivados.</p>
                 </div>
 
                 <!-- 8. Alimentos -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-utensils"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg8">Alimentos y Bebidas</h3>
+                <div class="seg-card red-tint" style="background-image: url('optimized/shutterstock_134184635.jpg'); background-position: left center;">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-utensils"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag8">Alimentaria</span>
+                            <h3 class="seg-title" data-i18n="sp-seg8">Alimentos y Bebidas</h3>
+                            <p class="seg-desc" data-i18n="sp-seg8-desc">Procesamiento de alimentos, embotelladoras y plantas de bebidas con altos estándares de higiene.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg8-desc">Procesamiento de alimentos, embotelladoras y plantas de bebidas con altos estándares de higiene.</p>
                 </div>
 
                 <!-- 9. Acueductos -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-droplet"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg9">Acueductos</h3>
+                <div class="seg-card" style="background-image: url('optimized/shutterstock_115685029.jpg'); background-position: left center;">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag9">Hídrico</span>
+                            <h3 class="seg-title" data-i18n="sp-seg9">Acueductos</h3>
+                            <p class="seg-desc" data-i18n="sp-seg9-desc">Sistemas de tratamiento, distribución y bombeo de agua potable y residual.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg9-desc">Sistemas de tratamiento, distribución y bombeo de agua potable y residual.</p>
                 </div>
 
                 <!-- 10. Puertos -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-anchor"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg10">Puertos y Marinas</h3>
+                <div class="seg-card red-tint" style="background-image: url('optimized/shutterstock_230489932.jpg');">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-anchor"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag10">Marítimo</span>
+                            <h3 class="seg-title" data-i18n="sp-seg10">Puertos y Marinas</h3>
+                            <p class="seg-desc" data-i18n="sp-seg10-desc">Equipos portuarios, grúas, montacargas y embarcaciones para operación marítima.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg10-desc">Equipos portuarios, grúas, montacargas y embarcaciones para operación marítima.</p>
                 </div>
 
                 <!-- 11. Construcción -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-helmet-safety"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg11">Construcción</h3>
+                <div class="seg-card" style="background-image: url('optimized/shutterstock_260598251.jpg'); background-position: top center;">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag11">Infraestructura</span>
+                            <h3 class="seg-title" data-i18n="sp-seg11">Construcción</h3>
+                            <p class="seg-desc" data-i18n="sp-seg11-desc">Equipos pesados, maquinaria de construcción y herramientas para proyectos de infraestructura.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg11-desc">Equipos pesados, maquinaria de construcción y herramientas para proyectos de infraestructura.</p>
                 </div>
 
                 <!-- 12. Ferrocarril -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--dark);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-train"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg12">Ferrocarril</h3>
+                <div class="seg-card red-tint" style="background-image: url('optimized/shutterstock_141409537.jpg'); background-position: right center;">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-train"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag12">Ferroviario</span>
+                            <h3 class="seg-title" data-i18n="sp-seg12">Ferrocarril</h3>
+                            <p class="seg-desc" data-i18n="sp-seg12-desc">Componentes ferroviarios para locomotoras, vagones y sistemas de transporte sobre rieles.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg12-desc">Componentes ferroviarios para locomotoras, vagones y sistemas de transporte sobre rieles.</p>
                 </div>
 
                 <!-- 13. Otras -->
-                <div class="sol-card" style="background: white; padding: 30px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); border-top: 4px solid var(--red);">
-                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-                        <div style="width: 50px; height: 50px; background: rgba(232,75,55,0.1); color: var(--red); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;"><i class="fa-solid fa-industry"></i></div>
-                        <h3 style="color: var(--dark); font-size: 17px; margin: 0;" data-i18n="sp-seg13">Otras Industrias</h3>
+                <div class="seg-card" style="background-image: url('optimized/shutterstock_96365069.jpg');">
+                    <div class="seg-card-content">
+                        <div class="seg-icon"><i class="fa-solid fa-industry"></i></div>
+                        <div class="seg-bottom">
+                            <span class="seg-tag" data-i18n="sp-tag13">Diversas</span>
+                            <h3 class="seg-title" data-i18n="sp-seg13">Otras Industrias</h3>
+                            <p class="seg-desc" data-i18n="sp-seg13-desc">Atendemos múltiples sectores adicionales con soluciones a medida según necesidades específicas.</p>
+                        </div>
                     </div>
-                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="sp-seg13-desc">Atendemos múltiples sectores adicionales con soluciones a medida según necesidades específicas.</p>
                 </div>
 
             </div>

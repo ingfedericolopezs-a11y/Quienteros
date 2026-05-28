@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <style>
         /* ============ DÓNDE COMPRAR PAGE ============ */
-        .dc-hero { background: #1a1c1e; padding: 100px 0 80px; position: relative; overflow: hidden; }
-        .dc-hero::before { content: ''; position: absolute; inset: 0; background: url('optimized/shutterstock_260598251.jpg') center/cover; opacity: 0.12; }
+        .dc-hero { background-image: url('optimized/shutterstock_260598251.jpg'); background-size: cover; background-position: center; background-attachment: fixed; padding: 130px 0 100px; position: relative; overflow: hidden; }
+        .dc-hero::before { content: ''; position: absolute; inset: 0; background: rgba(15, 17, 20, 0.75); }
         .dc-hero-content { position: relative; z-index: 2; text-align: center; color: white; }
-        .dc-hero h1 { font-size: 52px; font-weight: 900; margin-bottom: 18px; letter-spacing: -1px; }
-        .dc-hero h1 span { color: #e84b37; }
-        .dc-hero p { font-size: 18px; max-width: 760px; margin: 0 auto; color: rgba(255,255,255,0.85); line-height: 1.7; }
+        .dc-hero h1 { font-size: 52px; font-weight: 900; margin-bottom: 18px; letter-spacing: -1px; color: white; text-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+        .dc-hero h1 span { color: #e84b37; display: block; margin-top: 4px; }
+        .dc-hero p { font-size: 18px; max-width: 760px; margin: 0 auto; color: rgba(255,255,255,0.95); line-height: 1.7; text-shadow: 0 1px 6px rgba(0,0,0,0.4); }
 
         /* Stats */
         .dc-stats { background: white; padding: 50px 0; border-bottom: 1px solid #eee; }

@@ -3,11 +3,16 @@
    Hero Slider + Navbar + Animations
    ============================================================ */
 
-/* ---- NAVBAR SCROLL ---- */
+/* ---- NAVBAR SCROLL (throttled with rAF) ---- */
 const navbar = document.getElementById('navbar');
+let scrollRAF = null;
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
+    if (scrollRAF) return;
+    scrollRAF = requestAnimationFrame(() => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+        scrollRAF = null;
+    });
+}, { passive: true });
 
 /* ---- MOBILE HAMBURGER ---- */
 const hamburger = document.getElementById('hamburger');

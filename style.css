@@ -561,7 +561,6 @@ a { text-decoration: none; color: inherit; }
     padding: 90px 0;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     text-align: center;
 }
 .cta-band-overlay {
@@ -608,7 +607,7 @@ a { text-decoration: none; color: inherit; }
 .brand-track-wrap::before { left: 0; background: linear-gradient(to right, #fff 0%, transparent 100%); }
 .brand-track-wrap::after  { right: 0; background: linear-gradient(to left, #fff 0%, transparent 100%); }
 
-.brand-track { display: flex; width: max-content; }
+.brand-track { display: flex; width: max-content; will-change: transform; }
 .track-ltr { animation: scrollLTR 28s linear infinite; }
 .track-rtl { animation: scrollRTL 28s linear infinite; }
 

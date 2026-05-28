@@ -1,4 +1,4 @@
-?<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,96 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <style>
+        /* ============ DÓNDE COMPRAR PAGE ============ */
+        .dc-hero { background: linear-gradient(135deg, #1a1c1e 0%, #2d3033 100%); padding: 100px 0 80px; position: relative; overflow: hidden; }
+        .dc-hero::before { content: ''; position: absolute; inset: 0; background: url('optimized/shutterstock_260598251.jpg') center/cover; opacity: 0.18; }
+        .dc-hero-content { position: relative; z-index: 2; text-align: center; color: white; }
+        .dc-hero h1 { font-size: 52px; font-weight: 900; margin-bottom: 18px; letter-spacing: -1px; }
+        .dc-hero h1 span { color: #e84b37; }
+        .dc-hero p { font-size: 18px; max-width: 760px; margin: 0 auto; color: rgba(255,255,255,0.85); line-height: 1.7; }
+
+        /* Stats */
+        .dc-stats { background: white; padding: 50px 0; border-bottom: 1px solid #eee; }
+        .dc-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 960px; margin: 0 auto; }
+        .dc-stat { text-align: center; }
+        .dc-stat-num { font-size: 42px; font-weight: 900; color: #e84b37; line-height: 1; margin-bottom: 6px; }
+        .dc-stat-lbl { font-size: 13px; color: #555; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+        /* Filters Section */
+        .dc-filters { background: #f8f8f9; padding: 50px 0 30px; }
+        .dc-filter-title { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: #666; font-weight: 700; margin-bottom: 12px; }
+
+        .dc-search-box { position: relative; max-width: 600px; margin: 0 auto 30px; }
+        .dc-search-box input { width: 100%; padding: 16px 50px 16px 22px; border: 2px solid #e0e0e0; border-radius: 50px; font-size: 15px; outline: none; transition: all 0.3s; background: white; }
+        .dc-search-box input:focus { border-color: #e84b37; box-shadow: 0 0 0 4px rgba(232,75,55,0.1); }
+        .dc-search-box i { position: absolute; right: 22px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 18px; pointer-events: none; }
+
+        .dc-brand-tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 22px; }
+        .dc-brand-tab { background: white; border: 2px solid #e0e0e0; color: #444; padding: 8px 18px; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.25s; text-transform: uppercase; letter-spacing: 0.04em; }
+        .dc-brand-tab:hover { border-color: #e84b37; color: #e84b37; }
+        .dc-brand-tab.active { background: #e84b37; border-color: #e84b37; color: white; box-shadow: 0 4px 12px rgba(232,75,55,0.3); }
+
+        .dc-city-tabs { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-width: 1100px; margin: 0 auto 20px; }
+        .dc-city-tab { background: transparent; border: 1px solid #d0d0d0; color: #666; padding: 5px 14px; border-radius: 20px; cursor: pointer; font-size: 12px; transition: all 0.25s; }
+        .dc-city-tab:hover { border-color: #1a1c1e; color: #1a1c1e; }
+        .dc-city-tab.active { background: #1a1c1e; border-color: #1a1c1e; color: white; }
+
+        /* Results */
+        .dc-results { padding: 50px 0 80px; background: white; }
+        .dc-result-count { text-align: center; margin-bottom: 30px; color: #666; font-size: 14px; }
+        .dc-result-count strong { color: #1a1c1e; font-size: 17px; }
+
+        .dc-brand-section { margin-bottom: 60px; }
+        .dc-brand-header { display: flex; align-items: center; gap: 16px; padding-bottom: 12px; border-bottom: 3px solid #e84b37; margin-bottom: 26px; }
+        .dc-brand-name { font-size: 24px; font-weight: 900; color: #1a1c1e; letter-spacing: 0.5px; }
+        .dc-brand-count { background: rgba(232,75,55,0.1); color: #e84b37; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+
+        .dc-city-group { margin-bottom: 26px; }
+        .dc-city-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding-left: 4px; }
+        .dc-city-header i { color: #e84b37; font-size: 14px; }
+        .dc-city-name { font-size: 14px; font-weight: 700; color: #1a1c1e; text-transform: uppercase; letter-spacing: 0.05em; }
+        .dc-region-name { color: #888; font-weight: 500; font-size: 13px; }
+
+        .dc-dist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
+        .dc-dist-card { background: #fafafa; border: 1px solid #ececec; border-radius: 12px; padding: 16px 20px; transition: all 0.3s; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+        .dc-dist-card:hover { border-color: #e84b37; background: white; box-shadow: 0 6px 18px rgba(0,0,0,0.06); transform: translateY(-2px); }
+        .dc-dist-info { flex: 1; min-width: 0; }
+        .dc-dist-name { font-weight: 600; color: #1a1c1e; font-size: 14px; line-height: 1.4; margin-bottom: 4px; }
+        .dc-dist-phone { font-size: 13px; color: #666; display: flex; align-items: center; gap: 6px; }
+        .dc-dist-phone i { color: #e84b37; font-size: 11px; }
+        .dc-dist-call { background: #e84b37; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; flex-shrink: 0; transition: all 0.3s; }
+        .dc-dist-call:hover { background: #1a1c1e; transform: scale(1.1); }
+
+        .dc-no-results { text-align: center; padding: 60px 20px; color: #888; }
+        .dc-no-results i { font-size: 48px; color: #ddd; margin-bottom: 16px; }
+        .dc-no-results h3 { font-size: 20px; color: #555; margin-bottom: 8px; }
+
+        /* Downloads */
+        .dc-downloads { background: #f8f8f9; padding: 60px 0; }
+        .dc-downloads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 40px auto 0; }
+        .dc-download-card { background: white; border-radius: 14px; padding: 30px; text-align: center; transition: all 0.3s; border: 1px solid #ececec; }
+        .dc-download-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .dc-download-icon { width: 60px; height: 60px; background: rgba(232,75,55,0.1); color: #e84b37; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 16px; }
+        .dc-download-card h4 { font-size: 16px; color: #1a1c1e; margin-bottom: 8px; font-weight: 700; }
+        .dc-download-card p { font-size: 13px; color: #777; margin-bottom: 18px; }
+        .dc-download-btn { display: inline-flex; align-items: center; gap: 8px; background: #1a1c1e; color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.3s; }
+        .dc-download-btn:hover { background: #e84b37; }
+
+        /* Help section */
+        .dc-help { background: linear-gradient(135deg, #e84b37 0%, #c93b2a 100%); padding: 60px 0; color: white; text-align: center; }
+        .dc-help h2 { font-size: 32px; font-weight: 900; margin-bottom: 12px; }
+        .dc-help p { font-size: 16px; opacity: 0.95; max-width: 560px; margin: 0 auto 26px; line-height: 1.6; }
+        .dc-help-btn { display: inline-flex; align-items: center; gap: 10px; background: white; color: #e84b37; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s; }
+        .dc-help-btn:hover { background: #1a1c1e; color: white; transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .dc-hero h1 { font-size: 36px; }
+            .dc-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+            .dc-stat-num { font-size: 32px; }
+            .dc-brand-name { font-size: 20px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -33,7 +123,6 @@
             <nav class="nav-links" id="navLinks">
                 <a href="index.html" class="nav-item" data-i18n="inicio">INICIO</a>
 
-                <!-- NUESTRA COMPAÑÍA dropdown -->
                 <div class="nav-dropdown">
                     <button class="nav-item dropdown-toggle" data-i18n="nuestra-compania">NUESTRA COMPAÑÍA <span class="dropdown-icon">+</span></button>
                     <div class="dropdown-menu">
@@ -43,7 +132,6 @@
                     </div>
                 </div>
 
-                <!-- QUÉ HACEMOS dropdown -->
                 <div class="nav-dropdown">
                     <button class="nav-item dropdown-toggle" data-i18n="que-hacemos">QUÉ HACEMOS <span class="dropdown-icon">+</span></button>
                     <div class="dropdown-menu">
@@ -53,7 +141,6 @@
                     </div>
                 </div>
 
-                <!-- QUÉ SOLUCIONAMOS dropdown -->
                 <div class="nav-dropdown">
                     <button class="nav-item dropdown-toggle" data-i18n="que-solucionamos">QUÉ SOLUCIONAMOS <span class="dropdown-icon">+</span></button>
                     <div class="dropdown-menu">
@@ -64,10 +151,9 @@
                     </div>
                 </div>
 
-                <a href="donde-comprar.html" class="nav-item" data-i18n="donde-comprar">DÓNDE COMPRAR</a>
+                <a href="donde-comprar.html" class="nav-item active" data-i18n="donde-comprar">DÓNDE COMPRAR</a>
                 <a href="contacto.html" class="nav-item" data-i18n="contactenos">CONTÁCTENOS</a>
 
-                <!-- IDIOMA selector -->
                 <div class="nav-dropdown language-selector">
                     <button class="nav-item dropdown-toggle"><span data-i18n="idioma">IDIOMA:</span> <span id="currentLang">🇪🇸</span> <span class="dropdown-icon">+</span></button>
                     <div class="dropdown-menu">
@@ -82,127 +168,102 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <div class="cta-band" style="background-image: url('optimized/shutterstock_260598251.jpg'); padding: 120px 0;">
-        <div class="cta-band-overlay" style="background: rgba(26,28,30,0.85);"></div>
-        <div class="container cta-band-content">
-            <h1 style="font-size: 48px; color: white; margin-bottom: 15px;">Dónde Comprar</h1>
-            <p style="font-size: 18px; color: rgba(255,255,255,0.9); max-width: 600px;">Accede a nuestra red de distribuidores autorizados en toda Colombia</p>
-        </div>
-    </div>
-
-    <!-- Content Section -->
-    <section class="contact-section" style="padding: 80px 0;">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge-center">Red de Distribuidores</div>
-                <h2>Nuestros Distribuidores Autorizados</h2>
-                <div class="divider-center"></div>
-                <p>Contamos con canales de distribución especializados que cubren la totalidad del territorio nacional. Encontra el distribuidor más cercano a ti.</p>
-            </div>
-
-            <!-- Distributor Search/Filter -->
-            <div style="background: var(--gray); padding: 40px; border-radius: var(--radius-lg); margin: 40px 0;">
-                <h3 style="margin-bottom: 20px; color: var(--dark);">Buscar por Región</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                    <button class="distributor-filter-btn active" data-region="all" style="padding: 12px 20px; border: 2px solid var(--red); background: var(--red); color: white; border-radius: 6px; cursor: pointer; font-weight: 600;">
-                        Todas las Regiones
-                    </button>
-                    <button class="distributor-filter-btn" data-region="bogota" style="padding: 12px 20px; border: 2px solid var(--gray-mid); background: white; color: var(--text); border-radius: 6px; cursor: pointer; font-weight: 600;">
-                        Bogotá y Cundinamarca
-                    </button>
-                    <button class="distributor-filter-btn" data-region="antioquia" style="padding: 12px 20px; border: 2px solid var(--gray-mid); background: white; color: var(--text); border-radius: 6px; cursor: pointer; font-weight: 600;">
-                        Antioquia
-                    </button>
-                    <button class="distributor-filter-btn" data-region="caribe" style="padding: 12px 20px; border: 2px solid var(--gray-mid); background: white; color: var(--text); border-radius: 6px; cursor: pointer; font-weight: 600;">
-                        Región Caribe
-                    </button>
-                    <button class="distributor-filter-btn" data-region="occidente" style="padding: 12px 20px; border: 2px solid var(--gray-mid); background: white; color: var(--text); border-radius: 6px; cursor: pointer; font-weight: 600;">
-                        Occidente
-                    </button>
-                    <button class="distributor-filter-btn" data-region="sur" style="padding: 12px 20px; border: 2px solid var(--gray-mid); background: white; color: var(--text); border-radius: 6px; cursor: pointer; font-weight: 600;">
-                        Sur y Suroccidente
-                    </button>
-                </div>
-            </div>
-
-            <!-- Distributors List -->
-            <div class="distributors-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin: 40px 0;">
-
-                <!-- Distributor Card 1 -->
-                <div class="distributor-card" data-region="bogota" style="background: white; border-radius: var(--radius-lg); padding: 25px; box-shadow: var(--shadow-md); border-left: 4px solid var(--red);">
-                    <h3 style="color: var(--red); margin-bottom: 10px; font-size: 18px;">Quinteros Bogotá</h3>
-                    <p style="color: var(--text); margin-bottom: 15px;"><strong>Sede Principal</strong></p>
-                    <div style="color: var(--text); line-height: 1.8;">
-                        <p><i class="fa-solid fa-location-dot" style="color: var(--red); margin-right: 8px;"></i> Cll. 30A #6-22, Bogotá D.C.</p>
-                        <p><i class="fa-solid fa-phone" style="color: var(--red); margin-right: 8px;"></i> (601) 743 6830</p>
-                        <p><i class="fa-solid fa-envelope" style="color: var(--red); margin-right: 8px;"></i> info@quinteros.co</p>
-                    </div>
-                    <a href="contacto.html" class="btn-primary" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--red); color: white; border-radius: 6px; text-decoration: none; font-weight: 600;">Contactar</a>
-                </div>
-
-                <!-- Distributor Card 2 -->
-                <div class="distributor-card" data-region="antioquia" style="background: white; border-radius: var(--radius-lg); padding: 25px; box-shadow: var(--shadow-md); border-left: 4px solid var(--red);">
-                    <h3 style="color: var(--red); margin-bottom: 10px; font-size: 18px;">Distribuidora Antioquia</h3>
-                    <p style="color: var(--text); margin-bottom: 15px;"><strong>Medellín</strong></p>
-                    <div style="color: var(--text); line-height: 1.8;">
-                        <p><i class="fa-solid fa-location-dot" style="color: var(--red); margin-right: 8px;"></i> Medellín, Antioquia</p>
-                        <p><i class="fa-solid fa-phone" style="color: var(--red); margin-right: 8px;"></i> Contactar por teléfono</p>
-                        <p style="font-size: 13px; color: #aaa; margin-top: 10px;">Para solicitudes especiales en la región</p>
-                    </div>
-                    <a href="contacto.html" class="btn-primary" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--red); color: white; border-radius: 6px; text-decoration: none; font-weight: 600;">Solicitar Contacto</a>
-                </div>
-
-                <!-- Distributor Card 3 -->
-                <div class="distributor-card" data-region="caribe" style="background: white; border-radius: var(--radius-lg); padding: 25px; box-shadow: var(--shadow-md); border-left: 4px solid var(--red);">
-                    <h3 style="color: var(--red); margin-bottom: 10px; font-size: 18px;">Distribuidora Caribe</h3>
-                    <p style="color: var(--text); margin-bottom: 15px;"><strong>Costa Atlántica</strong></p>
-                    <div style="color: var(--text); line-height: 1.8;">
-                        <p><i class="fa-solid fa-location-dot" style="color: var(--red); margin-right: 8px;"></i> Región Caribe</p>
-                        <p><i class="fa-solid fa-phone" style="color: var(--red); margin-right: 8px;"></i> Contactar por teléfono</p>
-                        <p style="font-size: 13px; color: #aaa; margin-top: 10px;">Distribuidor autorizado para toda la costa</p>
-                    </div>
-                    <a href="contacto.html" class="btn-primary" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--red); color: white; border-radius: 6px; text-decoration: none; font-weight: 600;">Solicitar Contacto</a>
-                </div>
-
-                <!-- Distributor Card 4 -->
-                <div class="distributor-card" data-region="occidente" style="background: white; border-radius: var(--radius-lg); padding: 25px; box-shadow: var(--shadow-md); border-left: 4px solid var(--red);">
-                    <h3 style="color: var(--red); margin-bottom: 10px; font-size: 18px;">Distribuidora Occidente</h3>
-                    <p style="color: var(--text); margin-bottom: 15px;"><strong>Eje Cafetero</strong></p>
-                    <div style="color: var(--text); line-height: 1.8;">
-                        <p><i class="fa-solid fa-location-dot" style="color: var(--red); margin-right: 8px;"></i> Región Cafetera</p>
-                        <p><i class="fa-solid fa-phone" style="color: var(--red); margin-right: 8px;"></i> Contactar por teléfono</p>
-                        <p style="font-size: 13px; color: #aaa; margin-top: 10px;">Especializada en soluciones agroindustriales</p>
-                    </div>
-                    <a href="contacto.html" class="btn-primary" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--red); color: white; border-radius: 6px; text-decoration: none; font-weight: 600;">Solicitar Contacto</a>
-                </div>
-
-                <!-- Distributor Card 5 -->
-                <div class="distributor-card" data-region="sur" style="background: white; border-radius: var(--radius-lg); padding: 25px; box-shadow: var(--shadow-md); border-left: 4px solid var(--red);">
-                    <h3 style="color: var(--red); margin-bottom: 10px; font-size: 18px;">Distribuidora Sur</h3>
-                    <p style="color: var(--text); margin-bottom: 15px;"><strong>Suroccidente</strong></p>
-                    <div style="color: var(--text); line-height: 1.8;">
-                        <p><i class="fa-solid fa-location-dot" style="color: var(--red); margin-right: 8px;"></i> Región Suroccidental</p>
-                        <p><i class="fa-solid fa-phone" style="color: var(--red); margin-right: 8px;"></i> Contactar por teléfono</p>
-                        <p style="font-size: 13px; color: #aaa; margin-top: 10px;">Cobertura en el sur del país</p>
-                    </div>
-                    <a href="contacto.html" class="btn-primary" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--red); color: white; border-radius: 6px; text-decoration: none; font-weight: 600;">Solicitar Contacto</a>
-                </div>
-
-            </div>
-
+    <!-- Hero -->
+    <section class="dc-hero">
+        <div class="container dc-hero-content">
+            <h1 data-i18n="dc-hero-title">¿Dónde Comprar? <span>Nuestros Distribuidores</span></h1>
+            <p data-i18n="dc-hero-desc">Nuestro modelo de negocio es soportado por nuestro equipo de expertos y nuestros canales de distribución especializados que cubren la totalidad del territorio nacional.</p>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <div class="cta-band" style="background-image: url('optimized/shutterstock_175182809.jpg');">
-        <div class="cta-band-overlay"></div>
-        <div class="container cta-band-content">
-            <h2>¿No encuentras distribuidor en tu zona?</h2>
-            <p>Contáctanos directamente y te ayudaremos a ubicar el punto de venta más cercano.</p>
-            <a href="contacto.html" class="btn-cta-band">Contactar Ahora <i class="fa-solid fa-arrow-right"></i></a>
+    <!-- Stats -->
+    <section class="dc-stats">
+        <div class="container">
+            <div class="dc-stats-grid">
+                <div class="dc-stat">
+                    <div class="dc-stat-num" id="statDist">150+</div>
+                    <div class="dc-stat-lbl" data-i18n="dc-stat-dist">Distribuidores</div>
+                </div>
+                <div class="dc-stat">
+                    <div class="dc-stat-num" id="statCity">25+</div>
+                    <div class="dc-stat-lbl" data-i18n="dc-stat-city">Ciudades</div>
+                </div>
+                <div class="dc-stat">
+                    <div class="dc-stat-num" id="statBrand">10</div>
+                    <div class="dc-stat-lbl" data-i18n="dc-stat-brand">Marcas</div>
+                </div>
+                <div class="dc-stat">
+                    <div class="dc-stat-num">2</div>
+                    <div class="dc-stat-lbl" data-i18n="dc-stat-countries">Países</div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="dc-filters">
+        <div class="container">
+            <div class="dc-search-box">
+                <input type="text" id="searchInput" placeholder="Buscar distribuidor por nombre o teléfono..." data-i18n-placeholder="dc-search-placeholder">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="dc-filter-title" style="text-align:center;" data-i18n="dc-filter-brand">Filtrar por Marca</div>
+            <div class="dc-brand-tabs" id="brandTabs"></div>
+
+            <div class="dc-filter-title" style="text-align:center;" data-i18n="dc-filter-city">Filtrar por Ciudad</div>
+            <div class="dc-city-tabs" id="cityTabs"></div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="dc-results">
+        <div class="container">
+            <div class="dc-result-count" id="resultCount"></div>
+            <div id="distributorsContainer"></div>
+        </div>
+    </section>
+
+    <!-- Downloads -->
+    <section class="dc-downloads">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <div class="section-badge-center" data-i18n="dc-downloads-badge">Recursos</div>
+                <h2 data-i18n="dc-downloads-title">Listados de Distribuidores Autorizados</h2>
+                <div class="divider-center"></div>
+                <p style="color:#666; margin-top:14px;" data-i18n="dc-downloads-desc">Descarga las listas completas de distribuidores por división y país</p>
+            </div>
+            <div class="dc-downloads-grid">
+                <div class="dc-download-card">
+                    <div class="dc-download-icon"><i class="fa-solid fa-car"></i></div>
+                    <h4 data-i18n="dc-dl1-title">División Automotriz</h4>
+                    <p data-i18n="dc-dl1-desc">Distribuidores autorizados en Colombia</p>
+                    <a href="#" class="dc-download-btn"><i class="fa-solid fa-download"></i> <span data-i18n="dc-dl-btn">Descargar PDF</span></a>
+                </div>
+                <div class="dc-download-card">
+                    <div class="dc-download-icon"><i class="fa-solid fa-truck"></i></div>
+                    <h4 data-i18n="dc-dl2-title">División Automotriz</h4>
+                    <p data-i18n="dc-dl2-desc">Distribuidores autorizados en Ecuador</p>
+                    <a href="#" class="dc-download-btn"><i class="fa-solid fa-download"></i> <span data-i18n="dc-dl-btn">Descargar PDF</span></a>
+                </div>
+                <div class="dc-download-card">
+                    <div class="dc-download-icon"><i class="fa-solid fa-industry"></i></div>
+                    <h4 data-i18n="dc-dl3-title">División Industrial</h4>
+                    <p data-i18n="dc-dl3-desc">Distribuidores autorizados en Colombia</p>
+                    <a href="#" class="dc-download-btn"><i class="fa-solid fa-download"></i> <span data-i18n="dc-dl-btn">Descargar PDF</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help -->
+    <section class="dc-help">
+        <div class="container">
+            <h2 data-i18n="dc-help-title">¿No encuentras un distribuidor cercano?</h2>
+            <p data-i18n="dc-help-desc">Nuestro equipo comercial puede ayudarte a encontrar el distribuidor más adecuado para tus necesidades específicas.</p>
+            <a href="contacto.html" class="dc-help-btn" data-i18n="dc-help-btn"><i class="fa-solid fa-headset"></i> Contactar a un Asesor</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -210,14 +271,14 @@
             <div class="container footer-grid">
                 <div class="footer-col footer-brand">
                     <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros Logo" class="footer-logo" loading="lazy">
-                    <p>Soluciones integrales para el sector productivo y automotriz. Más de 85 años de respaldo industrial en Colombia.</p>
+                    <p data-i18n="footer-desc">Soluciones integrales para el sector productivo y automotriz. Más de 85 años de respaldo industrial en Colombia.</p>
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/company/quinteros" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.youtube.com/channel/UCI9B12Jei4zk40jR9xewqIg" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Navegación</h4>
+                    <h4 data-i18n="footer-nav">Navegación</h4>
                     <a href="index.html">Inicio</a>
                     <a href="nuestra-compania.html">Nuestra Compañía</a>
                     <a href="soluciones.html">Soluciones</a>
@@ -226,14 +287,14 @@
                     <a href="contacto.html">Contacto</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Soluciones</h4>
-                    <a href="soluciones.html">Transmisión de Potencia</a>
-                    <a href="soluciones.html">Soluciones Hidráulicas</a>
-                    <a href="soluciones.html">Transporte de Fluidos</a>
-                    <a href="soluciones.html">Herramientas Industriales</a>
+                    <h4 data-i18n="footer-solutions">Soluciones</h4>
+                    <a href="campos-de-experiencia.html">Transmisión de Potencia</a>
+                    <a href="campos-de-experiencia.html">Soluciones Hidráulicas</a>
+                    <a href="campos-de-experiencia.html">Transferencia de Fluidos</a>
+                    <a href="campos-de-experiencia.html">Herramientas Industriales</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Contacto</h4>
+                    <h4 data-i18n="footer-contact">Contacto</h4>
                     <p><i class="fa-solid fa-location-dot"></i>&nbsp; Cll. 30A #6-22, Bogotá</p>
                     <p><i class="fa-solid fa-phone"></i>&nbsp; (601) 743 6830</p>
                     <p><i class="fa-solid fa-envelope"></i>&nbsp; info@quinteros.co</p>
@@ -247,36 +308,7 @@
         </div>
     </footer>
 
+    <script src="donde-comprar-data.js"></script>
     <script src="main.js"></script>
-    <script>
-        // Distributor filter functionality
-        document.querySelectorAll('.distributor-filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const region = this.getAttribute('data-region');
-
-                // Update active button
-                document.querySelectorAll('.distributor-filter-btn').forEach(b => {
-                    b.style.borderColor = 'var(--gray-mid)';
-                    b.style.background = 'white';
-                    b.style.color = 'var(--text)';
-                });
-                this.style.borderColor = 'var(--red)';
-                this.style.background = 'var(--red)';
-                this.style.color = 'white';
-
-                // Filter distributors
-                document.querySelectorAll('.distributor-card').forEach(card => {
-                    if (region === 'all' || card.getAttribute('data-region') === region) {
-                        card.style.display = 'block';
-                        card.classList.add('visible');
-                    } else {
-                        card.style.display = 'none';
-                        card.classList.remove('visible');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
-

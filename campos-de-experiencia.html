@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campos de Experiencia | Quinteros S.A.</title>
+    <meta name="description" content="Descubra los 6 campos de experiencia de Quinteros S.A.: transmisión de potencia, soluciones hidráulicas, fluidos, herramientas y más.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <span data-i18n="home-topbar"><i class="fa-solid fa-industry"></i>&nbsp; Más de 85 años de trayectoria industrial en Colombia</span>
+            <div class="topbar-links">
+                <a href="mailto:info@quinteros.co"><i class="fa-solid fa-envelope"></i> info@quinteros.co</a>
+                <a href="tel:+576017436830"><i class="fa-solid fa-phone"></i> (601) 743 6830</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros S.A. Logo" loading="lazy">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item" data-i18n="inicio">INICIO</a>
+
+                <!-- NUESTRA COMPAÑÍA dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="nuestra-compania">NUESTRA COMPAÑÍA <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="nuestra-compania.html" data-i18n="sobre-nosotros">SOBRE NOSOTROS</a>
+                        <a href="noticias.html" data-i18n="noticias">NOTICIAS</a>
+                        <a href="#multimedia" data-i18n="multimedia">MULTIMEDIA</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ HACEMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-hacemos">QUÉ HACEMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="aliados.html" data-i18n="aliados">ALIADOS DE NEGOCIO</a>
+                        <a href="#modelo-negocio" data-i18n="modelo-negocio">MODELO DE NEGOCIO</a>
+                        <a href="#estudios-mercado" data-i18n="estudios-mercado">ESTUDIOS DE MERCADO</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ SOLUCIONAMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-solucionamos">QUÉ SOLUCIONAMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="#segmentos" data-i18n="segmentos">SEGMENTOS PRODUCTIVOS</a>
+                        <a href="campos-de-experiencia.html" data-i18n="campos" class="active">CAMPOS DE EXPERIENCIA</a>
+                        <a href="aliados.html" data-i18n="marcas">NUESTRAS MARCAS</a>
+                        <a href="soluciones.html" data-i18n="soluciones">NUESTRAS SOLUCIONES</a>
+                    </div>
+                </div>
+
+                <a href="donde-comprar.html" class="nav-item" data-i18n="donde-comprar">DÓNDE COMPRAR</a>
+                <a href="contacto.html" class="nav-item" data-i18n="contactenos">CONTÁCTENOS</a>
+
+                <!-- IDIOMA selector -->
+                <div class="nav-dropdown language-selector">
+                    <button class="nav-item dropdown-toggle"><span data-i18n="idioma">IDIOMA:</span> <span id="currentLang">🇪🇸</span> <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <button class="lang-btn" data-lang="es">🇪🇸 ESPAÑOL</button>
+                        <button class="lang-btn" data-lang="en">🇺🇸 ENGLISH</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_188389790.jpg'); padding: 120px 0;">
+        <div class="cta-band-overlay" style="background: rgba(26,28,30,0.85);"></div>
+        <div class="container cta-band-content">
+            <h1 style="font-size: 48px; color: white; margin-bottom: 15px;" data-i18n="campos-titulo">Campos de Experiencia</h1>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.9); max-width: 700px;" data-i18n="campos-subtitulo">Diseñamos soluciones que optimizan las operaciones industriales de nuestros usuarios finales</p>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section style="background: white; padding: 60px 0;">
+        <div class="container" style="text-align: center; max-width: 860px; margin: 0 auto;">
+            <div class="section-badge-center" data-i18n="campos-badge">Nuestra Especialización</div>
+            <h2 style="font-size: 32px; color: var(--dark); margin: 16px 0 20px;" data-i18n="campos-intro-titulo">6 Campos de Experiencia Industrial</h2>
+            <div class="divider-center"></div>
+            <p style="font-size: 16px; color: var(--text); line-height: 1.8; margin-top: 24px;" data-i18n="campos-intro-desc">
+                Diseñamos Soluciones que optimizan las operaciones Industriales de nuestros usuarios finales, nos enfocamos en los procesos más críticos buscando su máxima eficiencia.
+            </p>
+        </div>
+    </section>
+
+    <!-- Fields Grid -->
+    <section style="background: var(--light); padding: 60px 0 100px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 36px;">
+
+                <!-- Campo 1: Transmisión de Potencia -->
+                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                    <div style="background: var(--red); padding: 28px 30px 22px;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.15); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-gear" style="font-size: 24px; color: white;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo1-titulo">Transmisión de Potencia</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 28px 30px;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo1-desc">
+                            Componentes y sistemas especializados para la transmisión eficiente de fuerza en todo tipo de maquinaria industrial y automotriz pesada.
+                        </p>
+                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <li data-i18n="campo1-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Diferenciales</li>
+                            <li data-i18n="campo1-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Cardanes</li>
+                            <li data-i18n="campo1-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Zapatas</li>
+                            <li data-i18n="campo1-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Clutches</li>
+                            <li data-i18n="campo1-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Rodamientos</li>
+                            <li data-i18n="campo1-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Correas</li>
+                            <li data-i18n="campo1-p7" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Cadena Silenciosa</li>
+                            <li data-i18n="campo1-p8" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Acoples</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Campo 2: Soluciones de Punta de Rueda -->
+                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                    <div style="background: #1a1c1e; padding: 28px 30px 22px;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.1); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-circle-dot" style="font-size: 24px; color: white;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo2-titulo">Soluciones de Punta de Rueda</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 28px 30px;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo2-desc">
+                            Sistemas completos para la punta de rueda en vehículos de carga, garantizando seguridad, eficiencia y máxima vida útil de los componentes.
+                        </p>
+                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <li data-i18n="campo2-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Ratchets</li>
+                            <li data-i18n="campo2-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Autoinflado</li>
+                            <li data-i18n="campo2-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">King Pins</li>
+                            <li data-i18n="campo2-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Tapas</li>
+                            <li data-i18n="campo2-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Rodamientos</li>
+                            <li data-i18n="campo2-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Sellos</li>
+                            <li data-i18n="campo2-p7" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Bombonas</li>
+                            <li data-i18n="campo2-p8" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Amortiguadores</li>
+                            <li data-i18n="campo2-p9" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Tuercas</li>
+                            <li data-i18n="campo2-p10" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Hubodómetros</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Campo 3: Transferencia de Fluidos y Materiales -->
+                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                    <div style="background: var(--red); padding: 28px 30px 22px;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.15); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-droplet" style="font-size: 24px; color: white;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo3-titulo">Transferencia de Fluidos y Materiales</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 28px 30px;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo3-desc">
+                            Soluciones de transporte y manejo de fluidos industriales, materiales a granel y sistemas de conducción para procesos productivos exigentes.
+                        </p>
+                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <li data-i18n="campo3-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Mangueras Termoplásticas</li>
+                            <li data-i18n="campo3-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Mangueras Industriales</li>
+                            <li data-i18n="campo3-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Cadena de Ingeniería</li>
+                            <li data-i18n="campo3-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Cadena Agricultura</li>
+                            <li data-i18n="campo3-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Bandas Transportadoras</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Campo 4: Partes de Motor, Suspensión y Otros -->
+                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                    <div style="background: #1a1c1e; padding: 28px 30px 22px;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.1); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-engine" style="font-size: 24px; color: white;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo4-titulo">Partes de Motor, Suspensión y Otros Componentes</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 28px 30px;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo4-desc">
+                            Repuestos y componentes especializados para el mantenimiento preventivo y correctivo del motor, sistema de suspensión y otros subsistemas críticos.
+                        </p>
+                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <li data-i18n="campo4-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Filtros</li>
+                            <li data-i18n="campo4-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Correas Automotrices</li>
+                            <li data-i18n="campo4-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Bombas</li>
+                            <li data-i18n="campo4-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Kits de Reparación</li>
+                            <li data-i18n="campo4-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Refrigerantes</li>
+                            <li data-i18n="campo4-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Bujías</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Campo 5: Soluciones Hidráulicas -->
+                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                    <div style="background: var(--red); padding: 28px 30px 22px;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.15); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-water" style="font-size: 24px; color: white;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo5-titulo">Soluciones Hidráulicas</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 28px 30px;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo5-desc">
+                            Tecnología avanzada en sistemas hidráulicos de alta presión para maquinaria pesada, equipos industriales y vehículos de trabajo especializados.
+                        </p>
+                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <li data-i18n="campo5-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Mangueras Hidráulicas</li>
+                            <li data-i18n="campo5-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Acoples Hidráulicos</li>
+                            <li data-i18n="campo5-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Detección de Fugas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Campo 6: Herramientas de Control y Mantenimiento Industrial -->
+                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                    <div style="background: #1a1c1e; padding: 28px 30px 22px;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.1); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-screwdriver-wrench" style="font-size: 24px; color: white;"></i>
+                            </div>
+                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo6-titulo">Herramientas de Control y Mantenimiento Industrial</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 28px 30px;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo6-desc">
+                            Herramientas profesionales de corte, medición y metrología para garantizar precisión absoluta en procesos de manufactura y mantenimiento industrial.
+                        </p>
+                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <li data-i18n="campo6-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Herramientas de Corte</li>
+                            <li data-i18n="campo6-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Metrología</li>
+                            <li data-i18n="campo6-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Sierras Cinta</li>
+                            <li data-i18n="campo6-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Sierras Manuales</li>
+                            <li data-i18n="campo6-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Seguetas</li>
+                            <li data-i18n="campo6-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Lubricantes</li>
+                            <li data-i18n="campo6-p7" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Flexómetros</li>
+                            <li data-i18n="campo6-p8" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Micrómetros</li>
+                            <li data-i18n="campo6-p9" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Durómetros</li>
+                            <li data-i18n="campo6-p10" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Niveles</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_175182809.jpg');">
+        <div class="cta-band-overlay"></div>
+        <div class="container cta-band-content">
+            <h2 data-i18n="cta-titulo">¿Necesita asesoría técnica especializada?</h2>
+            <p data-i18n="cta-desc">Nuestro equipo de expertos está listo para ayudarle a encontrar la solución ideal para su industria.</p>
+            <a href="contacto.html" class="btn-cta-band" data-i18n="cta-btn">Contactar Ahora <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros Logo" class="footer-logo" loading="lazy">
+                    <p data-i18n="footer-desc">Soluciones integrales para el sector productivo y automotriz. Más de 85 años de respaldo industrial en Colombia.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/quinteros" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCI9B12Jei4zk40jR9xewqIg" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-nav">Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="nuestra-compania.html">Nuestra Compañía</a>
+                    <a href="soluciones.html">Soluciones</a>
+                    <a href="aliados.html">Marcas y Aliados</a>
+                    <a href="donde-comprar.html">Dónde Comprar</a>
+                    <a href="noticias.html">Noticias</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-solutions">Soluciones</h4>
+                    <a href="campos-de-experiencia.html#campo1">Transmisión de Potencia</a>
+                    <a href="campos-de-experiencia.html#campo5">Soluciones Hidráulicas</a>
+                    <a href="campos-de-experiencia.html#campo3">Transferencia de Fluidos</a>
+                    <a href="campos-de-experiencia.html#campo6">Herramientas Industriales</a>
+                    <a href="campos-de-experiencia.html#campo2">Soluciones de Rueda</a>
+                    <a href="campos-de-experiencia.html#campo4">Partes de Motor</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-contact">Contacto</h4>
+                    <p><i class="fa-solid fa-location-dot"></i>&nbsp; <span data-i18n="footer-address">Cll. 30A #6-22, Bogotá</span></p>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp; <span data-i18n="footer-phone">(601) 743 6830</span></p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp; <span data-i18n="footer-email">info@quinteros.co</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p data-i18n="footer-copyright">&copy; 2025 Quinteros S.A. Todos los derechos reservados. &nbsp;|&nbsp; Bogotá, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

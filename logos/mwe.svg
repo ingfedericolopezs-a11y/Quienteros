@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" preserveAspectRatio="xMidYMid meet">
+  <g fill="#1a1c1e">
+    <!-- Lightning bolt for power -->
+    <polygon points="40,30 70,30 55,60 75,60 35,100 50,70 30,70"/>
+    <!-- Text -->
+    <text x="105" y="80" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="62" letter-spacing="4">MWE</text>
+  </g>
+</svg>

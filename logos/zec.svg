@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" preserveAspectRatio="xMidYMid meet">
+  <g fill="#1a1c1e">
+    <!-- Z shape with hose -->
+    <path d="M20 35 L85 35 L85 50 L40 50 L85 80 L85 95 L20 95 L20 80 L65 80 L20 50 Z"/>
+    <!-- Text -->
+    <text x="115" y="80" font-family="Arial Black, sans-serif" font-weight="900" font-size="62" letter-spacing="6">ZEC</text>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" preserveAspectRatio="xMidYMid meet">
+  <g fill="#1a1c1e">
+    <!-- Rail icon -->
+    <rect x="20" y="50" width="60" height="6" rx="1"/>
+    <rect x="20" y="74" width="60" height="6" rx="1"/>
+    <rect x="28" y="40" width="3" height="50"/>
+    <rect x="42" y="40" width="3" height="50"/>
+    <rect x="56" y="40" width="3" height="50"/>
+    <rect x="70" y="40" width="3" height="50"/>
+    <!-- Text -->
+    <text x="100" y="62" font-family="Arial, sans-serif" font-weight="900" font-size="32" letter-spacing="-1">AMSTED</text>
+    <text x="100" y="98" font-family="Arial, sans-serif" font-weight="300" font-size="22" letter-spacing="6">RAIL</text>
+  </g>
+</svg>

@@ -734,13 +734,43 @@
                     <h3 class="dc-map-title" data-i18n="dc-map-title">Mapa de Cobertura</h3>
                     <p class="dc-map-sub" data-i18n="dc-map-sub">Haz click en una ciudad para ver sus distribuidores</p>
                     <div class="dc-map-svg-wrap">
-                        <svg class="dc-map-svg" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" id="colombiaMap">
-                            <!-- Outline simplificado de Colombia -->
-                            <path class="country-fill" d="M 195 50 L 215 55 L 240 62 L 270 75 L 285 95 L 290 115 L 305 135 L 295 155 L 310 175 L 305 195 L 285 200 L 275 220 L 295 235 L 320 245 L 340 270 L 350 305 L 340 340 L 320 365 L 300 385 L 290 415 L 295 450 L 285 485 L 265 510 L 240 525 L 215 540 L 190 550 L 170 540 L 155 510 L 145 475 L 140 440 L 145 405 L 140 370 L 125 340 L 110 315 L 100 285 L 95 255 L 100 225 L 110 195 L 125 170 L 130 145 L 125 120 L 135 95 L 155 75 L 175 60 Z" />
+                        <svg class="dc-map-svg" viewBox="0 0 400 620" xmlns="http://www.w3.org/2000/svg" id="colombiaMap">
+                            <!-- Outline geográfico real de Colombia (clockwise desde Punta Gallinas) -->
+                            <path class="country-fill" d="
+                                M 245,18
+                                L 256,32 L 258,48 L 256,62
+                                L 248,80 L 235,98
+                                L 225,118 L 222,140 L 220,165
+                                L 220,180 L 232,200 L 250,212
+                                L 275,210 L 295,218 L 318,230
+                                L 345,238 L 370,235 L 384,240
+                                L 388,265 L 384,290 L 372,315
+                                L 360,345 L 340,380 L 318,408
+                                L 305,440 L 295,475 L 285,510
+                                L 290,540 L 298,570 L 302,595
+                                L 290,605 L 275,605 L 260,590
+                                L 240,565 L 220,540 L 200,510
+                                L 175,478 L 150,448 L 120,425
+                                L 90,412 L 58,408 L 35,395
+                                L 18,378 L 12,360 L 15,340
+                                L 30,318 L 45,300 L 50,275
+                                L 48,250 L 50,225 L 55,200
+                                L 52,180 L 60,168 L 80,160
+                                L 100,150 L 115,128 L 122,108
+                                L 132,90 L 148,75 L 165,65
+                                L 188,55 L 210,48 L 230,38
+                                Z
+                            "/>
 
                             <!-- Pins de ciudades - se generan dinámicamente via JS -->
                             <g id="cityPins"></g>
                         </svg>
+
+                        <!-- Cities en Ecuador (fuera del mapa de Colombia) -->
+                        <div id="ecuadorCities" style="margin-top: 14px; padding: 12px; background: rgba(232,75,55,0.05); border: 1px dashed rgba(232,75,55,0.3); border-radius: 12px;">
+                            <div style="font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">🇪🇨 También en Ecuador:</div>
+                            <div id="ecuadorBtns" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
+                        </div>
                     </div>
                     <div class="dc-map-legend">
                         <div class="dc-map-legend-item">

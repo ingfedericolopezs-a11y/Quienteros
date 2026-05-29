@@ -338,37 +338,48 @@ let activeCity = null;  // null = ninguna ciudad seleccionada
 let searchTerm = "";
 
 /* ============================================================
-   POSICIONES DE CIUDADES EN EL MAPA (viewBox 400x600)
-   Coordenadas aproximadas geográficamente para Colombia
+   POSICIONES DE CIUDADES EN EL MAPA (viewBox 400x620)
+   Coordenadas geográficamente correctas para Colombia
+   Mapeo: long -79W..-67W → x 0..400, lat 13N..-5S → y 0..620
    ============================================================ */
 const cityPositions = {
-    "Barranquilla":     { x: 195, y: 85,  region: "Atlántico" },
-    "Santa Marta":      { x: 215, y: 78,  region: "Magdalena" },
-    "Cartagena":        { x: 168, y: 100, region: "Bolívar" },
-    "Bosconia":         { x: 215, y: 130, region: "Cesar" },
-    "Cúcuta":           { x: 268, y: 175, region: "Norte de Santander" },
-    "Bucaramanga":      { x: 232, y: 215, region: "Santander" },
-    "Barrancabermeja":  { x: 220, y: 230, region: "Santander" },
-    "Girardota":        { x: 175, y: 250, region: "Antioquia" },
-    "Medellín":         { x: 175, y: 265, region: "Antioquia" },
-    "Itagüí":           { x: 165, y: 275, region: "Antioquia" },
-    "Rionegro":         { x: 188, y: 270, region: "Antioquia" },
-    "Yopal":            { x: 250, y: 285, region: "Casanare" },
-    "Manizales":        { x: 175, y: 310, region: "Caldas" },
-    "Pereira":          { x: 165, y: 318, region: "Risaralda" },
-    "Dosquebradas":     { x: 158, y: 327, region: "Risaralda" },
-    "Ibagué":           { x: 195, y: 340, region: "Tolima" },
-    "Bogotá D.C.":      { x: 230, y: 335, region: "Bogotá D.C." },
-    "Mosquera":         { x: 218, y: 343, region: "Cundinamarca" },
-    "Funza":            { x: 223, y: 350, region: "Cundinamarca" },
-    "Villavicencio":    { x: 250, y: 355, region: "Meta" },
-    "Palmira":          { x: 155, y: 365, region: "Valle del Cauca" },
-    "Cali":             { x: 145, y: 380, region: "Valle del Cauca" },
-    "Pasto":            { x: 150, y: 470, region: "Nariño" },
-    // Ecuador
-    "Quito (Ecuador)":     { x: 140, y: 535, region: "Pichincha, Ecuador", country: "EC" },
-    "Cuenca (Ecuador)":    { x: 130, y: 565, region: "Azuay, Ecuador", country: "EC" },
-    "Guayaquil (Ecuador)": { x: 100, y: 555, region: "Guayas, Ecuador", country: "EC" }
+    // Costa Caribe (norte)
+    "Santa Marta":      { x: 175, y: 60,  region: "Magdalena" },
+    "Barranquilla":     { x: 150, y: 73,  region: "Atlántico" },
+    "Cartagena":        { x: 125, y: 95,  region: "Bolívar" },
+    "Bosconia":         { x: 180, y: 110, region: "Cesar" },
+    // Norte de Santander
+    "Cúcuta":           { x: 240, y: 180, region: "Norte de Santander" },
+    // Santander
+    "Bucaramanga":      { x: 215, y: 210, region: "Santander" },
+    "Barrancabermeja":  { x: 190, y: 215, region: "Santander" },
+    // Antioquia cluster
+    "Girardota":        { x: 132, y: 240, region: "Antioquia" },
+    "Medellín":         { x: 128, y: 250, region: "Antioquia" },
+    "Itagüí":           { x: 124, y: 260, region: "Antioquia" },
+    "Rionegro":         { x: 144, y: 252, region: "Antioquia" },
+    // Llanos Orientales
+    "Yopal":            { x: 245, y: 270, region: "Casanare" },
+    // Eje Cafetero
+    "Manizales":        { x: 130, y: 285, region: "Caldas" },
+    "Pereira":          { x: 122, y: 295, region: "Risaralda" },
+    "Dosquebradas":     { x: 118, y: 302, region: "Risaralda" },
+    "Ibagué":           { x: 145, y: 310, region: "Tolima" },
+    // Bogotá área (cluster centro)
+    "Bogotá D.C.":      { x: 178, y: 302, region: "Bogotá D.C." },
+    "Mosquera":         { x: 168, y: 312, region: "Cundinamarca" },
+    "Funza":            { x: 172, y: 320, region: "Cundinamarca" },
+    // Meta
+    "Villavicencio":    { x: 200, y: 320, region: "Meta" },
+    // Valle del Cauca
+    "Palmira":          { x: 108, y: 335, region: "Valle del Cauca" },
+    "Cali":             { x: 98, y: 348, region: "Valle del Cauca" },
+    // Sur
+    "Pasto":            { x: 72, y: 410, region: "Nariño" },
+    // Ecuador (mostrar como botones aparte, no en mapa)
+    "Quito (Ecuador)":     { x: 0, y: 0, region: "Pichincha, Ecuador", country: "EC" },
+    "Cuenca (Ecuador)":    { x: 0, y: 0, region: "Azuay, Ecuador", country: "EC" },
+    "Guayaquil (Ecuador)": { x: 0, y: 0, region: "Guayas, Ecuador", country: "EC" }
 };
 
 // Calculate stats
@@ -450,32 +461,78 @@ function getActiveCities() {
     return cities;
 }
 
-// Render city pins on SVG map
+// Render city pins on SVG map (solo Colombia)
 function renderMapPins() {
     const pinsContainer = document.getElementById('cityPins');
     if (!pinsContainer) return;
     const activeCities = getActiveCities();
+
+    // Pins en el SVG (solo Colombia, no Ecuador)
     const html = Object.entries(cityPositions).map(([city, pos]) => {
+        if (pos.country === 'EC') return ''; // Ecuador va aparte
         const cityData = activeCities[city];
-        if (!cityData) return ''; // Solo mostrar ciudades con distribuidores para la marca activa
+        if (!cityData) return ''; // Solo mostrar ciudades con distribuidores
         const isActive = city === activeCity;
         const count = cityData.count;
+        const radius = count >= 5 ? 8 : count >= 2 ? 7 : 5;
         return `
             <g class="city-pin ${isActive ? 'active' : ''}" data-city="${city}" transform="translate(${pos.x}, ${pos.y})">
-                <circle class="pin-pulse" cx="0" cy="0" r="6"/>
-                <circle class="pin-dot" cx="0" cy="0" r="6"/>
-                ${count > 1 ? `<text class="pin-count" x="0" y="3">${count}</text>` : ''}
-                <text class="pin-label" x="0" y="-12">${city}</text>
+                <circle class="pin-pulse" cx="0" cy="0" r="${radius}"/>
+                <circle class="pin-dot" cx="0" cy="0" r="${radius}"/>
+                ${count > 1 ? `<text class="pin-count" x="0" y="${radius >= 7 ? 3 : 2}">${count}</text>` : ''}
+                <text class="pin-label" x="0" y="${-radius - 6}">${city}</text>
             </g>
         `;
     }).join('');
     pinsContainer.innerHTML = html;
 
-    // Add click handlers
+    // Click handlers para pins SVG
     pinsContainer.querySelectorAll('.city-pin').forEach(pin => {
         pin.addEventListener('click', () => {
             activeCity = pin.dataset.city;
             renderMapPins();
+            renderEcuadorBtns();
+            renderMapPanel();
+        });
+    });
+
+    // También renderizar botones de Ecuador
+    renderEcuadorBtns();
+}
+
+// Render botones de ciudades de Ecuador (fuera del SVG)
+function renderEcuadorBtns() {
+    const ecBox = document.getElementById('ecuadorBtns');
+    if (!ecBox) return;
+    const activeCities = getActiveCities();
+    const ecCities = Object.entries(cityPositions).filter(([, pos]) => pos.country === 'EC');
+
+    const html = ecCities.map(([city]) => {
+        const cityData = activeCities[city];
+        if (!cityData) return '';
+        const isActive = city === activeCity;
+        const shortName = city.replace(' (Ecuador)', '');
+        return `
+            <button class="dc-ec-btn ${isActive ? 'active' : ''}" data-city="${city}"
+                style="background: ${isActive ? '#1a1c1e' : 'white'}; color: ${isActive ? 'white' : '#1a1c1e'};
+                       border: 1.5px solid ${isActive ? '#e84b37' : '#ececec'};
+                       padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 700;
+                       cursor: pointer; transition: all 0.2s; font-family: inherit;
+                       display: inline-flex; align-items: center; gap: 6px;">
+                <span style="background: #e84b37; color: white; border-radius: 50%; width: 18px; height: 18px;
+                             display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800;">${cityData.count}</span>
+                ${shortName}
+            </button>
+        `;
+    }).join('');
+
+    ecBox.innerHTML = html || '<span style="font-size:12px;color:#aaa;">Sin distribuidores para esta marca</span>';
+
+    ecBox.querySelectorAll('.dc-ec-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            activeCity = btn.dataset.city;
+            renderMapPins();
+            renderEcuadorBtns();
             renderMapPanel();
         });
     });

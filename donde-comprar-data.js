@@ -352,15 +352,45 @@ function calculateStats() {
     return { distCount, cityCount: citySet.size, brandCount, cities: Array.from(citySet).sort() };
 }
 
+// Brand icon mapping (FontAwesome icons)
+const brandIcons = {
+    "DITAS": "fa-solid fa-gear",
+    "GATES": "fa-solid fa-link",
+    "KIT MASTERS": "fa-solid fa-fan",
+    "PRESTONE": "fa-solid fa-droplet",
+    "RAMSEY PRODUCTS": "fa-solid fa-link-horizontal",
+    "SPECTROLINE": "fa-solid fa-magnifying-glass",
+    "STARRETT": "fa-solid fa-ruler-combined",
+    "STEMCO": "fa-solid fa-circle-dot",
+    "TRACER PRODUCTS": "fa-solid fa-bullseye",
+    "TUDERTECHNICA": "fa-solid fa-arrow-right-arrow-left",
+    "ZEC": "fa-solid fa-water"
+};
+
+// Get initials from name (max 2 chars)
+function getInitials(name) {
+    const clean = name.replace(/S\.?A\.?S?\.?|Ltda\.?|Cia\.?|S\.?A\.?|Inc\.?|& ?CDEB/gi, '').trim();
+    const words = clean.split(/[\s/]+/).filter(w => w.length > 0);
+    if (words.length === 0) return name.substring(0, 2).toUpperCase();
+    if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
 // Build brand tabs
 function renderBrandTabs() {
     const brands = ["TODAS", ...Object.keys(distributorsData)];
-    const html = brands.map(b => `<button class="dc-brand-tab ${b === activeBrand ? 'active' : ''}" data-brand="${b}">${b}</button>`).join('');
+    const html = brands.map(b => {
+        const isActive = b === activeBrand ? 'active' : '';
+        const isTodas = b === "TODAS" ? 'is-todas' : '';
+        return `<button class="dc-brand-tab ${isActive} ${isTodas}" data-brand="${b}">${b}</button>`;
+    }).join('');
     document.getElementById('brandTabs').innerHTML = html;
     document.querySelectorAll('.dc-brand-tab').forEach(btn => {
         btn.addEventListener('click', () => {
             activeBrand = btn.dataset.brand;
+            activeCity = "TODAS";
             renderBrandTabs();
+            renderCityTabs();
             renderDistributors();
         });
     });
@@ -420,8 +450,9 @@ function renderDistributors() {
 
             const cardsHtml = filtered.map(d => `
                 <div class="dc-dist-card">
+                    <div class="dc-dist-avatar">${getInitials(d.name)}</div>
                     <div class="dc-dist-info">
-                        <div class="dc-dist-name">${d.name}</div>
+                        <div class="dc-dist-name" title="${d.name}">${d.name}</div>
                         <div class="dc-dist-phone"><i class="fa-solid fa-phone"></i>${d.phone}</div>
                     </div>
                     <a href="tel:${d.phone.replace(/[^0-9+]/g, '')}" class="dc-dist-call" title="Llamar"><i class="fa-solid fa-phone"></i></a>
@@ -431,9 +462,9 @@ function renderDistributors() {
             brandHtml += `
                 <div class="dc-city-group">
                     <div class="dc-city-header">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="city-pin"><i class="fa-solid fa-location-dot"></i></div>
                         <span class="dc-city-name">${city}</span>
-                        <span class="dc-region-name">— ${cityData.region}</span>
+                        <span class="dc-region-name">${cityData.region}</span>
                     </div>
                     <div class="dc-dist-grid">${cardsHtml}</div>
                 </div>
@@ -443,9 +474,11 @@ function renderDistributors() {
         });
 
         if (brandCount > 0) {
+            const icon = brandIcons[brand] || 'fa-solid fa-tags';
             html += `
                 <div class="dc-brand-section">
                     <div class="dc-brand-header">
+                        <div class="dc-brand-logo"><i class="${icon}"></i></div>
                         <span class="dc-brand-name">${brand}</span>
                         <span class="dc-brand-count">${brandCount} distribuidor${brandCount !== 1 ? 'es' : ''}</span>
                     </div>
@@ -482,9 +515,25 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCityTabs();
     renderDistributors();
 
-    // Search
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-        searchTerm = e.target.value.trim();
-        renderDistributors();
+    // Search with debounce for performance
+    const searchInput = document.getElementById('searchInput');
+    let searchDebounce = null;
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(() => {
+            searchTerm = e.target.value.trim();
+            renderDistributors();
+        }, 150);
     });
+
+    // Clear search button
+    const clearBtn = document.getElementById('clearSearch');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            searchTerm = '';
+            renderDistributors();
+            searchInput.focus();
+        });
+    }
 });

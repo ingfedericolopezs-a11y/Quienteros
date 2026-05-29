@@ -409,6 +409,191 @@
             box-shadow: 0 16px 40px rgba(0,0,0,0.25);
         }
 
+        /* ============ MAPA INTERACTIVO DE COLOMBIA ============ */
+        .dc-map-section {
+            background: linear-gradient(180deg, white 0%, #f5f7fa 100%);
+            padding: 30px 0 80px;
+        }
+        .dc-map-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+            gap: 32px;
+            align-items: start;
+        }
+        .dc-map-card {
+            background: white;
+            border-radius: 22px;
+            padding: 28px 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid #ececec;
+            position: sticky; top: 100px;
+        }
+        .dc-map-title {
+            font-size: 14px; font-weight: 700; color: #1a1c1e;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            margin: 0 0 6px;
+        }
+        .dc-map-sub {
+            font-size: 12px; color: #888;
+            margin-bottom: 18px;
+        }
+        .dc-map-svg-wrap {
+            position: relative;
+            background: linear-gradient(180deg, #f8f9fa 0%, #eef0f3 100%);
+            border-radius: 16px;
+            padding: 16px 10px 10px;
+            border: 1px solid #ececec;
+        }
+        .dc-map-svg {
+            width: 100%; height: auto; display: block;
+            max-height: 580px;
+        }
+        .dc-map-svg .country-fill {
+            fill: #d6dde6; stroke: #adb5bd; stroke-width: 1.2;
+            stroke-linejoin: round;
+            transition: fill 0.4s;
+        }
+        .dc-map-svg .country-fill:hover { fill: #ced4da; }
+        .dc-map-svg .city-pin { cursor: pointer; }
+        .dc-map-svg .city-pin .pin-pulse {
+            opacity: 0; fill: #e84b37;
+            transform-origin: center;
+            transform-box: fill-box;
+        }
+        .dc-map-svg .city-pin:hover .pin-pulse,
+        .dc-map-svg .city-pin.active .pin-pulse {
+            animation: pinPulse 1.5s ease-out infinite;
+        }
+        @keyframes pinPulse {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2.5); }
+        }
+        .dc-map-svg .city-pin .pin-dot {
+            fill: #e84b37; stroke: white; stroke-width: 2;
+            transition: r 0.25s, fill 0.25s;
+        }
+        .dc-map-svg .city-pin:hover .pin-dot {
+            fill: #1a1c1e;
+        }
+        .dc-map-svg .city-pin.active .pin-dot {
+            fill: #1a1c1e; stroke: #e84b37; stroke-width: 3;
+        }
+        .dc-map-svg .city-pin .pin-label {
+            font-size: 9px; font-weight: 700; fill: #1a1c1e;
+            text-anchor: middle; pointer-events: none;
+            opacity: 0; transition: opacity 0.2s;
+            paint-order: stroke; stroke: white; stroke-width: 3;
+        }
+        .dc-map-svg .city-pin:hover .pin-label,
+        .dc-map-svg .city-pin.active .pin-label {
+            opacity: 1;
+        }
+        .dc-map-svg .city-pin.has-count .pin-count {
+            font-size: 8px; font-weight: 800; fill: white;
+            text-anchor: middle; pointer-events: none;
+        }
+
+        .dc-map-legend {
+            margin-top: 18px; padding-top: 16px; border-top: 1px solid #ececec;
+            display: flex; align-items: center; gap: 14px;
+            font-size: 11px; color: #888;
+            flex-wrap: wrap;
+        }
+        .dc-map-legend-item { display: flex; align-items: center; gap: 6px; }
+        .dc-map-legend-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: #e84b37; border: 2px solid white;
+            box-shadow: 0 0 0 1px #e84b37;
+        }
+        .dc-map-legend-dot.active { background: #1a1c1e; box-shadow: 0 0 0 1px #1a1c1e; }
+
+        /* PANEL DE RESULTADOS LATERAL */
+        .dc-map-panel {
+            background: white;
+            border-radius: 22px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid #ececec;
+            min-height: 600px;
+        }
+        .dc-panel-header {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 16px; padding-bottom: 22px; margin-bottom: 24px;
+            border-bottom: 2px solid #f0f2f5;
+        }
+        .dc-panel-city {
+            display: flex; align-items: center; gap: 14px;
+        }
+        .dc-panel-pin {
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, #e84b37 0%, #c93b2a 100%);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 20px;
+            box-shadow: 0 6px 16px rgba(232,75,55,0.3);
+        }
+        .dc-panel-city-info h3 {
+            margin: 0 0 4px; font-size: 22px; font-weight: 900;
+            color: #1a1c1e; letter-spacing: -0.5px;
+        }
+        .dc-panel-city-info .region {
+            font-size: 13px; color: #888; font-weight: 500;
+        }
+        .dc-panel-count {
+            background: #f0f2f5;
+            padding: 8px 16px; border-radius: 100px;
+            font-size: 13px; font-weight: 700; color: #1a1c1e;
+            white-space: nowrap;
+        }
+        .dc-panel-count strong { color: #e84b37; font-size: 16px; }
+        .dc-panel-back {
+            background: transparent; border: 1.5px solid #ececec;
+            color: #555; padding: 8px 16px; border-radius: 100px;
+            cursor: pointer; font-size: 12px; font-weight: 600;
+            display: inline-flex; align-items: center; gap: 6px;
+            transition: all 0.2s; font-family: inherit;
+            margin-bottom: 20px;
+        }
+        .dc-panel-back:hover { border-color: #1a1c1e; color: #1a1c1e; }
+
+        .dc-panel-brands { display: flex; flex-direction: column; gap: 20px; }
+        .dc-panel-brand-group { }
+        .dc-panel-brand-header {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 12px;
+            font-size: 12px; font-weight: 800; color: #1a1c1e;
+            text-transform: uppercase; letter-spacing: 0.1em;
+        }
+        .dc-panel-brand-icon {
+            width: 28px; height: 28px;
+            background: rgba(232,75,55,0.1); color: #e84b37;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px;
+        }
+        .dc-panel-brand-count {
+            margin-left: auto; background: #f0f2f5;
+            padding: 2px 10px; border-radius: 100px;
+            font-size: 11px; color: #666; font-weight: 600;
+        }
+        .dc-panel-empty {
+            text-align: center; padding: 80px 20px; color: #888;
+        }
+        .dc-panel-empty .empty-icon {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, rgba(232,75,55,0.1), rgba(232,75,55,0.02));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; font-size: 32px; color: #e84b37;
+        }
+        .dc-panel-empty h3 {
+            font-size: 20px; color: #1a1c1e; margin-bottom: 8px; font-weight: 800;
+        }
+        .dc-panel-empty p { font-size: 14px; line-height: 1.6; max-width: 400px; margin: 0 auto; }
+
+        @media (max-width: 968px) {
+            .dc-map-layout { grid-template-columns: 1fr; }
+            .dc-map-card { position: static; }
+        }
         @media (max-width: 768px) {
             .dc-hero { min-height: 380px; }
             .dc-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: -50px; }
@@ -417,6 +602,7 @@
             .dc-brand-header { padding: 14px 16px; }
             .dc-brand-name { font-size: 18px; }
             .dc-dist-grid { grid-template-columns: 1fr; }
+            .dc-panel-header { flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -536,17 +722,43 @@
 
             <div class="dc-filter-title" style="text-align:center;" data-i18n="dc-filter-brand">Filtrar por Marca</div>
             <div class="dc-brand-tabs" id="brandTabs"></div>
-
-            <div class="dc-filter-title" style="text-align:center;" data-i18n="dc-filter-city">Filtrar por Ciudad</div>
-            <div class="dc-city-tabs" id="cityTabs"></div>
         </div>
     </section>
 
-    <!-- Results -->
-    <section class="dc-results">
+    <!-- Mapa Interactivo de Colombia -->
+    <section class="dc-map-section">
         <div class="container">
-            <div class="dc-result-count" id="resultCount"></div>
-            <div id="distributorsContainer"></div>
+            <div class="dc-map-layout">
+                <!-- Mapa SVG -->
+                <div class="dc-map-card">
+                    <h3 class="dc-map-title" data-i18n="dc-map-title">Mapa de Cobertura</h3>
+                    <p class="dc-map-sub" data-i18n="dc-map-sub">Haz click en una ciudad para ver sus distribuidores</p>
+                    <div class="dc-map-svg-wrap">
+                        <svg class="dc-map-svg" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" id="colombiaMap">
+                            <!-- Outline simplificado de Colombia -->
+                            <path class="country-fill" d="M 195 50 L 215 55 L 240 62 L 270 75 L 285 95 L 290 115 L 305 135 L 295 155 L 310 175 L 305 195 L 285 200 L 275 220 L 295 235 L 320 245 L 340 270 L 350 305 L 340 340 L 320 365 L 300 385 L 290 415 L 295 450 L 285 485 L 265 510 L 240 525 L 215 540 L 190 550 L 170 540 L 155 510 L 145 475 L 140 440 L 145 405 L 140 370 L 125 340 L 110 315 L 100 285 L 95 255 L 100 225 L 110 195 L 125 170 L 130 145 L 125 120 L 135 95 L 155 75 L 175 60 Z" />
+
+                            <!-- Pins de ciudades - se generan dinámicamente via JS -->
+                            <g id="cityPins"></g>
+                        </svg>
+                    </div>
+                    <div class="dc-map-legend">
+                        <div class="dc-map-legend-item">
+                            <span class="dc-map-legend-dot"></span>
+                            <span data-i18n="dc-map-legend-city">Ciudad con distribuidores</span>
+                        </div>
+                        <div class="dc-map-legend-item">
+                            <span class="dc-map-legend-dot active"></span>
+                            <span data-i18n="dc-map-legend-active">Ciudad seleccionada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel lateral de resultados -->
+                <div class="dc-map-panel" id="mapPanel">
+                    <!-- Contenido se renderiza dinámicamente vía JS -->
+                </div>
+            </div>
         </div>
     </section>
 

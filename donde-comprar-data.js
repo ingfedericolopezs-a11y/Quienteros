@@ -334,52 +334,21 @@ const distributorsData = {
    ============================================================ */
 
 let activeBrand = "TODAS";
-let activeCity = null;  // null = ninguna ciudad seleccionada
+let activeCity = "TODAS";
 let searchTerm = "";
 
-/* ============================================================
-   POSICIONES DE CIUDADES EN EL MAPA (viewBox 400x620)
-   Coordenadas geográficamente correctas para Colombia
-   Mapeo: long -79W..-67W → x 0..400, lat 13N..-5S → y 0..620
-   ============================================================ */
-const cityPositions = {
-    // Costa Caribe (norte)
-    "Santa Marta":      { x: 175, y: 60,  region: "Magdalena" },
-    "Barranquilla":     { x: 150, y: 73,  region: "Atlántico" },
-    "Cartagena":        { x: 125, y: 95,  region: "Bolívar" },
-    "Bosconia":         { x: 180, y: 110, region: "Cesar" },
-    // Norte de Santander
-    "Cúcuta":           { x: 240, y: 180, region: "Norte de Santander" },
-    // Santander
-    "Bucaramanga":      { x: 215, y: 210, region: "Santander" },
-    "Barrancabermeja":  { x: 190, y: 215, region: "Santander" },
-    // Antioquia cluster
-    "Girardota":        { x: 132, y: 240, region: "Antioquia" },
-    "Medellín":         { x: 128, y: 250, region: "Antioquia" },
-    "Itagüí":           { x: 124, y: 260, region: "Antioquia" },
-    "Rionegro":         { x: 144, y: 252, region: "Antioquia" },
-    // Llanos Orientales
-    "Yopal":            { x: 245, y: 270, region: "Casanare" },
-    // Eje Cafetero
-    "Manizales":        { x: 130, y: 285, region: "Caldas" },
-    "Pereira":          { x: 122, y: 295, region: "Risaralda" },
-    "Dosquebradas":     { x: 118, y: 302, region: "Risaralda" },
-    "Ibagué":           { x: 145, y: 310, region: "Tolima" },
-    // Bogotá área (cluster centro)
-    "Bogotá D.C.":      { x: 178, y: 302, region: "Bogotá D.C." },
-    "Mosquera":         { x: 168, y: 312, region: "Cundinamarca" },
-    "Funza":            { x: 172, y: 320, region: "Cundinamarca" },
-    // Meta
-    "Villavicencio":    { x: 200, y: 320, region: "Meta" },
-    // Valle del Cauca
-    "Palmira":          { x: 108, y: 335, region: "Valle del Cauca" },
-    "Cali":             { x: 98, y: 348, region: "Valle del Cauca" },
-    // Sur
-    "Pasto":            { x: 72, y: 410, region: "Nariño" },
-    // Ecuador (mostrar como botones aparte, no en mapa)
-    "Quito (Ecuador)":     { x: 0, y: 0, region: "Pichincha, Ecuador", country: "EC" },
-    "Cuenca (Ecuador)":    { x: 0, y: 0, region: "Azuay, Ecuador", country: "EC" },
-    "Guayaquil (Ecuador)": { x: 0, y: 0, region: "Guayas, Ecuador", country: "EC" }
+// Mapeo de ciudades a regiones (para mostrar como información adicional)
+const cityRegions = {
+    "Santa Marta": "Magdalena", "Barranquilla": "Atlántico", "Cartagena": "Bolívar",
+    "Bosconia": "Cesar", "Cúcuta": "Norte de Santander", "Bucaramanga": "Santander",
+    "Barrancabermeja": "Santander", "Girardota": "Antioquia", "Medellín": "Antioquia",
+    "Itagüí": "Antioquia", "Rionegro": "Antioquia", "Yopal": "Casanare",
+    "Manizales": "Caldas", "Pereira": "Risaralda", "Dosquebradas": "Risaralda",
+    "Ibagué": "Tolima", "Bogotá D.C.": "Bogotá D.C.", "Mosquera": "Cundinamarca",
+    "Funza": "Cundinamarca", "Villavicencio": "Meta", "Palmira": "Valle del Cauca",
+    "Cali": "Valle del Cauca", "Pasto": "Nariño",
+    "Quito (Ecuador)": "Pichincha, Ecuador", "Cuenca (Ecuador)": "Azuay, Ecuador",
+    "Guayaquil (Ecuador)": "Guayas, Ecuador"
 };
 
 // Calculate stats
@@ -433,219 +402,124 @@ function renderBrandTabs() {
     document.querySelectorAll('.dc-brand-tab').forEach(btn => {
         btn.addEventListener('click', () => {
             activeBrand = btn.dataset.brand;
-            // Si la ciudad activa no tiene distribuidores para esta marca, deseleccionar
-            if (activeCity && activeBrand !== "TODAS") {
-                if (!distributorsData[activeBrand][activeCity]) {
-                    activeCity = null;
-                }
-            }
+            activeCity = "TODAS";  // Reset city al cambiar marca
             renderBrandTabs();
-            renderMapPins();
-            renderMapPanel();
+            renderCityTabs();
+            renderDistributors();
         });
     });
 }
 
-// Get cities with distributors for active brand
-function getActiveCities() {
-    const cities = {};
-    const brandsToCheck = activeBrand === "TODAS" ? Object.keys(distributorsData) : [activeBrand];
-    brandsToCheck.forEach(brand => {
-        for (const city in distributorsData[brand]) {
-            if (!cities[city]) {
-                cities[city] = { count: 0, region: distributorsData[brand][city].region };
-            }
-            cities[city].count += distributorsData[brand][city].distributors.length;
+// Build city tabs (depende de la marca activa)
+function renderCityTabs() {
+    let cities = new Set();
+    if (activeBrand === "TODAS") {
+        for (const brand in distributorsData) {
+            for (const city in distributorsData[brand]) cities.add(city);
         }
-    });
-    return cities;
-}
-
-// Render city pins on SVG map (solo Colombia)
-function renderMapPins() {
-    const pinsContainer = document.getElementById('cityPins');
-    if (!pinsContainer) return;
-    const activeCities = getActiveCities();
-
-    // Pins en el SVG (solo Colombia, no Ecuador)
-    const html = Object.entries(cityPositions).map(([city, pos]) => {
-        if (pos.country === 'EC') return ''; // Ecuador va aparte
-        const cityData = activeCities[city];
-        if (!cityData) return ''; // Solo mostrar ciudades con distribuidores
-        const isActive = city === activeCity;
-        const count = cityData.count;
-        const radius = count >= 5 ? 8 : count >= 2 ? 7 : 5;
-        return `
-            <g class="city-pin ${isActive ? 'active' : ''}" data-city="${city}" transform="translate(${pos.x}, ${pos.y})">
-                <circle class="pin-pulse" cx="0" cy="0" r="${radius}"/>
-                <circle class="pin-dot" cx="0" cy="0" r="${radius}"/>
-                ${count > 1 ? `<text class="pin-count" x="0" y="${radius >= 7 ? 3 : 2}">${count}</text>` : ''}
-                <text class="pin-label" x="0" y="${-radius - 6}">${city}</text>
-            </g>
-        `;
+    } else {
+        for (const city in distributorsData[activeBrand]) cities.add(city);
+    }
+    const cityList = ["TODAS", ...Array.from(cities).sort((a, b) => a.localeCompare(b))];
+    const html = cityList.map(c => {
+        const isActive = c === activeCity ? 'active' : '';
+        return `<button class="dc-city-tab ${isActive}" data-city="${c}">${c}</button>`;
     }).join('');
-    pinsContainer.innerHTML = html;
-
-    // Click handlers para pins SVG
-    pinsContainer.querySelectorAll('.city-pin').forEach(pin => {
-        pin.addEventListener('click', () => {
-            activeCity = pin.dataset.city;
-            renderMapPins();
-            renderEcuadorBtns();
-            renderMapPanel();
-        });
-    });
-
-    // También renderizar botones de Ecuador
-    renderEcuadorBtns();
-}
-
-// Render botones de ciudades de Ecuador (fuera del SVG)
-function renderEcuadorBtns() {
-    const ecBox = document.getElementById('ecuadorBtns');
-    if (!ecBox) return;
-    const activeCities = getActiveCities();
-    const ecCities = Object.entries(cityPositions).filter(([, pos]) => pos.country === 'EC');
-
-    const html = ecCities.map(([city]) => {
-        const cityData = activeCities[city];
-        if (!cityData) return '';
-        const isActive = city === activeCity;
-        const shortName = city.replace(' (Ecuador)', '');
-        return `
-            <button class="dc-ec-btn ${isActive ? 'active' : ''}" data-city="${city}"
-                style="background: ${isActive ? '#1a1c1e' : 'white'}; color: ${isActive ? 'white' : '#1a1c1e'};
-                       border: 1.5px solid ${isActive ? '#e84b37' : '#ececec'};
-                       padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 700;
-                       cursor: pointer; transition: all 0.2s; font-family: inherit;
-                       display: inline-flex; align-items: center; gap: 6px;">
-                <span style="background: #e84b37; color: white; border-radius: 50%; width: 18px; height: 18px;
-                             display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800;">${cityData.count}</span>
-                ${shortName}
-            </button>
-        `;
-    }).join('');
-
-    ecBox.innerHTML = html || '<span style="font-size:12px;color:#aaa;">Sin distribuidores para esta marca</span>';
-
-    ecBox.querySelectorAll('.dc-ec-btn').forEach(btn => {
+    document.getElementById('cityTabs').innerHTML = html;
+    document.querySelectorAll('.dc-city-tab').forEach(btn => {
         btn.addEventListener('click', () => {
             activeCity = btn.dataset.city;
-            renderMapPins();
-            renderEcuadorBtns();
-            renderMapPanel();
+            renderCityTabs();
+            renderDistributors();
         });
     });
 }
 
-// Render side panel (city or default state)
-function renderMapPanel() {
-    const panel = document.getElementById('mapPanel');
-    if (!panel) return;
-
-    // Si no hay ciudad seleccionada, mostrar estado inicial
-    if (!activeCity) {
-        const activeCities = getActiveCities();
-        const totalCities = Object.keys(activeCities).length;
-        const totalDist = Object.values(activeCities).reduce((sum, c) => sum + c.count, 0);
-        panel.innerHTML = `
-            <div class="dc-panel-empty">
-                <div class="empty-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                <h3>Selecciona una ciudad en el mapa</h3>
-                <p>Haz click en cualquier pin del mapa para ver los distribuidores autorizados de esa ciudad.</p>
-                <div style="margin-top: 24px; padding: 16px; background: #f8f9fa; border-radius: 12px; display: inline-flex; gap: 24px;">
-                    <div><strong style="color: #e84b37; font-size: 22px; font-weight: 900;">${totalDist}</strong><div style="font-size: 11px; color: #888; margin-top: 2px;">distribuidores</div></div>
-                    <div><strong style="color: #e84b37; font-size: 22px; font-weight: 900;">${totalCities}</strong><div style="font-size: 11px; color: #888; margin-top: 2px;">ciudades</div></div>
-                </div>
-            </div>
-        `;
-        return;
-    }
-
-    // Render distributors of selected city
-    const region = cityPositions[activeCity]?.region || '';
-    const brandsToCheck = activeBrand === "TODAS" ? Object.keys(distributorsData) : [activeBrand];
-    let brandsHtml = '';
-    let totalCount = 0;
-
-    brandsToCheck.forEach(brand => {
-        const cityData = distributorsData[brand][activeCity];
-        if (!cityData) return;
-
-        // Aplicar búsqueda
-        const filtered = cityData.distributors.filter(d => {
-            if (!searchTerm) return true;
-            const s = searchTerm.toLowerCase();
-            return d.name.toLowerCase().includes(s) || d.phone.toLowerCase().includes(s);
-        });
-        if (filtered.length === 0) return;
-
-        const cardsHtml = filtered.map(d => `
-            <div class="dc-dist-card">
-                <div class="dc-dist-avatar">${getInitials(d.name)}</div>
-                <div class="dc-dist-info">
-                    <div class="dc-dist-name" title="${d.name}">${d.name}</div>
-                    <div class="dc-dist-phone"><i class="fa-solid fa-phone"></i>${d.phone}</div>
-                </div>
-                <a href="tel:${d.phone.replace(/[^0-9+]/g, '')}" class="dc-dist-call" title="Llamar"><i class="fa-solid fa-phone"></i></a>
-            </div>
-        `).join('');
-
-        const icon = brandIcons[brand] || 'fa-solid fa-tags';
-        brandsHtml += `
-            <div class="dc-panel-brand-group">
-                <div class="dc-panel-brand-header">
-                    <div class="dc-panel-brand-icon"><i class="${icon}"></i></div>
-                    <span>${brand}</span>
-                    <span class="dc-panel-brand-count">${filtered.length}</span>
-                </div>
-                <div class="dc-dist-grid">${cardsHtml}</div>
-            </div>
-        `;
-        totalCount += filtered.length;
-    });
-
-    if (totalCount === 0) {
-        panel.innerHTML = `
-            <button class="dc-panel-back" id="panelBack"><i class="fa-solid fa-arrow-left"></i> Volver al mapa</button>
-            <div class="dc-panel-empty">
-                <div class="empty-icon"><i class="fa-solid fa-circle-info"></i></div>
-                <h3>Sin resultados</h3>
-                <p>No hay distribuidores que coincidan con los filtros activos en ${activeCity}.</p>
-            </div>
-        `;
-    } else {
-        panel.innerHTML = `
-            <button class="dc-panel-back" id="panelBack"><i class="fa-solid fa-arrow-left"></i> Volver al mapa</button>
-            <div class="dc-panel-header">
-                <div class="dc-panel-city">
-                    <div class="dc-panel-pin"><i class="fa-solid fa-location-dot"></i></div>
-                    <div class="dc-panel-city-info">
-                        <h3>${activeCity}</h3>
-                        <div class="region">${region}</div>
-                    </div>
-                </div>
-                <div class="dc-panel-count"><strong>${totalCount}</strong> distribuidor${totalCount !== 1 ? 'es' : ''}</div>
-            </div>
-            <div class="dc-panel-brands">${brandsHtml}</div>
-        `;
-    }
-
-    // Back button
-    const backBtn = document.getElementById('panelBack');
-    if (backBtn) {
-        backBtn.addEventListener('click', () => {
-            activeCity = null;
-            renderMapPins();
-            renderMapPanel();
-        });
-    }
-}
-
-// Wrapper to keep existing interface
+// Render filtered distributors (grid agrupada por marca y ciudad)
 function renderDistributors() {
-    renderMapPins();
-    renderMapPanel();
+    const container = document.getElementById('distributorsContainer');
+    const resultCount = document.getElementById('resultCount');
+    if (!container) return;
+
+    const brandsToShow = activeBrand === "TODAS" ? Object.keys(distributorsData) : [activeBrand];
+    let totalShown = 0;
+    let html = '';
+
+    brandsToShow.forEach(brand => {
+        const cities = distributorsData[brand];
+        const citiesToShow = activeCity === "TODAS" ? Object.keys(cities) : (cities[activeCity] ? [activeCity] : []);
+        if (citiesToShow.length === 0) return;
+
+        let brandHtml = '';
+        let brandCount = 0;
+
+        citiesToShow.forEach(city => {
+            const cityData = cities[city];
+            if (!cityData) return;
+
+            // Filter by search term
+            const filtered = cityData.distributors.filter(d => {
+                if (!searchTerm) return true;
+                const s = searchTerm.toLowerCase();
+                return d.name.toLowerCase().includes(s) || d.phone.toLowerCase().includes(s);
+            });
+
+            if (filtered.length === 0) return;
+
+            const cardsHtml = filtered.map(d => `
+                <div class="dc-dist-card">
+                    <div class="dc-dist-avatar">${getInitials(d.name)}</div>
+                    <div class="dc-dist-info">
+                        <div class="dc-dist-name" title="${d.name}">${d.name}</div>
+                        <div class="dc-dist-phone"><i class="fa-solid fa-phone"></i>${d.phone}</div>
+                    </div>
+                    <a href="tel:${d.phone.replace(/[^0-9+]/g, '')}" class="dc-dist-call" title="Llamar"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            `).join('');
+
+            brandHtml += `
+                <div class="dc-city-group">
+                    <div class="dc-city-header">
+                        <div class="city-pin"><i class="fa-solid fa-location-dot"></i></div>
+                        <span class="dc-city-name">${city}</span>
+                        <span class="dc-region-name">${cityData.region}</span>
+                    </div>
+                    <div class="dc-dist-grid">${cardsHtml}</div>
+                </div>
+            `;
+            brandCount += filtered.length;
+            totalShown += filtered.length;
+        });
+
+        if (brandCount > 0) {
+            const icon = brandIcons[brand] || 'fa-solid fa-tags';
+            html += `
+                <div class="dc-brand-section">
+                    <div class="dc-brand-header">
+                        <div class="dc-brand-logo"><i class="${icon}"></i></div>
+                        <span class="dc-brand-name">${brand}</span>
+                        <span class="dc-brand-count">${brandCount} distribuidor${brandCount !== 1 ? 'es' : ''}</span>
+                    </div>
+                    ${brandHtml}
+                </div>
+            `;
+        }
+    });
+
+    if (totalShown === 0) {
+        html = `
+            <div class="dc-no-results">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>Sin resultados</h3>
+                <p>No encontramos distribuidores que coincidan con tu búsqueda.<br>Intenta con otros filtros o contacta a un asesor.</p>
+            </div>
+        `;
+        if (resultCount) resultCount.innerHTML = '';
+    } else {
+        if (resultCount) resultCount.innerHTML = `Mostrando <strong>${totalShown}</strong> distribuidor${totalShown !== 1 ? 'es' : ''}`;
+    }
+
+    container.innerHTML = html;
 }
 
 // Initialize
@@ -656,8 +530,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('statBrand').textContent = stats.brandCount;
 
     renderBrandTabs();
-    renderMapPins();
-    renderMapPanel();
+    renderCityTabs();
+    renderDistributors();
 
     // Search with debounce for performance
     const searchInput = document.getElementById('searchInput');

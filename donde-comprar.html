@@ -722,67 +722,17 @@
 
             <div class="dc-filter-title" style="text-align:center;" data-i18n="dc-filter-brand">Filtrar por Marca</div>
             <div class="dc-brand-tabs" id="brandTabs"></div>
+
+            <div class="dc-filter-title" style="text-align:center; margin-top:20px;" data-i18n="dc-filter-city">Filtrar por Ciudad</div>
+            <div class="dc-city-tabs" id="cityTabs"></div>
         </div>
     </section>
 
-    <!-- Mapa Interactivo de Colombia -->
-    <section class="dc-map-section">
+    <!-- Results -->
+    <section class="dc-results">
         <div class="container">
-            <div class="dc-map-layout">
-                <!-- Mapa SVG -->
-                <div class="dc-map-card">
-                    <h3 class="dc-map-title" data-i18n="dc-map-title">Mapa de Cobertura</h3>
-                    <p class="dc-map-sub" data-i18n="dc-map-sub">Haz click en una ciudad para ver sus distribuidores</p>
-                    <div class="dc-map-svg-wrap">
-                        <svg class="dc-map-svg" viewBox="0 0 400 620" xmlns="http://www.w3.org/2000/svg" id="colombiaMap">
-                            <!-- Outline geográfico de Colombia (92 puntos, clockwise desde Punta Gallinas) -->
-                            <path class="country-fill" d="
-                                M 248,18 L 260,22 L 264,32 L 264,45 L 260,55 L 252,60 L 250,70
-                                L 252,85 L 248,100 L 240,115 L 230,130 L 222,148 L 218,165 L 217,180
-                                L 220,195 L 228,210 L 240,220
-                                L 260,220 L 282,215 L 305,215 L 330,218 L 360,222 L 385,230
-                                L 390,250 L 388,275 L 382,298 L 370,322 L 355,345 L 340,368
-                                L 322,388 L 308,410 L 296,432 L 288,455 L 285,480 L 288,505
-                                L 292,530 L 295,555 L 300,580 L 302,598
-                                L 288,598 L 272,590 L 255,575 L 238,560 L 220,542 L 200,522
-                                L 180,505 L 158,488 L 135,472 L 115,458 L 95,448 L 75,438
-                                L 55,428 L 35,418 L 20,405
-                                L 10,388 L 8,370 L 10,352 L 15,332 L 22,315 L 30,298 L 35,280
-                                L 38,262 L 42,245 L 48,228 L 52,212 L 55,198 L 50,183 L 45,168
-                                L 45,152 L 55,145
-                                L 68,140 L 80,138 L 92,135 L 105,133 L 115,128 L 122,122
-                                L 128,115 L 130,108 L 128,100 L 125,92 L 128,82 L 140,75
-                                L 152,70 L 165,65 L 180,60 L 198,55 L 215,50 L 232,45 L 245,35 L 255,28
-                                Z
-                            "/>
-
-                            <!-- Pins de ciudades - se generan dinámicamente via JS -->
-                            <g id="cityPins"></g>
-                        </svg>
-
-                        <!-- Cities en Ecuador (fuera del mapa de Colombia) -->
-                        <div id="ecuadorCities" style="margin-top: 14px; padding: 12px; background: rgba(232,75,55,0.05); border: 1px dashed rgba(232,75,55,0.3); border-radius: 12px;">
-                            <div style="font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">🇪🇨 También en Ecuador:</div>
-                            <div id="ecuadorBtns" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
-                        </div>
-                    </div>
-                    <div class="dc-map-legend">
-                        <div class="dc-map-legend-item">
-                            <span class="dc-map-legend-dot"></span>
-                            <span data-i18n="dc-map-legend-city">Ciudad con distribuidores</span>
-                        </div>
-                        <div class="dc-map-legend-item">
-                            <span class="dc-map-legend-dot active"></span>
-                            <span data-i18n="dc-map-legend-active">Ciudad seleccionada</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Panel lateral de resultados -->
-                <div class="dc-map-panel" id="mapPanel">
-                    <!-- Contenido se renderiza dinámicamente vía JS -->
-                </div>
-            </div>
+            <div class="dc-result-count" id="resultCount"></div>
+            <div id="distributorsContainer"></div>
         </div>
     </section>
 

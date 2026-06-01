@@ -421,6 +421,7 @@ const translations = {
         'desc-stemco': 'Soluciones para punta de rueda.',
         'desc-tuder': 'Soluciones técnicas automotrices.',
         'desc-zec': 'Soluciones técnicas especializadas.',
+        'visitar-sitio': 'Visitar sitio oficial',
         // Dónde Comprar page
         'dc-hero-title': '¿Dónde Comprar? Nuestros Distribuidores',
         'dc-hero-desc': 'Nuestro modelo de negocio es soportado por nuestro equipo de expertos y nuestros canales de distribución especializados que cubren la totalidad del territorio nacional.',
@@ -654,6 +655,7 @@ const translations = {
         'desc-stemco': 'Wheel end solutions.',
         'desc-tuder': 'Automotive technical solutions.',
         'desc-zec': 'Specialized technical solutions.',
+        'visitar-sitio': 'Visit official website',
         // Dónde Comprar page
         'dc-hero-title': 'Where to Buy? Our Distributors',
         'dc-hero-desc': 'Our business model is supported by our team of experts and our specialized distribution channels that cover the entire national territory.',

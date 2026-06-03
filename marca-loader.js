@@ -192,23 +192,67 @@ function prettyFileName(filename, brandName) {
     return s;
 }
 
-// Generar HTML de una sola categoría de catálogo
+// Clasificar PDFs por tipo
+function classifyPdf(filename) {
+    const upper = filename.toUpperCase();
+    if (upper.includes('CATALOGO') || upper.includes('CATALOG') || upper.includes('BROCHURE') || upper.includes('MASTER')) return 'catalogo';
+    if (upper.includes('POSTER') || upper.includes('BANNER')) return 'poster';
+    if (upper.includes('GUIA') || upper.includes('GUIDE') || upper.includes('MANUAL')) return 'guia';
+    return 'ficha';
+}
+const typeLabels = {
+    catalogo: { label: 'Catálogos', icon: 'fa-book' },
+    ficha: { label: 'Fichas Técnicas', icon: 'fa-file-lines' },
+    poster: { label: 'Pósters y Material', icon: 'fa-image' },
+    guia: { label: 'Guías y Manuales', icon: 'fa-graduation-cap' }
+};
+
+function buildPdfCard(folder, file, brandName) {
+    const encoded = folder + encodeURIComponent(file);
+    const pretty = prettyFileName(file, brandName);
+    const type = classifyPdf(file);
+    return `
+        <a href="${encoded}" target="_blank" rel="noopener" class="marca-catalog-item">
+            <div class="pdf-icon"><i class="fa-solid fa-file-pdf"></i></div>
+            <div class="info">
+                <div class="name">${pretty}</div>
+                <div class="meta">PDF · ${typeLabels[type].label}</div>
+            </div>
+            <i class="fa-solid fa-arrow-right arrow"></i>
+        </a>`;
+}
+
+// Generar HTML de una categoría: usar acordeón si hay diferentes tipos
 function buildCategoryHtml(catalog, brandName) {
     const iconKey = Object.keys(categoryIcons).find(k => catalog.folder.includes(k)) || 'general';
     const icon = categoryIcons[iconKey] || 'fa-file-pdf';
-    const cardsHtml = catalog.files.map(file => {
-        const encoded = catalog.folder + encodeURIComponent(file);
-        const pretty = prettyFileName(file, brandName);
-        return `
-            <a href="${encoded}" target="_blank" rel="noopener" class="marca-catalog-item">
-                <div class="pdf-icon"><i class="fa-solid fa-file-pdf"></i></div>
-                <div class="info">
-                    <div class="name">${pretty}</div>
-                    <div class="meta">PDF · Descargar</div>
-                </div>
-                <i class="fa-solid fa-arrow-right arrow"></i>
-            </a>`;
-    }).join('');
+
+    // Agrupar archivos por tipo
+    const byType = { catalogo: [], ficha: [], guia: [], poster: [] };
+    catalog.files.forEach(f => byType[classifyPdf(f)].push(f));
+    const typesPresent = Object.entries(byType).filter(([_, files]) => files.length > 0);
+
+    let content;
+    if (typesPresent.length <= 1) {
+        const cardsHtml = catalog.files.map(f => buildPdfCard(catalog.folder, f, brandName)).join('');
+        content = `<div class="marca-catalog-grid">${cardsHtml}</div>`;
+    } else {
+        content = '<div class="marca-type-accordion">' + typesPresent.map(([type, files], idx) => {
+            const meta = typeLabels[type];
+            const cardsHtml = files.map(f => buildPdfCard(catalog.folder, f, brandName)).join('');
+            return `
+                <div class="marca-type-section" data-open="${idx === 0 ? 'true' : 'false'}">
+                    <button class="marca-type-header" onclick="this.parentElement.dataset.open = this.parentElement.dataset.open === 'true' ? 'false' : 'true'">
+                        <div class="type-icon"><i class="fa-solid ${meta.icon}"></i></div>
+                        <span class="type-name">${meta.label}</span>
+                        <span class="type-count">${files.length}</span>
+                        <i class="fa-solid fa-chevron-down toggle"></i>
+                    </button>
+                    <div class="marca-type-body"><div class="marca-catalog-grid">${cardsHtml}</div></div>
+                </div>`;
+        }).join('') + '</div>';
+    }
+
     return `
         <div class="marca-catalog-cat">
             <div class="marca-catalog-cat-header">
@@ -216,7 +260,7 @@ function buildCategoryHtml(catalog, brandName) {
                 <span class="marca-catalog-cat-name">${catalog.label || 'Catálogos'}</span>
                 <span class="marca-catalog-cat-count">${catalog.files.length} PDF${catalog.files.length !== 1 ? 's' : ''}</span>
             </div>
-            <div class="marca-catalog-grid">${cardsHtml}</div>
+            ${content}
         </div>`;
 }
 

@@ -1,6 +1,32 @@
         /* ============ MARCA INTERNA - ESTILOS COMUNES ============ */
         .marca-hero { background: linear-gradient(135deg, #0a0c0e 0%, #1a1c1e 100%); padding: 100px 0 70px; position: relative; overflow: hidden; }
-        .marca-hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 80% 20%, rgba(232,75,55,0.12), transparent 60%); }
+        .marca-hero-image { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.28; filter: saturate(0.7); z-index: 0; transform: scale(1.05); animation: heroZoom 25s ease-in-out infinite alternate; }
+        @keyframes heroZoom { 0% { transform: scale(1.0); } 100% { transform: scale(1.12); } }
+        .marca-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,12,14,0.85) 0%, rgba(26,28,30,0.7) 60%, rgba(10,12,14,0.4) 100%), radial-gradient(circle at 80% 20%, rgba(232,75,55,0.18), transparent 60%); z-index: 1; }
+        .marca-hero .container { position: relative; z-index: 2; }
+        /* Iconos decorativos flotando */
+        .marca-hero-decor { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+        .marca-hero-decor i { position: absolute; color: rgba(232,75,55,0.10); font-size: 32px; animation: floatUp 14s linear infinite; }
+        .marca-hero-decor i:nth-child(1) { left: 6%;  top: 80%; animation-delay: 0s;   font-size: 28px; }
+        .marca-hero-decor i:nth-child(2) { left: 18%; top: 92%; animation-delay: 2.5s; font-size: 38px; color: rgba(255,137,120,0.10); }
+        .marca-hero-decor i:nth-child(3) { left: 32%; top: 86%; animation-delay: 5s;   font-size: 24px; }
+        .marca-hero-decor i:nth-child(4) { left: 46%; top: 95%; animation-delay: 7.5s; font-size: 34px; color: rgba(255,137,120,0.08); }
+        .marca-hero-decor i:nth-child(5) { left: 60%; top: 82%; animation-delay: 4s;   font-size: 30px; }
+        .marca-hero-decor i:nth-child(6) { left: 74%; top: 90%; animation-delay: 9s;   font-size: 42px; color: rgba(255,137,120,0.07); }
+        .marca-hero-decor i:nth-child(7) { left: 88%; top: 84%; animation-delay: 11s;  font-size: 26px; }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+        /* Logo box mejorado */
+        .marca-hero-logo { position: relative; }
+        .marca-hero-logo::after { content: ''; position: absolute; inset: -12px; background: linear-gradient(135deg, rgba(232,75,55,0.30), rgba(255,137,120,0.15)); border-radius: 28px; z-index: -1; filter: blur(20px); opacity: 0.6; }
+        /* Tag chips de categorías */
+        .marca-hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 22px; }
+        .marca-hero-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 100px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.85); letter-spacing: 0.04em; text-transform: uppercase; }
+        .marca-hero-chip i { color: #ff8978; font-size: 10px; }
         .marca-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .marca-hero-logo { background: white; border-radius: 22px; padding: 50px; display: flex; align-items: center; justify-content: center; min-height: 200px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
         .marca-hero-logo img { max-width: 100%; max-height: 140px; object-fit: contain; }

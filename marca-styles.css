@@ -1,8 +1,7 @@
         /* ============ MARCA INTERNA - ESTILOS COMUNES ============ */
         .marca-hero { background: linear-gradient(135deg, #0a0c0e 0%, #1a1c1e 100%); padding: 100px 0 70px; position: relative; overflow: hidden; }
-        .marca-hero-image { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.28; filter: saturate(0.7); z-index: 0; transform: scale(1.05); animation: heroZoom 25s ease-in-out infinite alternate; }
-        @keyframes heroZoom { 0% { transform: scale(1.0); } 100% { transform: scale(1.12); } }
-        .marca-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,12,14,0.85) 0%, rgba(26,28,30,0.7) 60%, rgba(10,12,14,0.4) 100%), radial-gradient(circle at 80% 20%, rgba(232,75,55,0.18), transparent 60%); z-index: 1; }
+        .marca-hero-image { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.60; filter: saturate(1); z-index: 0; }
+        .marca-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,12,14,0.55) 0%, rgba(26,28,30,0.40) 60%, rgba(10,12,14,0.20) 100%), radial-gradient(circle at 80% 20%, rgba(232,75,55,0.14), transparent 60%); z-index: 1; }
         .marca-hero .container { position: relative; z-index: 2; }
         /* Iconos decorativos flotando */
         .marca-hero-decor { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }

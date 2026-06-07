@@ -83,11 +83,32 @@
         .marca-dist-list .dot { color: #e84b37; font-size: 6px; }
 
         /* CTA FINAL */
-        .marca-cta { background: linear-gradient(135deg, #e84b37 0%, #c93b2a 100%); padding: 70px 0; text-align: center; color: white; }
-        .marca-cta h2 { font-size: 32px; font-weight: 900; margin: 0 0 14px; letter-spacing: -0.5px; }
-        .marca-cta p { font-size: 16px; opacity: 0.95; max-width: 540px; margin: 0 auto 26px; line-height: 1.65; }
-        .marca-cta-btn { display: inline-flex; align-items: center; gap: 10px; background: white; color: #e84b37; padding: 15px 32px; border-radius: 100px; text-decoration: none; font-weight: 800; transition: all 0.25s; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        .marca-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.25); }
+        /* CTA elegante con dark theme + glass */
+        .marca-cta { background: #0e1116; padding: 90px 0; text-align: center; color: white; position: relative; overflow: hidden; }
+        .marca-cta::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(ellipse at top, rgba(232,75,55,0.18), transparent 55%), radial-gradient(circle at 15% 85%, rgba(100,150,255,0.08), transparent 50%), radial-gradient(circle at 85% 80%, rgba(232,75,55,0.10), transparent 45%); pointer-events: none; }
+        .marca-cta::after {
+            content: ''; position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+            pointer-events: none;
+        }
+        .marca-cta .container { position: relative; z-index: 2; }
+        .marca-cta-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; background: rgba(232,75,55,0.12); border: 1px solid rgba(232,75,55,0.30); border-radius: 100px; color: #ff8978; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 18px; backdrop-filter: blur(10px); }
+        .marca-cta-badge .pulse { width: 7px; height: 7px; background: #e84b37; border-radius: 50%; box-shadow: 0 0 0 0 rgba(232,75,55,0.7); animation: ctaPulse 2s ease-in-out infinite; }
+        @keyframes ctaPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(232,75,55,0.6); } 50% { box-shadow: 0 0 0 10px rgba(232,75,55,0); } }
+        .marca-cta h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 900; margin: 0 0 14px; letter-spacing: -0.5px; background: linear-gradient(135deg, #ffffff 0%, #cfd5dd 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .marca-cta p { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 540px; margin: 0 auto 30px; line-height: 1.7; }
+        .marca-cta-actions { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+        .marca-cta-btn { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #e84b37, #c93b2a); color: white; padding: 15px 32px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 14px; transition: transform 0.25s, box-shadow 0.25s; box-shadow: 0 12px 30px rgba(232,75,55,0.35), inset 0 1px 0 rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.10); }
+        .marca-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(232,75,55,0.45), inset 0 1px 0 rgba(255,255,255,0.22); }
+        .marca-cta-btn-ghost { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); color: white; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 13px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); transition: background 0.25s, border-color 0.25s; }
+        .marca-cta-btn-ghost:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.25); }
+
+        /* Logo en grayscale por defecto → color en hover */
+        .marca-hero-logo img { filter: grayscale(100%) contrast(1.05); opacity: 0.92; transition: filter 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.5s, transform 0.5s; }
+        .marca-hero-logo:hover img { filter: grayscale(0%) contrast(1); opacity: 1; transform: scale(1.03); }
 
         /* ACORDEÓN de tipos de recursos */
         .marca-type-accordion { display: flex; flex-direction: column; gap: 12px; }

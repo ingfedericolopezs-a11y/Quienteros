@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" preserveAspectRatio="xMidYMid meet">
-  <g fill="#1a1c1e">
-    <!-- Star icon (Starrett's S) -->
-    <polygon points="55,25 64,49 90,49 69,64 77,90 55,75 33,90 41,64 20,49 46,49"/>
-    <!-- Text -->
-    <text x="105" y="80" font-family="Times New Roman, serif" font-weight="900" font-size="48" letter-spacing="2">STARRETT</text>
-    <text x="105" y="105" font-family="Arial, sans-serif" font-weight="400" font-size="11" letter-spacing="3">SINCE 1880</text>
-  </g>
-</svg>

@@ -207,21 +207,47 @@ const typeLabels = {
     guia: { label: 'Guías y Manuales', icon: 'fa-graduation-cap' }
 };
 
+// Escapa un valor para que sea seguro dentro de atributos HTML
+function escapeAttr(s) {
+    return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
+// Escapa para usar como texto dentro de HTML (no en atributos)
+function escapeHtml(s) {
+    return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
 function buildPdfCard(folder, file, brandName) {
     const encoded = folder + encodeURIComponent(file);
     const pretty = prettyFileName(file, brandName);
     const type = classifyPdf(file);
-    // Visor embebido sin opción de descarga: onclick abre modal con iframe
+    // Usa data-attributes + event delegation (mas seguro que onclick inline)
     return `
-        <button type="button" class="marca-catalog-item" onclick="openPdfViewer('${encoded}', ${JSON.stringify(pretty)})" aria-label="Ver ${pretty}">
+        <button type="button" class="marca-catalog-item" data-pdf-url="${escapeAttr(encoded)}" data-pdf-title="${escapeAttr(pretty)}" aria-label="Ver ${escapeAttr(pretty)}">
             <div class="pdf-icon"><i class="fa-solid fa-file-pdf"></i></div>
             <div class="info">
-                <div class="name">${pretty}</div>
+                <div class="name">${escapeHtml(pretty)}</div>
                 <div class="meta">PDF · ${typeLabels[type].label}</div>
             </div>
             <i class="fa-solid fa-eye arrow"></i>
         </button>`;
 }
+
+// Delegacion de eventos: un solo listener para todos los botones de PDF (incluso si se renderizan despues)
+document.addEventListener('click', e => {
+    const btn = e.target.closest('.marca-catalog-item[data-pdf-url]');
+    if (!btn) return;
+    e.preventDefault();
+    openPdfViewer(btn.dataset.pdfUrl, btn.dataset.pdfTitle);
+});
 
 // ===================== VISOR PDF.JS (sin descarga, cross-browser) =====================
 // Renderiza cada página del PDF como <canvas>, lo que impide:

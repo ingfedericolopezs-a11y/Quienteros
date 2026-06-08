@@ -114,3 +114,23 @@
             .marca-hero-text h1 { font-size: 36px; }
             .marca-section-title h2 { font-size: 28px; }
         }
+
+        /* ===================== VISOR DE PDF EMBEBIDO (sin descarga) ===================== */
+        /* Reset de button para que se comporte como tarjeta clickable */
+        button.marca-catalog-item { appearance: none; text-align: left; width: 100%; cursor: pointer; font: inherit; }
+
+        .pdf-viewer-modal { position: fixed; inset: 0; z-index: 9999; display: none; align-items: center; justify-content: center; padding: 32px; }
+        .pdf-viewer-modal.is-open { display: flex; }
+        .pdf-viewer-backdrop { position: absolute; inset: 0; background: rgba(10,12,14,0.82); backdrop-filter: blur(4px); }
+        .pdf-viewer-container { position: relative; width: 100%; max-width: 1200px; height: 100%; max-height: 90vh; background: #1a1c1e; border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.5); display: flex; flex-direction: column; }
+        .pdf-viewer-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: linear-gradient(135deg, #0f1114 0%, #1a1c1e 100%); border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .pdf-viewer-title { color: white; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 12px; max-width: calc(100% - 60px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .pdf-viewer-title i { color: #e84b37; font-size: 18px; flex-shrink: 0; }
+        .pdf-viewer-close { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.10); color: white; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+        .pdf-viewer-close:hover { background: rgba(232,75,55,0.30); }
+        .pdf-viewer-body { flex: 1; background: #2a2c2e; overflow: hidden; position: relative; }
+        .pdf-viewer-body iframe { width: 100%; height: 100%; border: 0; background: #2a2c2e; }
+        @media (max-width: 720px) {
+            .pdf-viewer-modal { padding: 0; }
+            .pdf-viewer-container { max-height: 100vh; border-radius: 0; }
+        }

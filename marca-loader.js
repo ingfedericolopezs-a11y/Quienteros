@@ -211,16 +211,63 @@ function buildPdfCard(folder, file, brandName) {
     const encoded = folder + encodeURIComponent(file);
     const pretty = prettyFileName(file, brandName);
     const type = classifyPdf(file);
+    // Visor embebido sin opción de descarga: onclick abre modal con iframe
     return `
-        <a href="${encoded}" target="_blank" rel="noopener" class="marca-catalog-item">
+        <button type="button" class="marca-catalog-item" onclick="openPdfViewer('${encoded}', ${JSON.stringify(pretty)})" aria-label="Ver ${pretty}">
             <div class="pdf-icon"><i class="fa-solid fa-file-pdf"></i></div>
             <div class="info">
                 <div class="name">${pretty}</div>
                 <div class="meta">PDF · ${typeLabels[type].label}</div>
             </div>
-            <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>`;
+            <i class="fa-solid fa-eye arrow"></i>
+        </button>`;
 }
+
+// Visor de PDF embebido — modal con iframe sin opción de descarga
+function openPdfViewer(url, title) {
+    let modal = document.getElementById('pdfViewerModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'pdfViewerModal';
+        modal.className = 'pdf-viewer-modal';
+        modal.innerHTML = `
+            <div class="pdf-viewer-backdrop" onclick="closePdfViewer()"></div>
+            <div class="pdf-viewer-container">
+                <div class="pdf-viewer-header">
+                    <div class="pdf-viewer-title"><i class="fa-solid fa-file-pdf"></i> <span id="pdfViewerTitle"></span></div>
+                    <button type="button" class="pdf-viewer-close" onclick="closePdfViewer()" aria-label="Cerrar">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="pdf-viewer-body">
+                    <iframe id="pdfViewerFrame" src="" title="Visor de PDF"
+                            sandbox="allow-same-origin allow-scripts"
+                            referrerpolicy="no-referrer"
+                            oncontextmenu="return false;"></iframe>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    document.getElementById('pdfViewerTitle').textContent = title;
+    // Parámetros para ocultar toolbar (descarga, imprimir) en Chrome/Edge
+    document.getElementById('pdfViewerFrame').src = url + '#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePdfViewer() {
+    const modal = document.getElementById('pdfViewerModal');
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    document.getElementById('pdfViewerFrame').src = '';
+    document.body.style.overflow = '';
+}
+
+// Cerrar con tecla ESC
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closePdfViewer();
+});
 
 // Generar HTML de una categoría: usar acordeón si hay diferentes tipos
 function buildCategoryHtml(catalog, brandName) {

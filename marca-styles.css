@@ -4,15 +4,8 @@
         .marca-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,12,14,0.55) 0%, rgba(26,28,30,0.40) 60%, rgba(10,12,14,0.20) 100%), radial-gradient(circle at 80% 20%, rgba(232,75,55,0.14), transparent 60%); z-index: 1; }
         .marca-hero .container { position: relative; z-index: 2; }
         /* Iconos decorativos flotando */
-        .marca-hero-decor { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
-        .marca-hero-decor i { position: absolute; color: rgba(232,75,55,0.10); font-size: 32px; }
-        .marca-hero-decor i:nth-child(1) { left: 6%;  top: 22%; font-size: 28px; }
-        .marca-hero-decor i:nth-child(2) { left: 18%; top: 75%; font-size: 38px; color: rgba(255,137,120,0.10); }
-        .marca-hero-decor i:nth-child(3) { left: 32%; top: 30%; font-size: 24px; }
-        .marca-hero-decor i:nth-child(4) { left: 46%; top: 70%; font-size: 34px; color: rgba(255,137,120,0.08); }
-        .marca-hero-decor i:nth-child(5) { left: 60%; top: 25%; font-size: 30px; }
-        .marca-hero-decor i:nth-child(6) { left: 74%; top: 78%; font-size: 42px; color: rgba(255,137,120,0.07); }
-        .marca-hero-decor i:nth-child(7) { left: 88%; top: 28%; font-size: 26px; }
+        /* Iconos decorativos ocultos por solicitud del cliente */
+        .marca-hero-decor { display: none; }
         /* Logo box mejorado */
         .marca-hero-logo { position: relative; }
         .marca-hero-logo::after { content: ''; position: absolute; inset: -12px; background: linear-gradient(135deg, rgba(232,75,55,0.30), rgba(255,137,120,0.15)); border-radius: 28px; z-index: -1; filter: blur(20px); opacity: 0.6; }
@@ -23,7 +16,7 @@
         .marca-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .marca-hero-logo { background: white; border-radius: 22px; padding: 50px; display: flex; align-items: center; justify-content: center; min-height: 200px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
         .marca-hero-logo img { max-width: 100%; max-height: 140px; object-fit: contain; }
-        .marca-hero-text h1 { color: white; font-size: 48px; font-weight: 900; margin: 0 0 10px; letter-spacing: -1px; }
+        .marca-hero-text h1 { color: white; font-size: 48px; font-weight: 900; margin: 0 0 10px; letter-spacing: 0.5px; text-transform: uppercase; }
         .marca-hero-text .tagline { color: #ff8978; font-weight: 700; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 18px; display: inline-block; padding: 6px 16px; background: rgba(232,75,55,0.15); border-radius: 100px; border: 1px solid rgba(232,75,55,0.3); }
         .marca-hero-text p { color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.8; margin: 0 0 24px; }
         .marca-hero-cta { display: inline-flex; align-items: center; gap: 10px; background: white; color: #1a1c1e; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; transition: all 0.3s; }

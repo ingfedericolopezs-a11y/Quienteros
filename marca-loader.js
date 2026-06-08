@@ -223,50 +223,205 @@ function buildPdfCard(folder, file, brandName) {
         </button>`;
 }
 
-// Visor de PDF embebido — modal con iframe sin opción de descarga
-function openPdfViewer(url, title) {
+// ===================== VISOR PDF.JS (sin descarga, cross-browser) =====================
+// Renderiza cada página del PDF como <canvas>, lo que impide:
+//  - El botón de descarga del visor nativo (no aparece nunca)
+//  - Click derecho > Guardar como PDF (canvas no es archivo)
+//  - Print desde la UI (no hay toolbar)
+// Notas: el archivo en sí sigue accesible por URL para alguien técnico que mire DevTools.
+
+const PDFJS_VERSION = '3.11.174';
+const PDFJS_CDN = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDFJS_VERSION}`;
+
+let _pdfJsLoaded = null;
+function loadPdfJs() {
+    if (_pdfJsLoaded) return _pdfJsLoaded;
+    _pdfJsLoaded = new Promise((resolve, reject) => {
+        if (window.pdfjsLib) {
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = `${PDFJS_CDN}/pdf.worker.min.js`;
+            return resolve(window.pdfjsLib);
+        }
+        const script = document.createElement('script');
+        script.src = `${PDFJS_CDN}/pdf.min.js`;
+        script.onload = () => {
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = `${PDFJS_CDN}/pdf.worker.min.js`;
+            resolve(window.pdfjsLib);
+        };
+        script.onerror = () => reject(new Error('No se pudo cargar PDF.js'));
+        document.head.appendChild(script);
+    });
+    return _pdfJsLoaded;
+}
+
+// Estado del visor activo
+const PdfViewerState = {
+    pdf: null,
+    currentPage: 1,
+    totalPages: 0,
+    isRendering: false,
+};
+
+function ensurePdfViewerModal() {
     let modal = document.getElementById('pdfViewerModal');
-    if (!modal) {
-        modal = document.createElement('div');
-        modal.id = 'pdfViewerModal';
-        modal.className = 'pdf-viewer-modal';
-        modal.innerHTML = `
-            <div class="pdf-viewer-backdrop" onclick="closePdfViewer()"></div>
-            <div class="pdf-viewer-container">
-                <div class="pdf-viewer-header">
-                    <div class="pdf-viewer-title"><i class="fa-solid fa-file-pdf"></i> <span id="pdfViewerTitle"></span></div>
-                    <button type="button" class="pdf-viewer-close" onclick="closePdfViewer()" aria-label="Cerrar">
-                        <i class="fa-solid fa-xmark"></i>
+    if (modal) return modal;
+
+    modal = document.createElement('div');
+    modal.id = 'pdfViewerModal';
+    modal.className = 'pdf-viewer-modal';
+    modal.innerHTML = `
+        <div class="pdf-viewer-backdrop" onclick="closePdfViewer()"></div>
+        <div class="pdf-viewer-container">
+            <div class="pdf-viewer-header">
+                <div class="pdf-viewer-title">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span id="pdfViewerTitle"></span>
+                </div>
+                <div class="pdf-viewer-pager">
+                    <button type="button" class="pdf-page-btn" id="pdfPrevPage" onclick="pdfPrevPage()" aria-label="Página anterior" disabled>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <span class="pdf-page-info"><span id="pdfCurrentPage">0</span> / <span id="pdfTotalPages">0</span></span>
+                    <button type="button" class="pdf-page-btn" id="pdfNextPage" onclick="pdfNextPage()" aria-label="Página siguiente" disabled>
+                        <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
-                <div class="pdf-viewer-body">
-                    <iframe id="pdfViewerFrame" src="" title="Visor de PDF"
-                            sandbox="allow-same-origin allow-scripts"
-                            referrerpolicy="no-referrer"
-                            oncontextmenu="return false;"></iframe>
+                <button type="button" class="pdf-viewer-close" onclick="closePdfViewer()" aria-label="Cerrar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="pdf-viewer-body" id="pdfViewerBody">
+                <div class="pdf-viewer-loading" id="pdfViewerLoading">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    <span>Cargando documento...</span>
+                </div>
+                <div class="pdf-canvas-wrapper" id="pdfCanvasWrapper" oncontextmenu="return false;">
+                    <canvas id="pdfCanvas"></canvas>
                 </div>
             </div>
-        `;
-        document.body.appendChild(modal);
-    }
+        </div>
+    `;
+    document.body.appendChild(modal);
+    return modal;
+}
+
+async function openPdfViewer(url, title) {
+    const modal = ensurePdfViewerModal();
     document.getElementById('pdfViewerTitle').textContent = title;
-    // Parámetros para ocultar toolbar (descarga, imprimir) en Chrome/Edge
-    document.getElementById('pdfViewerFrame').src = url + '#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
+    document.getElementById('pdfCurrentPage').textContent = '0';
+    document.getElementById('pdfTotalPages').textContent = '0';
+    document.getElementById('pdfPrevPage').disabled = true;
+    document.getElementById('pdfNextPage').disabled = true;
+    document.getElementById('pdfViewerLoading').style.display = 'flex';
+    document.getElementById('pdfCanvasWrapper').style.opacity = '0';
+
     modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+
+    try {
+        const pdfjsLib = await loadPdfJs();
+        const loadingTask = pdfjsLib.getDocument({
+            url,
+            disableAutoFetch: true,
+            disableStream: false,
+        });
+        const pdf = await loadingTask.promise;
+
+        PdfViewerState.pdf = pdf;
+        PdfViewerState.currentPage = 1;
+        PdfViewerState.totalPages = pdf.numPages;
+
+        document.getElementById('pdfTotalPages').textContent = pdf.numPages;
+        await renderPdfPage(1);
+        updatePagerButtons();
+
+        document.getElementById('pdfViewerLoading').style.display = 'none';
+        document.getElementById('pdfCanvasWrapper').style.opacity = '1';
+    } catch (err) {
+        console.error('Error al cargar PDF:', err);
+        document.getElementById('pdfViewerLoading').innerHTML =
+            '<i class="fa-solid fa-triangle-exclamation" style="color:#e84b37"></i>' +
+            '<span>No se pudo cargar el documento. Inténtalo de nuevo.</span>';
+    }
+}
+
+async function renderPdfPage(pageNum) {
+    const pdf = PdfViewerState.pdf;
+    if (!pdf || PdfViewerState.isRendering) return;
+    PdfViewerState.isRendering = true;
+
+    try {
+        const page = await pdf.getPage(pageNum);
+        const canvas = document.getElementById('pdfCanvas');
+        const wrapper = document.getElementById('pdfCanvasWrapper');
+        const ctx = canvas.getContext('2d');
+
+        const maxWidth = wrapper.clientWidth - 40;
+        const maxHeight = wrapper.clientHeight - 40;
+        const baseViewport = page.getViewport({ scale: 1 });
+        const scale = Math.min(
+            maxWidth / baseViewport.width,
+            maxHeight / baseViewport.height
+        );
+        const viewport = page.getViewport({ scale });
+
+        // Renderiza a alta densidad para verse nítido
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = viewport.width * dpr;
+        canvas.height = viewport.height * dpr;
+        canvas.style.width = viewport.width + 'px';
+        canvas.style.height = viewport.height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        PdfViewerState.currentPage = pageNum;
+        document.getElementById('pdfCurrentPage').textContent = pageNum;
+    } finally {
+        PdfViewerState.isRendering = false;
+    }
+}
+
+function updatePagerButtons() {
+    document.getElementById('pdfPrevPage').disabled = PdfViewerState.currentPage <= 1;
+    document.getElementById('pdfNextPage').disabled = PdfViewerState.currentPage >= PdfViewerState.totalPages;
+}
+
+async function pdfPrevPage() {
+    if (PdfViewerState.currentPage <= 1) return;
+    await renderPdfPage(PdfViewerState.currentPage - 1);
+    updatePagerButtons();
+}
+
+async function pdfNextPage() {
+    if (PdfViewerState.currentPage >= PdfViewerState.totalPages) return;
+    await renderPdfPage(PdfViewerState.currentPage + 1);
+    updatePagerButtons();
 }
 
 function closePdfViewer() {
     const modal = document.getElementById('pdfViewerModal');
     if (!modal) return;
     modal.classList.remove('is-open');
-    document.getElementById('pdfViewerFrame').src = '';
     document.body.style.overflow = '';
+    // Limpia recursos del PDF para liberar memoria
+    if (PdfViewerState.pdf) {
+        try { PdfViewerState.pdf.destroy(); } catch (_) {}
+        PdfViewerState.pdf = null;
+    }
 }
 
-// Cerrar con tecla ESC
+// Navegación por teclado
 document.addEventListener('keydown', e => {
+    const modal = document.getElementById('pdfViewerModal');
+    if (!modal || !modal.classList.contains('is-open')) return;
     if (e.key === 'Escape') closePdfViewer();
+    else if (e.key === 'ArrowLeft') pdfPrevPage();
+    else if (e.key === 'ArrowRight') pdfNextPage();
+});
+
+// Previene drag de imagen del canvas (algunos browsers permiten arrastrar canvas como imagen)
+document.addEventListener('dragstart', e => {
+    if (e.target && e.target.id === 'pdfCanvas') e.preventDefault();
 });
 
 // Generar HTML de una categoría: usar acordeón si hay diferentes tipos

@@ -106,169 +106,169 @@
     <!-- Fields Grid -->
     <section style="background: var(--light); padding: 60px 0 100px;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 36px;">
+            <div class="campos-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 36px;">
 
                 <!-- Campo 1: Transmisión de Potencia -->
-                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div style="background: var(--red); padding: 28px 30px 22px;">
-                        <div style="display: flex; align-items: center; gap: 14px;">
-                            <div style="background: rgba(255,255,255,0.15); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <article id="campo1" class="campo-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column;">
+                    <div class="campo-card-image" style="position: relative; height: 180px; background-image: url('optimized/shutterstock_108306956.jpg'); background-size: cover; background-position: center;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(232,75,55,0.25) 0%, rgba(15,17,20,0.78) 100%);"></div>
+                        <div style="position: absolute; inset: 0; padding: 22px 24px; display: flex; align-items: flex-end; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(8px); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fa-solid fa-gear" style="font-size: 24px; color: white;"></i>
                             </div>
-                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo1-titulo">Transmisión de Potencia</h3>
+                            <h3 style="color: white; font-size: 19px; font-weight: 800; margin: 0; line-height: 1.25; text-shadow: 0 2px 8px rgba(0,0,0,0.4);" data-i18n="campo1-titulo">Transmisión de Potencia</h3>
                         </div>
                     </div>
-                    <div style="padding: 28px 30px;">
-                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo1-desc">
-                            Componentes y sistemas especializados para la transmisión eficiente de fuerza en todo tipo de maquinaria industrial y automotriz pesada.
-                        </p>
-                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
-                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <li data-i18n="campo1-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Diferenciales</li>
-                            <li data-i18n="campo1-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Cardanes</li>
-                            <li data-i18n="campo1-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Zapatas</li>
-                            <li data-i18n="campo1-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Clutches</li>
-                            <li data-i18n="campo1-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Rodamientos</li>
-                            <li data-i18n="campo1-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Correas</li>
-                            <li data-i18n="campo1-p7" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Cadena Silenciosa</li>
-                            <li data-i18n="campo1-p8" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Acoples</li>
+                    <div style="padding: 28px 30px; flex: 1; display: flex; flex-direction: column;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo1-desc">Componentes y sistemas especializados para la transmisión eficiente de fuerza en todo tipo de maquinaria industrial y automotriz pesada.</p>
+                        <h4 style="color: var(--dark); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 7px;">
+                            <li data-i18n="campo1-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Diferenciales</li>
+                            <li data-i18n="campo1-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Cardanes</li>
+                            <li data-i18n="campo1-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Zapatas</li>
+                            <li data-i18n="campo1-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Clutches</li>
+                            <li data-i18n="campo1-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Rodamientos</li>
+                            <li data-i18n="campo1-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Correas</li>
+                            <li data-i18n="campo1-p7" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Cadena Silenciosa</li>
+                            <li data-i18n="campo1-p8" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Acoples</li>
                         </ul>
+                        <a href="aliados.html" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--red); font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 18px; background: rgba(232,75,55,0.08); border: 1px solid rgba(232,75,55,0.18); border-radius: 100px; align-self: flex-start;">Ver marcas relacionadas <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Campo 2: Soluciones de Punta de Rueda -->
-                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div style="background: #1a1c1e; padding: 28px 30px 22px;">
-                        <div style="display: flex; align-items: center; gap: 14px;">
-                            <div style="background: rgba(255,255,255,0.1); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <article id="campo2" class="campo-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column;">
+                    <div class="campo-card-image" style="position: relative; height: 180px; background-image: url('optimized/shutterstock_260598251.jpg'); background-size: cover; background-position: center;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,28,30,0.10) 0%, rgba(15,17,20,0.85) 100%);"></div>
+                        <div style="position: absolute; inset: 0; padding: 22px 24px; display: flex; align-items: flex-end; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(8px); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fa-solid fa-circle-dot" style="font-size: 24px; color: white;"></i>
                             </div>
-                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo2-titulo">Soluciones de Punta de Rueda</h3>
+                            <h3 style="color: white; font-size: 19px; font-weight: 800; margin: 0; line-height: 1.25; text-shadow: 0 2px 8px rgba(0,0,0,0.4);" data-i18n="campo2-titulo">Soluciones de Punta de Rueda</h3>
                         </div>
                     </div>
-                    <div style="padding: 28px 30px;">
-                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo2-desc">
-                            Sistemas completos para la punta de rueda en vehículos de carga, garantizando seguridad, eficiencia y máxima vida útil de los componentes.
-                        </p>
-                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
-                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <li data-i18n="campo2-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Ratchets</li>
-                            <li data-i18n="campo2-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Autoinflado</li>
-                            <li data-i18n="campo2-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">King Pins</li>
-                            <li data-i18n="campo2-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Tapas</li>
-                            <li data-i18n="campo2-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Rodamientos</li>
-                            <li data-i18n="campo2-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Sellos</li>
-                            <li data-i18n="campo2-p7" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Bombonas</li>
-                            <li data-i18n="campo2-p8" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Amortiguadores</li>
-                            <li data-i18n="campo2-p9" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Tuercas</li>
-                            <li data-i18n="campo2-p10" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Hubodómetros</li>
+                    <div style="padding: 28px 30px; flex: 1; display: flex; flex-direction: column;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo2-desc">Sistemas completos para la punta de rueda en vehículos de carga, garantizando seguridad, eficiencia y máxima vida útil de los componentes.</p>
+                        <h4 style="color: var(--dark); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 7px;">
+                            <li data-i18n="campo2-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Ratchets</li>
+                            <li data-i18n="campo2-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Autoinflado</li>
+                            <li data-i18n="campo2-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">King Pins</li>
+                            <li data-i18n="campo2-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Tapas</li>
+                            <li data-i18n="campo2-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Rodamientos</li>
+                            <li data-i18n="campo2-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Sellos</li>
+                            <li data-i18n="campo2-p7" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Bombonas</li>
+                            <li data-i18n="campo2-p8" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Amortiguadores</li>
+                            <li data-i18n="campo2-p9" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Tuercas</li>
+                            <li data-i18n="campo2-p10" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Hubodómetros</li>
                         </ul>
+                        <a href="marca-stemco.html" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--red); font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 18px; background: rgba(232,75,55,0.08); border: 1px solid rgba(232,75,55,0.18); border-radius: 100px; align-self: flex-start;">Ver Stemco <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Campo 3: Transferencia de Fluidos y Materiales -->
-                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div style="background: var(--red); padding: 28px 30px 22px;">
-                        <div style="display: flex; align-items: center; gap: 14px;">
-                            <div style="background: rgba(255,255,255,0.15); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <article id="campo3" class="campo-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column;">
+                    <div class="campo-card-image" style="position: relative; height: 180px; background-image: url('optimized/shutterstock_115685029.jpg'); background-size: cover; background-position: center;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(232,75,55,0.22) 0%, rgba(15,17,20,0.78) 100%);"></div>
+                        <div style="position: absolute; inset: 0; padding: 22px 24px; display: flex; align-items: flex-end; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(8px); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fa-solid fa-droplet" style="font-size: 24px; color: white;"></i>
                             </div>
-                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo3-titulo">Transferencia de Fluidos y Materiales</h3>
+                            <h3 style="color: white; font-size: 19px; font-weight: 800; margin: 0; line-height: 1.25; text-shadow: 0 2px 8px rgba(0,0,0,0.4);" data-i18n="campo3-titulo">Transferencia de Fluidos y Materiales</h3>
                         </div>
                     </div>
-                    <div style="padding: 28px 30px;">
-                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo3-desc">
-                            Soluciones de transporte y manejo de fluidos industriales, materiales a granel y sistemas de conducción para procesos productivos exigentes.
-                        </p>
-                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
-                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <li data-i18n="campo3-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Mangueras Termoplásticas</li>
-                            <li data-i18n="campo3-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Mangueras Industriales</li>
-                            <li data-i18n="campo3-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Cadena de Ingeniería</li>
-                            <li data-i18n="campo3-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Cadena Agricultura</li>
-                            <li data-i18n="campo3-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Bandas Transportadoras</li>
+                    <div style="padding: 28px 30px; flex: 1; display: flex; flex-direction: column;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo3-desc">Soluciones de transporte y manejo de fluidos industriales, materiales a granel y sistemas de conducción para procesos productivos exigentes.</p>
+                        <h4 style="color: var(--dark); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 7px;">
+                            <li data-i18n="campo3-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Mangueras Termoplásticas</li>
+                            <li data-i18n="campo3-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Mangueras Industriales</li>
+                            <li data-i18n="campo3-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Cadena de Ingeniería</li>
+                            <li data-i18n="campo3-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Cadena Agricultura</li>
+                            <li data-i18n="campo3-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Bandas Transportadoras</li>
                         </ul>
+                        <a href="marca-hose-solutions.html" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--red); font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 18px; background: rgba(232,75,55,0.08); border: 1px solid rgba(232,75,55,0.18); border-radius: 100px; align-self: flex-start;">Ver Hose Solutions <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Campo 4: Partes de Motor, Suspensión y Otros -->
-                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div style="background: #1a1c1e; padding: 28px 30px 22px;">
-                        <div style="display: flex; align-items: center; gap: 14px;">
-                            <div style="background: rgba(255,255,255,0.1); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                <i class="fa-solid fa-engine" style="font-size: 24px; color: white;"></i>
+                <article id="campo4" class="campo-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column;">
+                    <div class="campo-card-image" style="position: relative; height: 180px; background-image: url('optimized/shutterstock_244260913.jpg'); background-size: cover; background-position: center;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,28,30,0.10) 0%, rgba(15,17,20,0.85) 100%);"></div>
+                        <div style="position: absolute; inset: 0; padding: 22px 24px; display: flex; align-items: flex-end; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(8px); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-screwdriver" style="font-size: 24px; color: white;"></i>
                             </div>
-                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo4-titulo">Partes de Motor, Suspensión y Otros Componentes</h3>
+                            <h3 style="color: white; font-size: 19px; font-weight: 800; margin: 0; line-height: 1.25; text-shadow: 0 2px 8px rgba(0,0,0,0.4);" data-i18n="campo4-titulo">Partes de Motor, Suspensión y Otros Componentes</h3>
                         </div>
                     </div>
-                    <div style="padding: 28px 30px;">
-                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo4-desc">
-                            Repuestos y componentes especializados para el mantenimiento preventivo y correctivo del motor, sistema de suspensión y otros subsistemas críticos.
-                        </p>
-                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
-                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <li data-i18n="campo4-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Filtros</li>
-                            <li data-i18n="campo4-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Correas Automotrices</li>
-                            <li data-i18n="campo4-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Bombas</li>
-                            <li data-i18n="campo4-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Kits de Reparación</li>
-                            <li data-i18n="campo4-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Refrigerantes</li>
-                            <li data-i18n="campo4-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Bujías</li>
+                    <div style="padding: 28px 30px; flex: 1; display: flex; flex-direction: column;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo4-desc">Repuestos y componentes especializados para el mantenimiento preventivo y correctivo del motor, sistema de suspensión y otros subsistemas críticos.</p>
+                        <h4 style="color: var(--dark); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 7px;">
+                            <li data-i18n="campo4-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Filtros</li>
+                            <li data-i18n="campo4-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Correas Automotrices</li>
+                            <li data-i18n="campo4-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Bombas</li>
+                            <li data-i18n="campo4-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Kits de Reparación</li>
+                            <li data-i18n="campo4-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Refrigerantes</li>
+                            <li data-i18n="campo4-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Bujías</li>
                         </ul>
+                        <a href="marca-prestone.html" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--red); font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 18px; background: rgba(232,75,55,0.08); border: 1px solid rgba(232,75,55,0.18); border-radius: 100px; align-self: flex-start;">Ver Prestone <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Campo 5: Soluciones Hidráulicas -->
-                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div style="background: var(--red); padding: 28px 30px 22px;">
-                        <div style="display: flex; align-items: center; gap: 14px;">
-                            <div style="background: rgba(255,255,255,0.15); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <article id="campo5" class="campo-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column;">
+                    <div class="campo-card-image" style="position: relative; height: 180px; background-image: url('optimized/shutterstock_117314188.jpg'); background-size: cover; background-position: center;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(232,75,55,0.22) 0%, rgba(15,17,20,0.78) 100%);"></div>
+                        <div style="position: absolute; inset: 0; padding: 22px 24px; display: flex; align-items: flex-end; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(8px); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fa-solid fa-water" style="font-size: 24px; color: white;"></i>
                             </div>
-                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo5-titulo">Soluciones Hidráulicas</h3>
+                            <h3 style="color: white; font-size: 19px; font-weight: 800; margin: 0; line-height: 1.25; text-shadow: 0 2px 8px rgba(0,0,0,0.4);" data-i18n="campo5-titulo">Soluciones Hidráulicas</h3>
                         </div>
                     </div>
-                    <div style="padding: 28px 30px;">
-                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo5-desc">
-                            Tecnología avanzada en sistemas hidráulicos de alta presión para maquinaria pesada, equipos industriales y vehículos de trabajo especializados.
-                        </p>
-                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
-                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <li data-i18n="campo5-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Mangueras Hidráulicas</li>
-                            <li data-i18n="campo5-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Acoples Hidráulicos</li>
-                            <li data-i18n="campo5-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Detección de Fugas</li>
+                    <div style="padding: 28px 30px; flex: 1; display: flex; flex-direction: column;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo5-desc">Tecnología avanzada en sistemas hidráulicos de alta presión para maquinaria pesada, equipos industriales y vehículos de trabajo especializados.</p>
+                        <h4 style="color: var(--dark); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 7px;">
+                            <li data-i18n="campo5-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Mangueras Hidráulicas</li>
+                            <li data-i18n="campo5-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Acoples Hidráulicos</li>
+                            <li data-i18n="campo5-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Detección de Fugas</li>
                         </ul>
+                        <a href="marca-gates.html" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--red); font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 18px; background: rgba(232,75,55,0.08); border: 1px solid rgba(232,75,55,0.18); border-radius: 100px; align-self: flex-start;">Ver Gates <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Campo 6: Herramientas de Control y Mantenimiento Industrial -->
-                <div class="sol-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div style="background: #1a1c1e; padding: 28px 30px 22px;">
-                        <div style="display: flex; align-items: center; gap: 14px;">
-                            <div style="background: rgba(255,255,255,0.1); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <article id="campo6" class="campo-card" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column;">
+                    <div class="campo-card-image" style="position: relative; height: 180px; background-image: url('optimized/shutterstock_157270661.jpg'); background-size: cover; background-position: center;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,28,30,0.10) 0%, rgba(15,17,20,0.85) 100%);"></div>
+                        <div style="position: absolute; inset: 0; padding: 22px 24px; display: flex; align-items: flex-end; gap: 14px;">
+                            <div style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(8px); border-radius: 12px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fa-solid fa-screwdriver-wrench" style="font-size: 24px; color: white;"></i>
                             </div>
-                            <h3 style="color: white; font-size: 20px; font-weight: 700; margin: 0;" data-i18n="campo6-titulo">Herramientas de Control y Mantenimiento Industrial</h3>
+                            <h3 style="color: white; font-size: 19px; font-weight: 800; margin: 0; line-height: 1.25; text-shadow: 0 2px 8px rgba(0,0,0,0.4);" data-i18n="campo6-titulo">Herramientas de Control y Mantenimiento Industrial</h3>
                         </div>
                     </div>
-                    <div style="padding: 28px 30px;">
-                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo6-desc">
-                            Herramientas profesionales de corte, medición y metrología para garantizar precisión absoluta en procesos de manufactura y mantenimiento industrial.
-                        </p>
-                        <h4 style="color: var(--dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
-                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <li data-i18n="campo6-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Herramientas de Corte</li>
-                            <li data-i18n="campo6-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Metrología</li>
-                            <li data-i18n="campo6-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Sierras Cinta</li>
-                            <li data-i18n="campo6-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Sierras Manuales</li>
-                            <li data-i18n="campo6-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Seguetas</li>
-                            <li data-i18n="campo6-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Lubricantes</li>
-                            <li data-i18n="campo6-p7" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Flexómetros</li>
-                            <li data-i18n="campo6-p8" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Micrómetros</li>
-                            <li data-i18n="campo6-p9" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Durómetros</li>
-                            <li data-i18n="campo6-p10" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px;">Niveles</li>
+                    <div style="padding: 28px 30px; flex: 1; display: flex; flex-direction: column;">
+                        <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 22px;" data-i18n="campo6-desc">Herramientas profesionales de corte, medición y metrología para garantizar precisión absoluta en procesos de manufactura y mantenimiento industrial.</p>
+                        <h4 style="color: var(--dark); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;" data-i18n="campos-productos">Productos</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 7px;">
+                            <li data-i18n="campo6-p1" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Herramientas de Corte</li>
+                            <li data-i18n="campo6-p2" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Metrología</li>
+                            <li data-i18n="campo6-p3" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Sierras Cinta</li>
+                            <li data-i18n="campo6-p4" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Sierras Manuales</li>
+                            <li data-i18n="campo6-p5" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Seguetas</li>
+                            <li data-i18n="campo6-p6" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Lubricantes</li>
+                            <li data-i18n="campo6-p7" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Flexómetros</li>
+                            <li data-i18n="campo6-p8" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Micrómetros</li>
+                            <li data-i18n="campo6-p9" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Durómetros</li>
+                            <li data-i18n="campo6-p10" style="background: var(--light); color: var(--dark); font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ececec;">Niveles</li>
                         </ul>
+                        <a href="marca-starrett.html" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--red); font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 18px; background: rgba(232,75,55,0.08); border: 1px solid rgba(232,75,55,0.18); border-radius: 100px; align-self: flex-start;">Ver Starrett <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
                     </div>
-                </div>
+                </article>
 
             </div>
         </div>

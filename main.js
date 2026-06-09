@@ -369,6 +369,7 @@ const translations = {
         'marca-stemco': 'Stemco',
         'marca-tuder': 'Tuder Technica',
         'marca-zec': 'ZEC',
+        'marca-walker': 'Walker Products',
         // Stats bar
         'stat-anos': 'Años de Experiencia',
         'stat-marcas': 'Marcas Representadas',
@@ -431,6 +432,7 @@ const translations = {
         'desc-stemco': 'Punta de rueda, hubodómetros y autoinflado para HD.',
         'desc-tuder': 'Mangueras industriales para alimentos, farmacéutica y química.',
         'desc-zec': 'Mangueras y tubos termoplásticos italianos.',
+        'desc-walker': 'Engine management: sensores, inyección y encendido para automotriz y vehículos comerciales.',
         'visitar-sitio': 'Visitar sitio oficial',
         // Dónde Comprar page
         'dc-hero-title': '¿Dónde Comprar? Nuestros Distribuidores',
@@ -613,6 +615,7 @@ const translations = {
         'marca-stemco': 'Stemco',
         'marca-tuder': 'Tuder Technica',
         'marca-zec': 'ZEC',
+        'marca-walker': 'Walker Products',
         // Stats bar
         'stat-anos': 'Years of Experience',
         'stat-marcas': 'Represented Brands',
@@ -675,6 +678,7 @@ const translations = {
         'desc-stemco': 'Wheel-end, hubodometers and tire inflation for HD.',
         'desc-tuder': 'Industrial hoses for food, pharmaceutical and chemical.',
         'desc-zec': 'Italian thermoplastic hoses and tubing.',
+        'desc-walker': 'Engine management: sensors, fuel injection and ignition for automotive and commercial vehicles.',
         'visitar-sitio': 'Visit official website',
         // Dónde Comprar page
         'dc-hero-title': 'Where to Buy? Our Distributors',

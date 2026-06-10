@@ -525,7 +525,7 @@ function renderDistributors() {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     const stats = calculateStats();
-    document.getElementById('statDist').textContent = stats.distCount + '+';
+    document.getElementById('statDist').textContent = '+' + stats.distCount;
     document.getElementById('statCity').textContent = stats.cityCount;
     document.getElementById('statBrand').textContent = stats.brandCount;
 

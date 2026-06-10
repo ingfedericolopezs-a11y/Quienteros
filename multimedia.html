@@ -74,13 +74,219 @@
     </header>
 
     <!-- Page Header -->
-    <div class="cta-band" style="background-image: url('optimized/shutterstock_134184635.jpg'); padding: 130px 0 100px;">
-        <div class="cta-band-overlay"></div>
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_134184635.jpg'); padding: 140px 0 110px;">
+        <div class="cta-band-overlay" style="background: linear-gradient(135deg, rgba(15,17,20,0.88) 0%, rgba(26,28,30,0.75) 100%);"></div>
         <div class="container cta-band-content">
-            <h1 style="font-size: 48px; color: white; margin-bottom: 15px;" data-i18n="mm-titulo">Multimedia</h1>
-            <p style="font-size: 18px; color: rgba(255,255,255,0.9); max-width: 760px;" data-i18n="mm-subtitulo">Manuales y Videos — Encuentre en esta sección videos y manuales para ver o descargar</p>
+            <div style="display: inline-block; padding: 6px 16px; background: rgba(232,75,55,0.15); border: 1px solid rgba(232,75,55,0.35); border-radius: 100px; color: #ff8978; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 18px;">Centro de Aprendizaje</div>
+            <h1 style="font-size: 56px; color: white; margin-bottom: 18px; letter-spacing: -1px; font-weight: 900;" data-i18n="mm-titulo">Multimedia y Material Educativo</h1>
+            <p style="font-size: 20px; color: rgba(255,255,255,0.85); max-width: 800px; line-height: 1.6;" data-i18n="mm-subtitulo">Videos técnicos, capacitaciones y guías de las marcas que representamos — para que su equipo siempre tenga la información a la mano.</p>
         </div>
     </div>
+
+    <!-- ===================== VIDEOS DEL CANAL ===================== -->
+    <section style="background: #f8f9fb; padding: 70px 0 90px;">
+        <div class="container">
+            <div class="section-header" style="text-align:center; margin-bottom: 30px;">
+                <div class="section-badge-center">Canal Oficial</div>
+                <h2>Material Educativo en Video</h2>
+                <div class="divider-center"></div>
+                <p style="color: var(--text); margin-top: 16px; max-width: 720px; margin-left: auto; margin-right: auto;">Tips técnicos, capacitaciones de producto y contenido corporativo del canal <strong>Quinteros Colombia</strong>.</p>
+            </div>
+
+            <!-- Filtros por categoria -->
+            <div id="videoFilters" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px;">
+                <button class="video-filter is-active" data-filter="all" type="button">Todos <span class="count">15</span></button>
+                <button class="video-filter" data-filter="tips" type="button">Tips Técnicos <span class="count">9</span></button>
+                <button class="video-filter" data-filter="cap" type="button">Capacitación de Producto <span class="count">2</span></button>
+                <button class="video-filter" data-filter="corp" type="button">Corporativo <span class="count">4</span></button>
+            </div>
+
+            <!-- Featured + Grid -->
+            <div id="videoGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px;">
+
+                <!-- Featured (mas grande - latest) -->
+                <article class="video-card featured" data-category="tips" data-video-id="dQBZ9O3JW2A" data-title="La precarga correcta protege la punta de rueda | Stemco" style="grid-column: span 2;">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/dQBZ9O3JW2A/maxresdefault.jpg" alt="La precarga correcta protege la punta de rueda" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div><span class="brand-tag">Stemco</span></div>
+                    <div class="video-meta"><span class="cat-pill cat-tips">Tip Técnico</span><h3>La precarga correcta protege la punta de rueda</h3><span class="duration">Junio 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="tips" data-video-id="EMc3D4DbxHg" data-title="Cómo leer bien un calibrador vernier | Starrett">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/EMc3D4DbxHg/hqdefault.jpg" alt="Calibrador vernier Starrett" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div><span class="brand-tag">Starrett</span></div>
+                    <div class="video-meta"><span class="cat-pill cat-tips">Tip Técnico</span><h3>Cómo leer bien un calibrador vernier</h3><span class="duration">Mayo 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="tips" data-video-id="19AoBZhesC8" data-title="El dato que debes revisar en tu refrigerante | Prestone">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/19AoBZhesC8/hqdefault.jpg" alt="Dato del refrigerante Prestone" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div><span class="brand-tag">Prestone</span></div>
+                    <div class="video-meta"><span class="cat-pill cat-tips">Tip Técnico</span><h3>El dato que debes revisar en tu refrigerante</h3><span class="duration">Mayo 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="cap" data-video-id="9AgL0hjts5Y" data-title="Walker Products — Engine management">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/9AgL0hjts5Y/hqdefault.jpg" alt="Walker Products" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div><span class="brand-tag">Walker</span></div>
+                    <div class="video-meta"><span class="cat-pill cat-cap">Capacitación</span><h3>Walker Products — Engine management</h3><span class="duration">Mayo 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="tips" data-video-id="kiEXfGVGXw0" data-title="¿Por qué las correas Gates duran más? | Materiales de alta tecnología">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/kiEXfGVGXw0/hqdefault.jpg" alt="Correas Gates" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div><span class="brand-tag">Gates</span></div>
+                    <div class="video-meta"><span class="cat-pill cat-tips">Tip Técnico</span><h3>¿Por qué las correas Gates duran más?</h3><span class="duration">Mayo 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="corp" data-video-id="7sRBVSmDMhk" data-title="Cuando el orden impulsa el crecimiento">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/7sRBVSmDMhk/hqdefault.jpg" alt="Orden impulsa el crecimiento" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-corp">Corporativo</span><h3>Cuando el orden impulsa el crecimiento</h3><span class="duration">Mayo 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="corp" data-video-id="gFou7tAjii0" data-title="Decisiones en la red: lo que realmente las hace más claras">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/gFou7tAjii0/hqdefault.jpg" alt="Decisiones en la red" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-corp">Corporativo</span><h3>Decisiones en la red: lo que las hace más claras</h3><span class="duration">Abril 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="tips" data-video-id="Cs5cUH-eZa4" data-title="¿Cómo identificar una correa automotriz correctamente?">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/Cs5cUH-eZa4/hqdefault.jpg" alt="Identificar correa automotriz" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-tips">Tip Técnico</span><h3>¿Cómo identificar una correa automotriz correctamente?</h3><span class="duration">Abril 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="tips" data-video-id="I93SyMHIIOQ" data-title="¿Cuándo cambiar el líquido de frenos?">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/I93SyMHIIOQ/hqdefault.jpg" alt="Cuándo cambiar líquido de frenos" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-tips">Tip Técnico</span><h3>¿Cuándo cambiar el líquido de frenos?</h3><span class="duration">Abril 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="tips" data-video-id="b0gy9lwPlQQ" data-title="La punta de rueda en transporte pesado">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/b0gy9lwPlQQ/hqdefault.jpg" alt="Punta de rueda transporte pesado" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-tips">Tip Técnico</span><h3>La punta de rueda en transporte pesado</h3><span class="duration">Marzo 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="tips" data-video-id="v5tWKHTzEQk" data-title="¿Calibrador digital o análogo?">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/v5tWKHTzEQk/hqdefault.jpg" alt="Calibrador digital o análogo" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-tips">Tip Técnico</span><h3>¿Calibrador digital o análogo?</h3><span class="duration">Marzo 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="tips" data-video-id="C2Lgfvrpn3s" data-title="¿El color del refrigerante importa?">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/C2Lgfvrpn3s/hqdefault.jpg" alt="Color del refrigerante" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-tips">Tip Técnico</span><h3>¿El color del refrigerante importa?</h3><span class="duration">Marzo 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="corp" data-video-id="hYBjGxIb364" data-title="Desarrollo estratégico en la industria colombiana">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/hYBjGxIb364/hqdefault.jpg" alt="Desarrollo estratégico industria" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-corp">Corporativo</span><h3>Desarrollo estratégico en la industria colombiana</h3><span class="duration">Febrero 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="cap" data-video-id="RG0vHq8GT1M" data-title="Capacitación que acompaña el trabajo en campo">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/RG0vHq8GT1M/hqdefault.jpg" alt="Capacitación en campo" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-cap">Capacitación</span><h3>Capacitación que acompaña el trabajo en campo</h3><span class="duration">Febrero 2026</span></div>
+                </article>
+
+                <article class="video-card" data-category="corp" data-video-id="UdWJjCbgT00" data-title="Un día en Quinteros — Trabajamos para que tu operación avance">
+                    <div class="video-thumb"><img src="https://i.ytimg.com/vi/UdWJjCbgT00/hqdefault.jpg" alt="Un día en Quinteros" loading="lazy"><div class="play-overlay"><i class="fa-solid fa-play"></i></div></div>
+                    <div class="video-meta"><span class="cat-pill cat-corp">Corporativo</span><h3>Un día en Quinteros</h3><span class="duration">Enero 2026</span></div>
+                </article>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://www.youtube.com/@quinteroscolombia5808/videos" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; color: #ff0000; font-weight: 700; text-decoration: none;"><i class="fa-brands fa-youtube" style="font-size: 22px;"></i> Ver todos los videos en el canal <i class="fa-solid fa-arrow-right" style="font-size: 12px;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal del Reproductor de Video -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+        <div class="video-modal-container">
+            <button type="button" class="video-modal-close" onclick="closeVideoModal()" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            <div class="video-modal-title" id="videoModalTitle"></div>
+            <div class="video-modal-frame"><iframe id="videoModalFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        </div>
+    </div>
+
+    <!-- Estilos del bloque de videos -->
+    <style>
+        .video-filter { background: white; border: 1px solid #e0e0e0; color: var(--dark); font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 100px; cursor: pointer; transition: all 0.25s ease; display: inline-flex; align-items: center; gap: 8px; font-family: inherit; }
+        .video-filter .count { background: #f0f0f0; color: var(--text); font-size: 11px; padding: 2px 8px; border-radius: 100px; transition: all 0.25s ease; }
+        .video-filter:hover { border-color: var(--red); color: var(--red); }
+        .video-filter.is-active { background: var(--red); color: white; border-color: var(--red); box-shadow: 0 8px 20px rgba(232,75,55,0.30); }
+        .video-filter.is-active .count { background: rgba(255,255,255,0.20); color: white; }
+
+        .video-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, opacity 0.4s ease; display: flex; flex-direction: column; }
+        .video-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
+        .video-card.featured .video-thumb { aspect-ratio: 16/9; }
+        .video-card.featured .video-meta h3 { font-size: 20px; }
+        .video-card.hidden-by-filter { opacity: 0; pointer-events: none; transform: scale(0.95); display: none; }
+
+        .video-thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #1a1c1e; }
+        .video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+        .video-card:hover .video-thumb img { transform: scale(1.05); }
+        .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.30) 100%); transition: background 0.3s ease; }
+        .play-overlay i { width: 64px; height: 64px; background: rgba(232,75,55,0.95); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; padding-left: 4px; box-shadow: 0 10px 30px rgba(232,75,55,0.45); transition: transform 0.3s ease; }
+        .video-card:hover .play-overlay { background: linear-gradient(180deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.50) 100%); }
+        .video-card:hover .play-overlay i { transform: scale(1.10); }
+        .brand-tag { position: absolute; top: 14px; left: 14px; background: rgba(15,17,20,0.85); backdrop-filter: blur(8px); color: white; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; }
+
+        .video-meta { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+        .cat-pill { display: inline-block; align-self: flex-start; padding: 3px 10px; border-radius: 100px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+        .cat-tips { background: rgba(232,75,55,0.10); color: var(--red); }
+        .cat-cap { background: rgba(26,28,30,0.08); color: var(--dark); }
+        .cat-corp { background: rgba(46,113,177,0.10); color: #2e71b1; }
+        .video-meta h3 { color: var(--dark); font-size: 15px; font-weight: 800; line-height: 1.4; margin: 0; }
+        .duration { color: #999; font-size: 12px; margin-top: auto; }
+
+        @media (max-width: 720px) {
+            .video-card.featured { grid-column: span 1 !important; }
+            .video-card.featured .video-meta h3 { font-size: 16px; }
+        }
+
+        /* Modal */
+        .video-modal { position: fixed; inset: 0; z-index: 9999; display: none; align-items: center; justify-content: center; padding: 24px; }
+        .video-modal.is-open { display: flex; }
+        .video-modal-backdrop { position: absolute; inset: 0; background: rgba(10,12,14,0.85); backdrop-filter: blur(6px); }
+        .video-modal-container { position: relative; width: 100%; max-width: 1100px; }
+        .video-modal-close { position: absolute; top: -50px; right: 0; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.15); color: white; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: background 0.2s; }
+        .video-modal-close:hover { background: rgba(232,75,55,0.5); }
+        .video-modal-title { color: white; font-weight: 700; font-size: 15px; margin-bottom: 14px; padding-right: 50px; }
+        .video-modal-frame { position: relative; width: 100%; aspect-ratio: 16/9; background: black; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+        .video-modal-frame iframe { width: 100%; height: 100%; border: 0; }
+    </style>
+
+    <!-- Script videos -->
+    <script>
+        // Filtros
+        document.getElementById('videoFilters').addEventListener('click', e => {
+            const btn = e.target.closest('.video-filter');
+            if (!btn) return;
+            document.querySelectorAll('.video-filter').forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.video-card').forEach(card => {
+                const match = filter === 'all' || card.dataset.category === filter;
+                card.classList.toggle('hidden-by-filter', !match);
+            });
+        });
+
+        // Click en tarjeta abre modal
+        document.getElementById('videoGrid').addEventListener('click', e => {
+            const card = e.target.closest('.video-card');
+            if (!card) return;
+            const id = card.dataset.videoId;
+            const title = card.dataset.title;
+            openVideoModal(id, title);
+        });
+
+        function openVideoModal(id, title) {
+            const modal = document.getElementById('videoModal');
+            document.getElementById('videoModalTitle').textContent = title;
+            document.getElementById('videoModalFrame').src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+            modal.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            modal.classList.remove('is-open');
+            document.getElementById('videoModalFrame').src = '';
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeVideoModal();
+        });
+    </script>
 
     <!-- Tipos de Contenido -->
     <section style="background: white; padding: 70px 0;">
@@ -226,7 +432,7 @@
             <i class="fa-brands fa-youtube" style="font-size: 64px; color: #ff0000; margin-bottom: 20px;"></i>
             <h2 style="color: white; margin-bottom: 14px;" data-i18n="mm-yt-titulo">Canal Oficial de YouTube</h2>
             <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 28px;" data-i18n="mm-yt-desc">Visite nuestro canal "Quinteros Colombia" para demostraciones de productos, capacitación técnica, mensajes corporativos y guías de mantenimiento.</p>
-            <a href="https://www.youtube.com/channel/UCI9B12Jei4zk40jR9xewqIg" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: #ff0000; color: white; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s;"><i class="fa-brands fa-youtube"></i> <span data-i18n="mm-yt-btn">Visitar Canal</span></a>
+            <a href="https://www.youtube.com/@quinteroscolombia5808" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: #ff0000; color: white; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s;"><i class="fa-brands fa-youtube"></i> <span data-i18n="mm-yt-btn">Visitar Canal Quinteros Colombia</span></a>
         </div>
     </section>
 

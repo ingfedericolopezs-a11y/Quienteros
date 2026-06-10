@@ -84,6 +84,162 @@
         </div>
     </div>
 
+    <!-- Tipos de Contenido -->
+    <section style="background: white; padding: 70px 0;">
+        <div class="container">
+            <div class="section-header" style="text-align:center; margin-bottom: 50px;">
+                <div class="section-badge-center" data-i18n="mm-tipos-badge">Recursos Disponibles</div>
+                <h2 data-i18n="mm-tipos-titulo">Tipos de Contenido</h2>
+                <div class="divider-center"></div>
+            </div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+                <a href="#material-marcas" class="mm-tipo-card">
+                    <div class="mm-tipo-icon mm-tipo-icon--red"><i class="fa-solid fa-book"></i></div>
+                    <h4 data-i18n="mm-tipo1-titulo">Catálogos</h4>
+                    <p data-i18n="mm-tipo1-desc">En español e inglés</p>
+                    <span class="mm-tipo-cta">Ver por marca <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#material-marcas" class="mm-tipo-card">
+                    <div class="mm-tipo-icon mm-tipo-icon--dark"><i class="fa-solid fa-file-pdf"></i></div>
+                    <h4 data-i18n="mm-tipo2-titulo">Fichas Técnicas</h4>
+                    <p data-i18n="mm-tipo2-desc">Especificaciones detalladas</p>
+                    <span class="mm-tipo-cta">Ver por marca <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#videos" class="mm-tipo-card">
+                    <div class="mm-tipo-icon mm-tipo-icon--red"><i class="fa-solid fa-video"></i></div>
+                    <h4 data-i18n="mm-tipo3-titulo">Videos</h4>
+                    <p data-i18n="mm-tipo3-desc">Demostraciones y tutoriales</p>
+                    <span class="mm-tipo-cta">Ir a videos <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#material-marcas" class="mm-tipo-card">
+                    <div class="mm-tipo-icon mm-tipo-icon--dark"><i class="fa-solid fa-wrench"></i></div>
+                    <h4 data-i18n="mm-tipo4-titulo">Instalación</h4>
+                    <p data-i18n="mm-tipo4-desc">Guías paso a paso</p>
+                    <span class="mm-tipo-cta">Ver por marca <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="contacto.html" class="mm-tipo-card">
+                    <div class="mm-tipo-icon mm-tipo-icon--red"><i class="fa-solid fa-briefcase"></i></div>
+                    <h4 data-i18n="mm-tipo5-titulo">Soporte Ventas</h4>
+                    <p data-i18n="mm-tipo5-desc">Material comercial</p>
+                    <span class="mm-tipo-cta">Solicitar <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <style>
+                .mm-tipo-card { background: var(--light); padding: 30px 24px; border-radius: var(--radius-lg); text-align: center; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, background 0.3s ease; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; border: 1px solid transparent; }
+                .mm-tipo-card:hover { transform: translateY(-6px); background: white; box-shadow: 0 18px 40px rgba(0,0,0,0.08); border-color: #f0f0f0; }
+                .mm-tipo-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 24px; transition: transform 0.3s ease; }
+                .mm-tipo-card:hover .mm-tipo-icon { transform: scale(1.08); }
+                .mm-tipo-icon--red { background: rgba(232,75,55,0.10); color: var(--red); }
+                .mm-tipo-icon--dark { background: rgba(26,28,30,0.06); color: var(--dark); }
+                .mm-tipo-card h4 { color: var(--dark); margin-bottom: 6px; }
+                .mm-tipo-card p { color: var(--text); font-size: 13px; margin: 0; }
+                .mm-tipo-cta { margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; color: var(--red); font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0; transform: translateY(4px); transition: opacity 0.25s ease, transform 0.25s ease; }
+                .mm-tipo-card:hover .mm-tipo-cta { opacity: 1; transform: translateY(0); }
+            </style>
+        </div>
+    </section>
+
+    <!-- Material por Marca -->
+    <section id="material-marcas" style="background: var(--light); padding: 80px 0; scroll-margin-top: 80px;">
+        <div class="container">
+            <div class="section-header" style="text-align:center; margin-bottom: 50px;">
+                <div class="section-badge-center" data-i18n="mm-marcas-badge">Material por Marca</div>
+                <h2 data-i18n="mm-marcas-titulo">Recursos por Marca Representada</h2>
+                <div class="divider-center"></div>
+                <p style="color: var(--text); margin-top: 20px; max-width: 700px; margin-left: auto; margin-right: auto;" data-i18n="mm-marcas-desc">Acceda al material técnico y comercial de cada una de nuestras marcas aliadas</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <!-- Cards de marcas -->
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/amsted-rail.png" alt="Amsted Rail" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Amsted Rail</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-amsted">Frenos, rodamientos, ruedas, monitoreo remoto</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/gates.jpg" alt="Gates" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Gates</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-gates">Transmisión de potencia, automotriz, agrícola, hidráulica</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/gedore.png" alt="Gedore" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Gedore</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-gedore">Bandas transportadoras profesionales</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/hose-solutions.jpg" alt="Hose Solutions" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Hose Solutions</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-hose">Mangueras mineras y tubería flexible</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/kettenwulf.jpg" alt="Kettenwulf" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Kettenwulf</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-kettenwulf">Cadenas y piñones industriales</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/kit-masters.png" alt="Kit Masters" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Kit Masters</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-kitmasters">Embragues de ventilador y sistemas de enfriamiento</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/miner.jpg" alt="Miner" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Miner Elastomer</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-miner">Productos mineros y amortiguadores</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/prestone.png" alt="Prestone" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Prestone</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-prestone">Refrigerantes y fluidos automotrices</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/ramsey-products.png" alt="Ramsey Products" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Ramsey Products</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-ramsey">Cadenas silenciosas de transporte</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/spectroline.png" alt="Spectroline" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Spectroline</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-spectroline">Detección de fugas</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/starrett.png" alt="Starrett" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Starrett</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-starrett">Herramientas de precisión, sierras y metrología</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/stemco.jpg" alt="Stemco" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Stemco</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-stemco">Cubos de rueda, sellos y componentes de freno</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/tuder-technica.jpg" alt="Tudertechnica" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Tudertechnica</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-tuder">Mangueras industriales especializadas</p>
+                    </div></div>
+                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
+                    <img src="logos/zec.png" alt="ZEC" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
+                    <div style="flex:1;">
+                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">ZEC</h4>
+                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-zec">Mangueras termoplásticas</p>
+                    </div></div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===================== VIDEOS DEL CANAL ===================== -->
     <section id="videos" style="background: #f8f9fb; padding: 70px 0 90px; scroll-margin-top: 80px;">
         <div class="container">
@@ -288,162 +444,6 @@
             if (e.key === 'Escape') closeVideoModal();
         });
     </script>
-
-    <!-- Tipos de Contenido -->
-    <section style="background: white; padding: 70px 0;">
-        <div class="container">
-            <div class="section-header" style="text-align:center; margin-bottom: 50px;">
-                <div class="section-badge-center" data-i18n="mm-tipos-badge">Recursos Disponibles</div>
-                <h2 data-i18n="mm-tipos-titulo">Tipos de Contenido</h2>
-                <div class="divider-center"></div>
-            </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
-                <a href="#material-marcas" class="mm-tipo-card">
-                    <div class="mm-tipo-icon mm-tipo-icon--red"><i class="fa-solid fa-book"></i></div>
-                    <h4 data-i18n="mm-tipo1-titulo">Catálogos</h4>
-                    <p data-i18n="mm-tipo1-desc">En español e inglés</p>
-                    <span class="mm-tipo-cta">Ver por marca <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="#material-marcas" class="mm-tipo-card">
-                    <div class="mm-tipo-icon mm-tipo-icon--dark"><i class="fa-solid fa-file-pdf"></i></div>
-                    <h4 data-i18n="mm-tipo2-titulo">Fichas Técnicas</h4>
-                    <p data-i18n="mm-tipo2-desc">Especificaciones detalladas</p>
-                    <span class="mm-tipo-cta">Ver por marca <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="#videos" class="mm-tipo-card">
-                    <div class="mm-tipo-icon mm-tipo-icon--red"><i class="fa-solid fa-video"></i></div>
-                    <h4 data-i18n="mm-tipo3-titulo">Videos</h4>
-                    <p data-i18n="mm-tipo3-desc">Demostraciones y tutoriales</p>
-                    <span class="mm-tipo-cta">Ir a videos <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="#material-marcas" class="mm-tipo-card">
-                    <div class="mm-tipo-icon mm-tipo-icon--dark"><i class="fa-solid fa-wrench"></i></div>
-                    <h4 data-i18n="mm-tipo4-titulo">Instalación</h4>
-                    <p data-i18n="mm-tipo4-desc">Guías paso a paso</p>
-                    <span class="mm-tipo-cta">Ver por marca <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="contacto.html" class="mm-tipo-card">
-                    <div class="mm-tipo-icon mm-tipo-icon--red"><i class="fa-solid fa-briefcase"></i></div>
-                    <h4 data-i18n="mm-tipo5-titulo">Soporte Ventas</h4>
-                    <p data-i18n="mm-tipo5-desc">Material comercial</p>
-                    <span class="mm-tipo-cta">Solicitar <i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-            </div>
-
-            <style>
-                .mm-tipo-card { background: var(--light); padding: 30px 24px; border-radius: var(--radius-lg); text-align: center; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, background 0.3s ease; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; border: 1px solid transparent; }
-                .mm-tipo-card:hover { transform: translateY(-6px); background: white; box-shadow: 0 18px 40px rgba(0,0,0,0.08); border-color: #f0f0f0; }
-                .mm-tipo-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 24px; transition: transform 0.3s ease; }
-                .mm-tipo-card:hover .mm-tipo-icon { transform: scale(1.08); }
-                .mm-tipo-icon--red { background: rgba(232,75,55,0.10); color: var(--red); }
-                .mm-tipo-icon--dark { background: rgba(26,28,30,0.06); color: var(--dark); }
-                .mm-tipo-card h4 { color: var(--dark); margin-bottom: 6px; }
-                .mm-tipo-card p { color: var(--text); font-size: 13px; margin: 0; }
-                .mm-tipo-cta { margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; color: var(--red); font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0; transform: translateY(4px); transition: opacity 0.25s ease, transform 0.25s ease; }
-                .mm-tipo-card:hover .mm-tipo-cta { opacity: 1; transform: translateY(0); }
-            </style>
-        </div>
-    </section>
-
-    <!-- Material por Marca -->
-    <section id="material-marcas" style="background: var(--light); padding: 80px 0; scroll-margin-top: 80px;">
-        <div class="container">
-            <div class="section-header" style="text-align:center; margin-bottom: 50px;">
-                <div class="section-badge-center" data-i18n="mm-marcas-badge">Material por Marca</div>
-                <h2 data-i18n="mm-marcas-titulo">Recursos por Marca Representada</h2>
-                <div class="divider-center"></div>
-                <p style="color: var(--text); margin-top: 20px; max-width: 700px; margin-left: auto; margin-right: auto;" data-i18n="mm-marcas-desc">Acceda al material técnico y comercial de cada una de nuestras marcas aliadas</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                <!-- Cards de marcas -->
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/amsted-rail.png" alt="Amsted Rail" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Amsted Rail</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-amsted">Frenos, rodamientos, ruedas, monitoreo remoto</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/gates.jpg" alt="Gates" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Gates</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-gates">Transmisión de potencia, automotriz, agrícola, hidráulica</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/gedore.png" alt="Gedore" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Gedore</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-gedore">Bandas transportadoras profesionales</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/hose-solutions.jpg" alt="Hose Solutions" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Hose Solutions</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-hose">Mangueras mineras y tubería flexible</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/kettenwulf.jpg" alt="Kettenwulf" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Kettenwulf</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-kettenwulf">Cadenas y piñones industriales</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/kit-masters.png" alt="Kit Masters" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Kit Masters</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-kitmasters">Embragues de ventilador y sistemas de enfriamiento</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/miner.jpg" alt="Miner" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Miner Elastomer</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-miner">Productos mineros y amortiguadores</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/prestone.png" alt="Prestone" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Prestone</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-prestone">Refrigerantes y fluidos automotrices</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/ramsey-products.png" alt="Ramsey Products" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Ramsey Products</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-ramsey">Cadenas silenciosas de transporte</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/spectroline.png" alt="Spectroline" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Spectroline</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-spectroline">Detección de fugas</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/starrett.png" alt="Starrett" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Starrett</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-starrett">Herramientas de precisión, sierras y metrología</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/stemco.jpg" alt="Stemco" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Stemco</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-stemco">Cubos de rueda, sellos y componentes de freno</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/tuder-technica.jpg" alt="Tudertechnica" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">Tudertechnica</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-tuder">Mangueras industriales especializadas</p>
-                    </div></div>
-                <div class="sol-card" style="background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 16px;">
-                    <img src="logos/zec.png" alt="ZEC" style="width: 80px; height: 60px; object-fit: contain; filter: grayscale(100%);">
-                    <div style="flex:1;">
-                        <h4 style="color: var(--dark); margin: 0 0 4px; font-size: 16px;">ZEC</h4>
-                        <p style="color: var(--text); font-size: 12px; margin: 0;" data-i18n="mm-zec">Mangueras termoplásticas</p>
-                    </div></div>
-            </div>
-        </div>
-    </section>
 
     <!-- Canal YouTube -->
     <section style="background: #1a1c1e; padding: 70px 0; color: white; text-align: center;">

@@ -185,12 +185,15 @@ const counterIO = new IntersectionObserver(entries => {
             const numMatch = rawText.match(/\d+/);
             if (!numMatch) return;
             const target = parseInt(numMatch[0]);
-            const suffix = rawText.replace(/[\d]/g, '');
+            // Separa prefijo y sufijo no-digitos para preservar formato "+85" o "85+"
+            const numIdx = rawText.indexOf(numMatch[0]);
+            const prefix = rawText.slice(0, numIdx);
+            const suffix = rawText.slice(numIdx + numMatch[0].length);
             let current = 0;
             const step  = Math.max(1, Math.floor(target / 60));
             const timer = setInterval(() => {
                 current = Math.min(current + step, target);
-                el.textContent = current + suffix;
+                el.textContent = prefix + current + suffix;
                 if (current >= target) clearInterval(timer);
             }, 30);
             counterIO.unobserve(el);
@@ -408,7 +411,7 @@ const translations = {
         'footer-copyright': '© 2025 Quinteros S.A. Todos los derechos reservados. | Bogotá, Colombia',
         // Aliados page
         'aliados-titulo': 'Nuestros Aliados',
-        'aliados-subtitulo': 'Representamos 15+ marcas internacionales de clase mundial',
+        'aliados-subtitulo': 'Representamos +20 marcas internacionales de clase mundial',
         'aliados-badge': 'Aliados Internacionales',
         'aliados-marcas-titulo': 'Marcas que Representamos',
         'aliados-descripcion': 'Quinteros representa las más importantes marcas mundiales en sus categorías. Aliados comprometidos con la excelencia, innovación y calidad.',
@@ -654,7 +657,7 @@ const translations = {
         'footer-copyright': '© 2025 Quinteros S.A. All rights reserved. | Bogotá, Colombia',
         // Aliados page
         'aliados-titulo': 'Our Partners',
-        'aliados-subtitulo': 'We represent 15+ world-class international brands',
+        'aliados-subtitulo': 'We represent +20 world-class international brands',
         'aliados-badge': 'International Partners',
         'aliados-marcas-titulo': 'Brands We Represent',
         'aliados-descripcion': 'Quinteros represents the most important brands in their categories worldwide. Partners committed to excellence, innovation and quality.',

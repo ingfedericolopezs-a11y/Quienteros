@@ -235,7 +235,7 @@ const currentLangSpan = document.getElementById('currentLang');
 
 // Set initial language
 let currentLanguage = localStorage.getItem('site-language') || 'es';
-currentLangSpan.textContent = currentLanguage === 'es' ? '🇪🇸' : '🇺🇸';
+currentLangSpan.textContent = currentLanguage === 'es' ? 'ES' : 'EN';
 
 langBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -243,7 +243,7 @@ langBtns.forEach(btn => {
         const lang = btn.getAttribute('data-lang');
         currentLanguage = lang;
         localStorage.setItem('site-language', lang);
-        currentLangSpan.textContent = lang === 'es' ? '🇪🇸' : '🇺🇸';
+        currentLangSpan.textContent = lang === 'es' ? 'ES' : 'EN';
 
         // Close language dropdown
         document.querySelector('.language-selector').classList.remove('active');

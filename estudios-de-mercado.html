@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudios de Mercado | Quinteros S.A.</title>
+    <meta name="description" content="Estudios de mercado especializados para anticipar tendencias y garantizar la viabilidad de proyectos empresariales en la industria.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <span data-i18n="home-topbar"><i class="fa-solid fa-industry"></i>&nbsp; Más de 85 años de trayectoria industrial en Colombia</span>
+            <div class="topbar-links">
+                <a href="mailto:info@quinteros.co"><i class="fa-solid fa-envelope"></i> info@quinteros.co</a>
+                <a href="tel:+576017436830"><i class="fa-solid fa-phone"></i> (601) 743 6830</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros S.A. Logo" loading="lazy">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item" data-i18n="inicio">INICIO</a>
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="nuestra-compania">NUESTRA COMPAÑÍA <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="nuestra-compania.html" data-i18n="sobre-nosotros">SOBRE NOSOTROS</a>
+                        <a href="noticias.html" data-i18n="noticias">NOTICIAS</a>
+                        <a href="multimedia.html" data-i18n="multimedia">MULTIMEDIA</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-hacemos">QUÉ HACEMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="aliados.html" data-i18n="aliados">ALIADOS DE NEGOCIO</a>
+                        <a href="modelo-de-negocio.html" data-i18n="modelo-negocio">MODELO DE NEGOCIO</a>
+                        <a href="estudios-de-mercado.html" data-i18n="estudios-mercado" class="active">ESTUDIOS DE MERCADO</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-solucionamos">QUÉ SOLUCIONAMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="segmentos-productivos.html" data-i18n="segmentos">SECTORES PRODUCTIVOS</a>
+                        <a href="campos-de-experiencia.html" data-i18n="campos">CAMPOS DE EXPERIENCIA</a>
+                        <a href="aliados.html" data-i18n="marcas">NUESTRAS MARCAS</a>
+                        <a href="soluciones.html" data-i18n="soluciones">NUESTRAS SOLUCIONES</a>
+                    </div>
+                </div>
+                <a href="donde-comprar.html" class="nav-item" data-i18n="donde-comprar">DÓNDE COMPRAR</a>
+                <a href="contacto.html" class="nav-item" data-i18n="contactenos">CONTÁCTENOS</a>
+                <div class="nav-dropdown language-selector">
+                    <button class="nav-item dropdown-toggle"><span data-i18n="idioma">IDIOMA:</span> <span id="currentLang">🇪🇸</span> <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <button class="lang-btn" data-lang="es">🇪🇸 ESPAÑOL</button>
+                        <button class="lang-btn" data-lang="en">🇺🇸 ENGLISH</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_96365069.jpg'); padding: 140px 0 110px;">
+        <div class="cta-band-overlay" style="background: linear-gradient(135deg, rgba(15,17,20,0.88) 0%, rgba(26,28,30,0.75) 100%);"></div>
+        <div class="container cta-band-content">
+            <div style="display: inline-block; padding: 6px 16px; background: rgba(232,75,55,0.15); border: 1px solid rgba(232,75,55,0.35); border-radius: 100px; color: #ff8978; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 18px;" data-i18n="em-hero-tag">Inteligencia de Negocios</div>
+            <h1 style="font-size: 56px; color: white; margin-bottom: 18px; letter-spacing: -1px; font-weight: 900;" data-i18n="em-titulo">Estudios de Mercado</h1>
+            <p style="font-size: 20px; color: rgba(255,255,255,0.85); max-width: 780px; line-height: 1.6;" data-i18n="em-subtitulo">Anticipe el futuro. Si no está haciendo estudios de mercado, la salud de su empresa está en riesgo.</p>
+        </div>
+    </div>
+
+    <!-- Stats Bar flotante -->
+    <section style="background: var(--white); padding: 0; margin-top: -50px; position: relative; z-index: 5;">
+        <div class="container">
+            <div style="background: white; border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(0,0,0,0.10); padding: 36px 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; text-align: center;">
+                <div style="border-right: 1px solid #eee; padding-right: 16px;">
+                    <div style="font-size: 42px; font-weight: 900; color: var(--red); line-height: 1; font-family: 'Montserrat', sans-serif;">5</div>
+                    <div style="color: var(--text); font-size: 12px; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Pasos del Proceso</div>
+                </div>
+                <div style="border-right: 1px solid #eee; padding-right: 16px;">
+                    <div style="font-size: 42px; font-weight: 900; color: var(--dark); line-height: 1; font-family: 'Montserrat', sans-serif;">+85</div>
+                    <div style="color: var(--text); font-size: 12px; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Años de Sector</div>
+                </div>
+                <div style="border-right: 1px solid #eee; padding-right: 16px;">
+                    <div style="font-size: 42px; font-weight: 900; color: var(--red); line-height: 1; font-family: 'Montserrat', sans-serif;">13</div>
+                    <div style="color: var(--text); font-size: 12px; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Segmentos Cubiertos</div>
+                </div>
+                <div>
+                    <div style="font-size: 42px; font-weight: 900; color: var(--dark); line-height: 1; font-family: 'Montserrat', sans-serif;">5</div>
+                    <div style="color: var(--text); font-size: 12px; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Fuentes Primarias</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué es + Imagen split -->
+    <section class="historia" style="padding: 100px 0 80px;">
+        <div class="container">
+            <div class="historia-grid" style="grid-template-columns: 1.05fr 1fr; gap: 70px; align-items: center;">
+                <div class="historia-text">
+                    <div class="section-badge" data-i18n="em-badge">Anticípese al Mercado</div>
+                    <h2 data-i18n="em-intro-titulo">¿Qué es un Estudio de Mercado?</h2>
+                    <div class="divider-left"></div>
+                    <p data-i18n="em-intro-desc1">Un estudio de mercado analiza la viabilidad de un proyecto empresarial mediante el conocimiento del perfil y comportamiento del cliente objetivo. Es un proceso que recopila datos sustanciales sobre clientes, competidores, operaciones y condiciones del mercado.</p>
+                    <p data-i18n="em-intro-desc2">Es una práctica necesaria para no poner en riesgo la salud de su empresa y garantizar su supervivencia. El análisis ayuda a las empresas a comprender mejor tanto a sus clientes como a sus competidores — y a tomar decisiones basadas en datos, no en intuición.</p>
+                    <a href="contacto.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;">Solicitar estudio <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="historia-image">
+                    <div style="position: relative;">
+                        <img src="optimized/shutterstock_191628176.jpg" alt="Estudio de Mercado — Análisis y datos" loading="lazy" style="width: 100%; height: 520px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: 0 24px 60px rgba(0,0,0,0.15);">
+                        <div style="position: absolute; bottom: 24px; left: 24px; background: var(--red); color: white; padding: 16px 22px; border-radius: 10px; box-shadow: 0 12px 30px rgba(232,75,55,0.35); display: flex; align-items: center; gap: 14px;">
+                            <i class="fa-solid fa-chart-line" style="font-size: 28px;"></i>
+                            <div>
+                                <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px;">Decisiones</div>
+                                <div style="font-size: 11px; opacity: 0.9; margin-top: 2px;">basadas en datos</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Por qué importan? — Beneficios -->
+    <section style="background: var(--light); padding: 90px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <div class="section-badge-center" data-i18n="em-benef-badge">¿Por qué importan?</div>
+                <h2 data-i18n="em-benef-titulo">Lo que un estudio bien hecho le da a su empresa</h2>
+                <div class="divider-center"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-top: 4px solid var(--red); box-shadow: var(--shadow-md);">
+                    <div style="width: 60px; height: 60px; background: rgba(232,75,55,0.10); color: var(--red); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 26px;"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;" data-i18n="em-benef1-t">Reducción de riesgos</h4>
+                    <p style="color: var(--text); font-size: 14px; line-height: 1.7;" data-i18n="em-benef1-d">Identificar amenazas antes de invertir capital evita pérdidas significativas y proyectos fallidos.</p>
+                </div>
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-top: 4px solid var(--dark); box-shadow: var(--shadow-md);">
+                    <div style="width: 60px; height: 60px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 26px;"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;" data-i18n="em-benef2-t">Oportunidades reveladas</h4>
+                    <p style="color: var(--text); font-size: 14px; line-height: 1.7;" data-i18n="em-benef2-d">Detectar nichos, productos sin atender y necesidades latentes del mercado que la competencia aún no ve.</p>
+                </div>
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-top: 4px solid var(--red); box-shadow: var(--shadow-md);">
+                    <div style="width: 60px; height: 60px; background: rgba(232,75,55,0.10); color: var(--red); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 26px;"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;" data-i18n="em-benef3-t">Conocimiento del cliente</h4>
+                    <p style="color: var(--text); font-size: 14px; line-height: 1.7;" data-i18n="em-benef3-d">Perfil, comportamiento e intenciones de compra del cliente objetivo, para hablar su idioma.</p>
+                </div>
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-top: 4px solid var(--dark); box-shadow: var(--shadow-md);">
+                    <div style="width: 60px; height: 60px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 26px;"><i class="fa-solid fa-chess"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;" data-i18n="em-benef4-t">Ventaja competitiva</h4>
+                    <p style="color: var(--text); font-size: 14px; line-height: 1.7;" data-i18n="em-benef4-d">Análisis profundo de la competencia, sus precios, posicionamiento y debilidades explotables.</p>
+                </div>
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-top: 4px solid var(--red); box-shadow: var(--shadow-md);">
+                    <div style="width: 60px; height: 60px; background: rgba(232,75,55,0.10); color: var(--red); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 26px;"><i class="fa-solid fa-arrows-spin"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;" data-i18n="em-benef5-t">Decisiones validadas</h4>
+                    <p style="color: var(--text); font-size: 14px; line-height: 1.7;" data-i18n="em-benef5-d">Estrategia, precios, distribución y posicionamiento respaldados por datos, no por suposiciones.</p>
+                </div>
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-top: 4px solid var(--dark); box-shadow: var(--shadow-md);">
+                    <div style="width: 60px; height: 60px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 26px;"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;" data-i18n="em-benef6-t">Crecimiento sostenible</h4>
+                    <p style="color: var(--text); font-size: 14px; line-height: 1.7;" data-i18n="em-benef6-d">Planes de expansión, lanzamientos y nuevos mercados con probabilidades de éxito verificadas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodología — Timeline visual -->
+    <section style="background: white; padding: 90px 0;">
+        <div class="container">
+            <div class="section-header" style="text-align:center; margin-bottom: 60px;">
+                <div class="section-badge-center" data-i18n="em-metodo-badge">Metodología</div>
+                <h2 data-i18n="em-metodo-titulo">Nuestro Proceso de Investigación</h2>
+                <div class="divider-center"></div>
+                <p style="color: var(--text); margin-top: 20px; max-width: 700px; margin-left: auto; margin-right: auto;" data-i18n="em-metodo-desc">5 pasos estructurados para obtener insights accionables</p>
+            </div>
+
+            <div style="max-width: 1180px; margin: 0 auto; position: relative;">
+                <!-- Línea de tiempo visual conectora -->
+                <div style="position: absolute; top: 38px; left: 8%; right: 8%; height: 2px; background: linear-gradient(to right, var(--red) 0%, var(--dark) 100%); z-index: 0; opacity: 0.25;"></div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px; position: relative; z-index: 1;">
+                    <div style="background: white; padding: 28px 22px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md); border: 1px solid #f0f0f0;">
+                        <div style="width: 76px; height: 76px; background: var(--red); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px; box-shadow: 0 10px 24px rgba(232,75,55,0.30);"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <div style="color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">Paso 01</div>
+                        <h4 style="color: var(--dark); margin-bottom: 10px; font-size: 16px;" data-i18n="em-paso1-titulo">Selección</h4>
+                        <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-paso1-desc">Definición del producto, servicio o sector a estudiar.</p>
+                    </div>
+                    <div style="background: white; padding: 28px 22px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md); border: 1px solid #f0f0f0;">
+                        <div style="width: 76px; height: 76px; background: var(--dark); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px; box-shadow: 0 10px 24px rgba(26,28,30,0.25);"><i class="fa-solid fa-bullseye"></i></div>
+                        <div style="color: var(--dark); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">Paso 02</div>
+                        <h4 style="color: var(--dark); margin-bottom: 10px; font-size: 16px;" data-i18n="em-paso2-titulo">Objetivos</h4>
+                        <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-paso2-desc">Identificación clara de las metas e hipótesis del estudio.</p>
+                    </div>
+                    <div style="background: white; padding: 28px 22px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md); border: 1px solid #f0f0f0;">
+                        <div style="width: 76px; height: 76px; background: var(--red); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px; box-shadow: 0 10px 24px rgba(232,75,55,0.30);"><i class="fa-solid fa-database"></i></div>
+                        <div style="color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">Paso 03</div>
+                        <h4 style="color: var(--dark); margin-bottom: 10px; font-size: 16px;" data-i18n="em-paso3-titulo">Recolección</h4>
+                        <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-paso3-desc">Datos económicos, sector, competencia, precios y clientes.</p>
+                    </div>
+                    <div style="background: white; padding: 28px 22px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md); border: 1px solid #f0f0f0;">
+                        <div style="width: 76px; height: 76px; background: var(--dark); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px; box-shadow: 0 10px 24px rgba(26,28,30,0.25);"><i class="fa-solid fa-chart-line"></i></div>
+                        <div style="color: var(--dark); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">Paso 04</div>
+                        <h4 style="color: var(--dark); margin-bottom: 10px; font-size: 16px;" data-i18n="em-paso4-titulo">Interpretación</h4>
+                        <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-paso4-desc">Análisis del entorno y análisis DOFA de los hallazgos.</p>
+                    </div>
+                    <div style="background: white; padding: 28px 22px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md); border: 2px solid var(--red); position: relative;">
+                        <div style="width: 76px; height: 76px; background: var(--red); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px; box-shadow: 0 10px 24px rgba(232,75,55,0.40);"><i class="fa-solid fa-file-lines"></i></div>
+                        <div style="color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">Paso 05</div>
+                        <h4 style="color: var(--dark); margin-bottom: 10px; font-size: 16px;" data-i18n="em-paso5-titulo">Reporte</h4>
+                        <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-paso5-desc">Redacción del informe final con conclusiones y recomendaciones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fuentes Section -->
+    <section style="background: var(--light); padding: 90px 0;">
+        <div class="container">
+            <div class="section-header" style="text-align:center; margin-bottom: 50px;">
+                <div class="section-badge-center" data-i18n="em-fuentes-badge">Fuentes de Información</div>
+                <h2 data-i18n="em-fuentes-titulo">5 Fuentes Primarias de Investigación</h2>
+                <div class="divider-center"></div>
+                <p style="color: var(--text); margin-top: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">Cruzamos múltiples fuentes para garantizar la solidez de cada conclusión.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px;">
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-left: 4px solid var(--red); box-shadow: var(--shadow-md);">
+                    <i class="fa-solid fa-globe" style="font-size: 30px; color: var(--red); margin-bottom: 14px;"></i>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;" data-i18n="em-fuente1-titulo">Recursos en Internet</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-fuente1-desc">Información digital verificada con advertencias de credibilidad.</p>
+                </div>
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-left: 4px solid var(--dark); box-shadow: var(--shadow-md);">
+                    <i class="fa-solid fa-calendar-days" style="font-size: 30px; color: var(--dark); margin-bottom: 14px;"></i>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;" data-i18n="em-fuente2-titulo">Ferias y Eventos</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-fuente2-desc">Eventos sectoriales y ferias comerciales especializadas.</p>
+                </div>
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-left: 4px solid var(--red); box-shadow: var(--shadow-md);">
+                    <i class="fa-solid fa-newspaper" style="font-size: 30px; color: var(--red); margin-bottom: 14px;"></i>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;" data-i18n="em-fuente3-titulo">Publicaciones Especializadas</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-fuente3-desc">Revistas y periódicos especializados en cada industria.</p>
+                </div>
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-left: 4px solid var(--dark); box-shadow: var(--shadow-md);">
+                    <i class="fa-solid fa-people-group" style="font-size: 30px; color: var(--dark); margin-bottom: 14px;"></i>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;" data-i18n="em-fuente4-titulo">Asociaciones</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-fuente4-desc">Asociaciones industriales, gremios y agrupaciones del sector.</p>
+                </div>
+                <div style="background: white; padding: 32px 28px; border-radius: var(--radius-lg); border-left: 4px solid var(--red); box-shadow: var(--shadow-md);">
+                    <i class="fa-solid fa-clipboard-question" style="font-size: 30px; color: var(--red); margin-bottom: 14px;"></i>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;" data-i18n="em-fuente5-titulo">Encuestas y Entrevistas</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="em-fuente5-desc">Comprensión del comportamiento del cliente objetivo y sus intenciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-band" style="background-image: url('optimized/shutterstock_117314188.jpg'); padding: 100px 0;">
+        <div class="cta-band-overlay" style="background: rgba(15,17,20,0.82);"></div>
+        <div class="container cta-band-content">
+            <div style="display: inline-block; padding: 6px 16px; background: rgba(232,75,55,0.15); border: 1px solid rgba(232,75,55,0.35); border-radius: 100px; color: #ff8978; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 18px;">Tome la decisión correcta</div>
+            <h2 style="color: white; font-size: 38px; margin-bottom: 18px;" data-i18n="cta-titulo">¿Necesita asesoría técnica especializada?</h2>
+            <p style="color: rgba(255,255,255,0.85); font-size: 17px; max-width: 640px; margin: 0 auto 32px;" data-i18n="cta-desc">Nuestro equipo de expertos está listo para ayudarle a encontrar la solución ideal para su industria — con datos, no con suposiciones.</p>
+            <a href="contacto.html" class="btn-cta-band" data-i18n="cta-btn">Contactar Ahora <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros Logo" class="footer-logo" loading="lazy">
+                    <p data-i18n="footer-desc">Soluciones integrales para el sector productivo y automotriz. Más de 85 años de respaldo industrial en Colombia.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/QuinterosColombia/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/quinteros_sa/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/quinteros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UCI9B12Jei4zk40jR9xewqIg" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-nav">Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="nuestra-compania.html">Nuestra Compañía</a>
+                    <a href="soluciones.html">Soluciones</a>
+                    <a href="aliados.html">Marcas y Aliados</a>
+                    <a href="donde-comprar.html">Dónde Comprar</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-solutions">Soluciones</h4>
+                    <a href="campos-de-experiencia.html">Transmisión de Potencia</a>
+                    <a href="campos-de-experiencia.html">Soluciones Hidráulicas</a>
+                    <a href="campos-de-experiencia.html">Transferencia de Fluidos</a>
+                    <a href="campos-de-experiencia.html">Herramientas Industriales</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-contact">Contacto</h4>
+                    <p><i class="fa-solid fa-location-dot"></i>&nbsp; Cll. 30A #6-22, Bogotá</p>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp; (601) 743 6830</p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp; info@quinteros.co</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Quinteros S.A. Todos los derechos reservados. &nbsp;|&nbsp; Bogotá, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" preserveAspectRatio="xMidYMid meet">
+  <g>
+    <!-- Yellow oval (Prestone brand identity in grayscale) -->
+    <ellipse cx="200" cy="65" rx="180" ry="45" fill="#1a1c1e"/>
+    <text x="200" y="80" font-family="Arial Black, sans-serif" font-weight="900" font-size="54" fill="white" text-anchor="middle" letter-spacing="2">PRESTONE</text>
+  </g>
+</svg>

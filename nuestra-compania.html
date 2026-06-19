@@ -1,0 +1,354 @@
+﻿?<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Compañía | Quinteros S.A.</title>
+    <meta name="description" content="Historia, misión y visión de Quinteros S.A., más de 85 años impulsando la industria colombiana.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <span data-i18n="home-topbar"><i class="fa-solid fa-industry"></i>&nbsp; Más de 85 años de trayectoria industrial en Colombia</span>
+            <div class="topbar-links">
+                <a href="mailto:info@quinteros.co"><i class="fa-solid fa-envelope"></i> info@quinteros.co</a>
+                <a href="tel:+576017436830"><i class="fa-solid fa-phone"></i> (601) 743 6830</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros S.A. Logo">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item" data-i18n="inicio">INICIO</a>
+
+                <!-- NUESTRA COMPAÑÍA dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="nuestra-compania">NUESTRA COMPAÑÍA <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="nuestra-compania.html" data-i18n="sobre-nosotros">SOBRE NOSOTROS</a>
+                        <a href="noticias.html" data-i18n="noticias">NOTICIAS</a>
+                        <a href="multimedia.html" data-i18n="multimedia">MULTIMEDIA</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ HACEMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-hacemos">QUÉ HACEMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="aliados.html" data-i18n="aliados">ALIADOS DE NEGOCIO</a>
+                        <a href="modelo-de-negocio.html" data-i18n="modelo-negocio">MODELO DE NEGOCIO</a>
+                        <a href="estudios-de-mercado.html" data-i18n="estudios-mercado">ESTUDIOS DE MERCADO</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ SOLUCIONAMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-solucionamos">QUÉ SOLUCIONAMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="segmentos-productivos.html" data-i18n="segmentos">SECTORES PRODUCTIVOS</a>
+                        <a href="campos-de-experiencia.html" data-i18n="campos">CAMPOS DE EXPERIENCIA</a>
+                        <a href="aliados.html" data-i18n="marcas">NUESTRAS MARCAS</a>
+                        <a href="soluciones.html" data-i18n="soluciones">NUESTRAS SOLUCIONES</a>
+                    </div>
+                </div>
+
+                <a href="donde-comprar.html" class="nav-item" data-i18n="donde-comprar">DÓNDE COMPRAR</a>
+                <a href="contacto.html" class="nav-item" data-i18n="contactenos">CONTÁCTENOS</a>
+
+                <!-- IDIOMA selector -->
+                <div class="nav-dropdown language-selector">
+                    <button class="nav-item dropdown-toggle"><span data-i18n="idioma">IDIOMA:</span> <span id="currentLang">🇪🇸</span> <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <button class="lang-btn" data-lang="es">🇪🇸 ESPAÑOL</button>
+                        <button class="lang-btn" data-lang="en">🇺🇸 ENGLISH</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="cta-band" style="background-image: url('optimized/bogota-centro.jpg'); padding: 130px 0 100px;">
+        <div class="cta-band-overlay" style="background: rgba(26,28,30,0.85);"></div>
+        <div class="container cta-band-content">
+            <div style="display: inline-block; padding: 6px 16px; background: rgba(232,75,55,0.15); border: 1px solid rgba(232,75,55,0.35); border-radius: 100px; color: #ff8978; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 18px;">Quiénes Somos</div>
+            <h1 style="font-size: 56px; color: white; margin-bottom: 18px; letter-spacing: -1px;">Nuestra Compañía</h1>
+            <p style="font-size: 20px; color: rgba(255,255,255,0.85); max-width: 700px;">Más de 85 años escribiendo la historia industrial de Colombia, con la confianza de las marcas líderes del mundo.</p>
+        </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <section style="background: var(--white); padding: 0; margin-top: -50px; position: relative; z-index: 5;">
+        <div class="container">
+            <div style="background: white; border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(0,0,0,0.10); padding: 40px 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; text-align: center;">
+                <div style="border-right: 1px solid #eee; padding-right: 20px;">
+                    <div style="font-size: 44px; font-weight: 900; color: var(--red); line-height: 1; font-family: 'Montserrat', sans-serif;">+85</div>
+                    <div style="color: var(--text); font-size: 13px; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Años de experiencia</div>
+                </div>
+                <div style="border-right: 1px solid #eee; padding-right: 20px;">
+                    <div style="font-size: 44px; font-weight: 900; color: var(--dark); line-height: 1; font-family: 'Montserrat', sans-serif;">+100</div>
+                    <div style="color: var(--text); font-size: 13px; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Marcas globales</div>
+                </div>
+                <div style="border-right: 1px solid #eee; padding-right: 20px;">
+                    <div style="font-size: 44px; font-weight: 900; color: var(--red); line-height: 1; font-family: 'Montserrat', sans-serif;">+150</div>
+                    <div style="color: var(--text); font-size: 13px; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Distribuidores</div>
+                </div>
+                <div>
+                    <div style="font-size: 44px; font-weight: 900; color: var(--dark); line-height: 1; font-family: 'Montserrat', sans-serif;">32</div>
+                    <div style="color: var(--text); font-size: 13px; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Ciudades</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historia Content with Image -->
+    <section class="historia" style="padding: 100px 0 80px;">
+        <div class="container">
+            <div class="historia-grid" style="grid-template-columns: 1fr 1.05fr; gap: 70px; align-items: center;">
+                <div class="historia-image">
+                    <div style="position: relative;">
+                        <img src="optimized/shutterstock_94392268.jpg" alt="Quinteros — 85 años apoyando la industria pesada colombiana" loading="lazy" style="width: 100%; height: 540px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: 0 24px 60px rgba(0,0,0,0.15);">
+                        <div style="position: absolute; bottom: 24px; left: 24px; background: var(--red); color: white; padding: 14px 22px; border-radius: 10px; font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: 1px; box-shadow: 0 12px 30px rgba(232,75,55,0.35);">
+                            <div style="font-size: 28px; line-height: 1;">1938</div>
+                            <div style="font-size: 11px; opacity: 0.9; margin-top: 4px;">Año de fundación</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="historia-text">
+                    <div class="section-badge">Trayectoria</div>
+                    <h2>Más de 85 años de evolución constante</h2>
+                    <div class="divider-left"></div>
+
+                    <p>Fundada a finales de la década de 1930 en la ciudad de Bogotá por los hermanos Quintero, la compañía comenzó sus operaciones bajo un modelo de agencia tradicional, representando una amplia gama de productos para el mercado nacional e internacional.</p>
+
+                    <p>Con el paso de las décadas y en respuesta a los continuos cambios socioeconómicos del país y del mundo globalizado, Quinteros S.A. evolucionó radicalmente. Pasamos de ser una representación comercial y agencia a convertirnos en referentes de asesoría y consultoría técnica, importadores y distribuidores directos en Colombia.</p>
+
+                    <p>Hoy en día, somos un pilar fundamental para el desarrollo del sector productivo nacional y automotriz pesado, destacándonos por ofrecer soluciones integrales de la más alta calidad y un servicio postventa inigualable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión & Visión Cards -->
+    <section style="background: var(--light); padding: 90px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <div class="section-badge-center">Propósito</div>
+                <h2>Lo que nos mueve</h2>
+                <div class="divider-center"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
+                <!-- Misión Card -->
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                    <div style="height: 200px; background-image: url('optimized/shutterstock_152129339.jpg'); background-size: cover; background-position: center; position: relative;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(232,75,55,0.85) 0%, rgba(201,59,42,0.78) 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-bullseye" style="font-size: 64px; color: rgba(255,255,255,0.95);"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 36px 32px;">
+                        <h3 style="color: var(--dark); margin-bottom: 14px; font-size: 24px;">Nuestra Misión</h3>
+                        <p style="color: var(--text); line-height: 1.8;">Proveer soluciones industriales integrales que garanticen la eficiencia, rentabilidad y continuidad de las operaciones de nuestros clientes, apoyados en tecnología de punta y el respaldo de las mejores marcas a nivel mundial.</p>
+                    </div>
+                </div>
+                <!-- Visión Card -->
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                    <div style="height: 200px; background-image: url('optimized/shutterstock_186766919.jpg'); background-size: cover; background-position: center; position: relative;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,28,30,0.85) 0%, rgba(45,48,51,0.78) 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-binoculars" style="font-size: 64px; color: rgba(255,255,255,0.95);"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 36px 32px;">
+                        <h3 style="color: var(--dark); margin-bottom: 14px; font-size: 24px;">Nuestra Visión</h3>
+                        <p style="color: var(--text); line-height: 1.8;">Consolidarnos como el aliado estratégico más confiable de la industria colombiana, reconocidos por nuestra excelencia técnica, innovación continua y el compromiso con el desarrollo sostenible del país.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores Section -->
+    <section style="background: white; padding: 90px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <div class="section-badge-center">Nuestros Valores</div>
+                <h2>Los pilares de Quinteros</h2>
+                <div class="divider-center"></div>
+                <p style="color: var(--text); max-width: 680px; margin: 22px auto 0;">Cinco principios que guían cada decisión y cada relación que construimos con nuestros clientes y aliados.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+                <div style="background: var(--light); padding: 36px 24px; border-radius: var(--radius-lg); text-align: center; border-top: 4px solid var(--red);">
+                    <div style="width: 72px; height: 72px; background: rgba(232,75,55,0.10); color: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px;"><i class="fa-solid fa-handshake-simple"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">Compromiso</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.7;">Respondemos por cada solución que entregamos, con responsabilidad y transparencia.</p>
+                </div>
+                <div style="background: var(--light); padding: 36px 24px; border-radius: var(--radius-lg); text-align: center; border-top: 4px solid var(--dark);">
+                    <div style="width: 72px; height: 72px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px;"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">Innovación</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.7;">Incorporamos lo mejor del mundo para anticipar las necesidades de la industria colombiana.</p>
+                </div>
+                <div style="background: var(--light); padding: 36px 24px; border-radius: var(--radius-lg); text-align: center; border-top: 4px solid var(--red);">
+                    <div style="width: 72px; height: 72px; background: rgba(232,75,55,0.10); color: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px;"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">Confianza</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.7;">85 años de relaciones consolidadas con nuestros clientes, aliados y distribuidores.</p>
+                </div>
+                <div style="background: var(--light); padding: 36px 24px; border-radius: var(--radius-lg); text-align: center; border-top: 4px solid var(--dark);">
+                    <div style="width: 72px; height: 72px; background: rgba(26,28,30,0.06); color: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px;"><i class="fa-solid fa-medal"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">Excelencia</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.7;">Solo trabajamos con marcas líderes y soluciones de la más alta calidad técnica.</p>
+                </div>
+                <div style="background: var(--light); padding: 36px 24px; border-radius: var(--radius-lg); text-align: center; border-top: 4px solid var(--red);">
+                    <div style="width: 72px; height: 72px; background: rgba(232,75,55,0.10); color: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 28px;"><i class="fa-solid fa-headset"></i></div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">Respaldo</h4>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.7;">Soporte técnico y postventa que asegura la continuidad operativa de nuestros clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Línea de Tiempo -->
+    <section style="background: var(--light); padding: 90px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-badge-center">Línea de Tiempo</div>
+                <h2>Hitos en nuestra historia</h2>
+                <div class="divider-center"></div>
+            </div>
+            <div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px;">
+                <div style="background: white; padding: 30px 24px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md); position: relative;">
+                    <div style="font-size: 32px; font-weight: 900; color: var(--red); font-family: 'Montserrat', sans-serif;">1938</div>
+                    <div style="height: 2px; width: 40px; background: var(--red); margin: 14px auto;"></div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;">Fundación por los hermanos Quintero como agencia comercial tradicional.</p>
+                </div>
+                <div style="background: white; padding: 30px 24px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md);">
+                    <div style="font-size: 32px; font-weight: 900; color: var(--dark); font-family: 'Montserrat', sans-serif;">1960s</div>
+                    <div style="height: 2px; width: 40px; background: var(--dark); margin: 14px auto;"></div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;">Expansión del portafolio y transición hacia la importación directa.</p>
+                </div>
+                <div style="background: white; padding: 30px 24px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md);">
+                    <div style="font-size: 32px; font-weight: 900; color: var(--red); font-family: 'Montserrat', sans-serif;">1990s</div>
+                    <div style="height: 2px; width: 40px; background: var(--red); margin: 14px auto;"></div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;">Consolidación en sector automotriz pesado e industria petrolera.</p>
+                </div>
+                <div style="background: white; padding: 30px 24px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md);">
+                    <div style="font-size: 32px; font-weight: 900; color: var(--dark); font-family: 'Montserrat', sans-serif;">2010s</div>
+                    <div style="height: 2px; width: 40px; background: var(--dark); margin: 14px auto;"></div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;">Nuevas líneas estratégicas: control de fluidos y metrología.</p>
+                </div>
+                <div style="background: white; padding: 30px 24px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md); border: 2px solid var(--red);">
+                    <div style="font-size: 32px; font-weight: 900; color: var(--red); font-family: 'Montserrat', sans-serif;">2025</div>
+                    <div style="height: 2px; width: 40px; background: var(--red); margin: 14px auto;"></div>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;">Líderes con más de 100 marcas representadas a nivel global.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Visual Strip -->
+    <section style="background: white; padding: 90px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <div class="section-badge-center">Donde estamos presentes</div>
+                <h2>Industrias que respaldamos</h2>
+                <div class="divider-center"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                <div style="position: relative; height: 200px; border-radius: var(--radius-lg); overflow: hidden; background-image: url('optimized/shutterstock_94392268.jpg'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%); display: flex; align-items: flex-end; padding: 22px;">
+                        <div><i class="fa-solid fa-mountain" style="color: #ff8978; font-size: 20px; margin-bottom: 6px;"></i><h4 style="color: white; margin: 0;">Minería</h4></div>
+                    </div>
+                </div>
+                <div style="position: relative; height: 200px; border-radius: var(--radius-lg); overflow: hidden; background-image: url('optimized/shutterstock_152129339.jpg'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%); display: flex; align-items: flex-end; padding: 22px;">
+                        <div><i class="fa-solid fa-train" style="color: #ff8978; font-size: 20px; margin-bottom: 6px;"></i><h4 style="color: white; margin: 0;">Ferroviario</h4></div>
+                    </div>
+                </div>
+                <div style="position: relative; height: 200px; border-radius: var(--radius-lg); overflow: hidden; background-image: url('optimized/shutterstock_244260913.jpg'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%); display: flex; align-items: flex-end; padding: 22px;">
+                        <div><i class="fa-solid fa-truck" style="color: #ff8978; font-size: 20px; margin-bottom: 6px;"></i><h4 style="color: white; margin: 0;">Transporte HD</h4></div>
+                    </div>
+                </div>
+                <div style="position: relative; height: 200px; border-radius: var(--radius-lg); overflow: hidden; background-image: url('optimized/shutterstock_186766919.jpg'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%); display: flex; align-items: flex-end; padding: 22px;">
+                        <div><i class="fa-solid fa-oil-well" style="color: #ff8978; font-size: 20px; margin-bottom: 6px;"></i><h4 style="color: white; margin: 0;">Petróleo y Gas</h4></div>
+                    </div>
+                </div>
+                <div style="position: relative; height: 200px; border-radius: var(--radius-lg); overflow: hidden; background-image: url('optimized/shutterstock_205982155.jpg'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%); display: flex; align-items: flex-end; padding: 22px;">
+                        <div><i class="fa-solid fa-wheat-awn" style="color: #ff8978; font-size: 20px; margin-bottom: 6px;"></i><h4 style="color: white; margin: 0;">Agro</h4></div>
+                    </div>
+                </div>
+                <div style="position: relative; height: 200px; border-radius: var(--radius-lg); overflow: hidden; background-image: url('optimized/shutterstock_215331367.jpg'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%); display: flex; align-items: flex-end; padding: 22px;">
+                        <div><i class="fa-solid fa-helmet-safety" style="color: #ff8978; font-size: 20px; margin-bottom: 6px;"></i><h4 style="color: white; margin: 0;">Construcción</h4></div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="segmentos-productivos.html" style="display: inline-flex; align-items: center; gap: 10px; color: var(--red); font-weight: 700; text-decoration: none; font-size: 14px;">Ver todos los SECTORES PRODUCTIVOS <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-band" style="background-image: url('optimized/shutterstock_117314188.jpg'); padding: 100px 0;">
+        <div class="cta-band-overlay" style="background: rgba(15,17,20,0.82);"></div>
+        <div class="container cta-band-content">
+            <div style="display: inline-block; padding: 6px 16px; background: rgba(232,75,55,0.15); border: 1px solid rgba(232,75,55,0.35); border-radius: 100px; color: #ff8978; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 18px;">Trabajemos juntos</div>
+            <h2 style="color: white; font-size: 38px; margin-bottom: 18px;">¿Listo para llevar tu operación al siguiente nivel?</h2>
+            <p style="color: rgba(255,255,255,0.85); font-size: 17px; max-width: 620px; margin: 0 auto 32px;">Nuestro equipo técnico te acompaña desde el diagnóstico hasta el soporte postventa, con el respaldo de las marcas líderes del mundo.</p>
+            <a href="contacto.html" class="btn-cta-band">Contactar a un asesor <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros Logo" class="footer-logo">
+                    <p>Soluciones integrales para el sector productivo y automotriz. Más de 85 años de respaldo industrial en Colombia.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="nuestra-compania.html">Nuestra Compañía</a>
+                    <a href="soluciones.html">Soluciones</a>
+                    <a href="aliados.html">Marcas y Aliados</a>
+                    <a href="donde-comprar.html">Dónde Comprar</a>
+                    <a href="noticias.html">Noticias</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p><i class="fa-solid fa-location-dot"></i>&nbsp; Cll. 30A #6-22, Bogotá</p>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp; (601) 743 6830</p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp; info@quinteros.co</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Quinteros S.A. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

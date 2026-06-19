@@ -1,0 +1,380 @@
+﻿?<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcas y Aliados | Quinteros S.A.</title>
+    <meta name="description" content="Conoce las +20 marcas internacionales de clase mundial que Quinteros representa en Colombia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <span data-i18n="home-topbar"><i class="fa-solid fa-industry"></i>&nbsp; Más de 85 años de trayectoria industrial en Colombia</span>
+            <div class="topbar-links">
+                <a href="mailto:info@quinteros.co"><i class="fa-solid fa-envelope"></i> info@quinteros.co</a>
+                <a href="tel:+576017436830"><i class="fa-solid fa-phone"></i> (601) 743 6830</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros S.A. Logo" loading="lazy">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item" data-i18n="inicio">INICIO</a>
+
+                <!-- NUESTRA COMPAÑÍA dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="nuestra-compania">NUESTRA COMPAÑÍA <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="nuestra-compania.html" data-i18n="sobre-nosotros">SOBRE NOSOTROS</a>
+                        <a href="noticias.html" data-i18n="noticias">NOTICIAS</a>
+                        <a href="multimedia.html" data-i18n="multimedia">MULTIMEDIA</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ HACEMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-hacemos">QUÉ HACEMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="aliados.html" data-i18n="aliados">ALIADOS DE NEGOCIO</a>
+                        <a href="modelo-de-negocio.html" data-i18n="modelo-negocio">MODELO DE NEGOCIO</a>
+                        <a href="estudios-de-mercado.html" data-i18n="estudios-mercado">ESTUDIOS DE MERCADO</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ SOLUCIONAMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-solucionamos">QUÉ SOLUCIONAMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="segmentos-productivos.html" data-i18n="segmentos">SECTORES PRODUCTIVOS</a>
+                        <a href="campos-de-experiencia.html" data-i18n="campos">CAMPOS DE EXPERIENCIA</a>
+                        <a href="aliados.html" data-i18n="marcas">NUESTRAS MARCAS</a>
+                        <a href="soluciones.html" data-i18n="soluciones">NUESTRAS SOLUCIONES</a>
+                    </div>
+                </div>
+
+                <a href="donde-comprar.html" class="nav-item" data-i18n="donde-comprar">DÓNDE COMPRAR</a>
+                <a href="contacto.html" class="nav-item" data-i18n="contactenos">CONTÁCTENOS</a>
+
+                <!-- IDIOMA selector -->
+                <div class="nav-dropdown language-selector">
+                    <button class="nav-item dropdown-toggle"><span data-i18n="idioma">IDIOMA:</span> <span id="currentLang">🇪🇸</span> <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <button class="lang-btn" data-lang="es">🇪🇸 ESPAÑOL</button>
+                        <button class="lang-btn" data-lang="en">🇺🇸 ENGLISH</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_115685029.jpg'); padding: 120px 0;">
+        <div class="cta-band-overlay" style="background: rgba(26,28,30,0.85);"></div>
+        <div class="container cta-band-content">
+            <h1 style="font-size: 48px; color: white; margin-bottom: 15px;" data-i18n="aliados-titulo">Nuestros Aliados</h1>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.9); max-width: 600px;" data-i18n="aliados-subtitulo">Representamos +20 marcas internacionales de clase mundial</p>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <section class="contact-section" style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge-center" data-i18n="aliados-badge">Aliados Internacionales</div>
+                <h2 data-i18n="aliados-marcas-titulo">Marcas que Representamos</h2>
+                <div class="divider-center"></div>
+                <p data-i18n="aliados-descripcion">Quinteros representa las más importantes marcas mundiales en sus categorías. Aliados comprometidos con la excelencia, innovación y calidad.</p>
+            </div>
+
+            <!-- Brands Grid - 19 Marcas Oficiales de Quinteros -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin: 60px 0;">
+
+                <!-- Brand 1: Amsted Rail -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/amsted-rail.png" alt="Amsted Rail" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-amsted-rail.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-amsted-rail">Amsted Rail</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-amsted-rail">Componentes ferroviarios especializados.</p>
+                    <a href="https://www.amstedrail.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 2: Creanza -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/creanza.png" alt="Creanza" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-creanza.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-creanza">Creanza Tiles</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-creanza">Porcelanato vitrificado premium de India (GVT/PGVT).</p>
+                    <a href="https://creanza.in" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 3: Dönmez -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/donmez.png" alt="Donmez" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-donmez.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-donmez">Dönmez</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-donmez">Embragues para vehículos comerciales pesados.</p>
+                    <a href="https://www.donmezdebriyaj.com.tr" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 4: F.S.S. -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/fss.png" alt="F.S.S." loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-fss.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-fss">F.S.S.</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-fss">Sistemas de freno neumático y embrague para vehículos pesados.</p>
+                    <a href="https://www.fss-frensistemleri.com.tr" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 5: Gates -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/gates.jpg" alt="Gates" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-gates.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-gates">Gates</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-gates">Transmisión de potencia y correas.</p>
+                    <a href="https://www.gates.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 6: Gedore -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/gedore.png" alt="Gedore" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-gedore.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-gedore">Gedore</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-gedore">Herramientas profesionales de precisión.</p>
+                    <a href="https://www.gedore.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 7: Hose Solutions -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/hose-solutions.jpg" alt="Hose Solutions" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-hose-solutions.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-hose">Hose Solutions</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-hose">Mangueras industriales de fluidos.</p>
+                    <a href="https://www.hosesolutions.com.au" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 8: Kettenwulf -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/kettenwulf.jpg" alt="Kettenwulf" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-kettenwulf.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-kettenwulf">Kettenwulf</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-kettenwulf">Cadenas de transporte y piñones industriales.</p>
+                    <a href="https://www.kettenwulf.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 9: Kit Masters -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/kit-masters.png" alt="Kit Masters" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-kit-masters.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-kit-masters">Kit Masters</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-kit-masters">Fan clutches y sistemas de enfriamiento HD.</p>
+                    <a href="https://www.kitmastersinc.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 10: Miner -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/miner.jpg" alt="Miner" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-miner.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-miner">Miner</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-miner">Productos elastoméricos TecsPak® para absorción de impacto.</p>
+                    <a href="https://www.minerelastomer.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 11: MWE -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/mwe.png" alt="MWE" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-mwe.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-mwe">MWE</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-mwe">Volantes y placas de presión de embrague.</p>
+                    <a href="https://www.mvsflywheel.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 12: Prestone -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/prestone.png" alt="Prestone" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-prestone.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-prestone">Prestone</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-prestone">Refrigerantes y fluidos automotrices.</p>
+                    <a href="https://www.prestone.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 13: Ramsey Products -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/ramsey-products.png" alt="Ramsey Products" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-ramsey-products.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-ramsey">Ramsey Products</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-ramsey">Cadenas silenciosas de transmisión de potencia.</p>
+                    <a href="https://www.ramseychain.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 14: Reliable -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/reliable.png" alt="Reliable" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-reliable.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-reliable">Reliable</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-reliable">Kits de reparación para calipers de freno (TTT).</p>
+                    <a href="#" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 15: Spectroline -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/spectroline.png" alt="Spectroline" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-spectroline.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-spectroline">Spectroline</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-spectroline">Detección de fugas por fluorescencia UV.</p>
+                    <a href="https://www.spectroline.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 16: Starrett -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/starrett.png" alt="Starrett" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-starrett.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-starrett">Starrett</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-starrett">Herramientas de medición y metrología.</p>
+                    <a href="https://www.starrett.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 17: Stemco -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/stemco.jpg" alt="Stemco" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-stemco.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-stemco">Stemco</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-stemco">Soluciones para punta de rueda.</p>
+                    <a href="https://www.stemco.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 18: Tuder Technica -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/tuder-technica.jpg" alt="Tuder Technica" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-tudertechnica.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-tuder">Tuder Technica</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-tuder">Mangueras industriales para alimentos, farmacéutica y química.</p>
+                    <a href="https://www.tudertechnica.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 19: ZEC -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/zec.png" alt="ZEC" loading="lazy" style="max-width: 160px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-zec.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-zec">ZEC</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-zec">Mangueras y tubos termoplásticos italianos.</p>
+                    <a href="https://www.zec.it" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+                <!-- Brand 20: Walker Products -->
+                <div class="brand-card sol-card" style="background: white; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: var(--shadow-md); transition: var(--transition);">
+                    <div style="height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; padding: 8px;">
+                        <img src="logos/walker-products.png" alt="Walker Products" loading="lazy" style="max-width: 180px; max-height: 90px; width: auto; height: auto; object-fit: contain;">
+                    </div>
+                    <a href="marca-walker-products.html" style="text-decoration: none; color: var(--dark); display: inline-block; transition: color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark)'"><h3 style="margin-bottom: 10px; font-size: 18px; color: inherit;" data-i18n="marca-walker">Walker Products</h3></a>
+                    <p style="color: var(--text); font-size: 13px; line-height: 1.6;" data-i18n="desc-walker">Engine management: sensores, inyección y encendido para automotriz y vehículos comerciales.</p>
+                    <a href="https://www.walkerproducts.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--red); font-weight: 600; font-size: 12px; text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='4px'" onmouseout="this.style.gap='6px'"><i class="fa-solid fa-globe"></i> <span data-i18n="visitar-sitio">Visitar sitio oficial</span> <i class="fa-solid fa-arrow-right" style="font-size: 10px;"></i></a>
+                </div>
+
+            </div>
+
+            <!-- Additional Info -->
+            <div style="background: rgba(232, 75, 55, 0.05); padding: 40px; border-radius: var(--radius-lg); margin-top: 60px; border-left: 4px solid var(--red);">
+                <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 20px;">¿Buscas una marca específica?</h3>
+                <p style="color: var(--text); margin-bottom: 20px;">Representamos más de 20 marcas internacionales. Si no encuentras la que buscas, contactanos directamente.</p>
+                <a href="contacto.html" class="btn-primary" style="padding: 12px 28px; display: inline-block;">Solicitar Información</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_141409537.jpg');">
+        <div class="cta-band-overlay"></div>
+        <div class="container cta-band-content">
+            <h2>¿Necesitas asesoría sobre nuestras marcas?</h2>
+            <p>Nuestro equipo de expertos está disponible para ayudarte.</p>
+            <a href="contacto.html" class="btn-cta-band">Contactar Ahora <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros Logo" class="footer-logo" loading="lazy">
+                    <p>Soluciones integrales para el sector productivo y automotriz. Más de 85 años de respaldo industrial en Colombia.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/QuinterosColombia/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/quinteros_sa/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/quinteros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UCI9B12Jei4zk40jR9xewqIg" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="nuestra-compania.html">Nuestra Compañía</a>
+                    <a href="soluciones.html">Soluciones</a>
+                    <a href="aliados.html">Marcas y Aliados</a>
+                    <a href="donde-comprar.html">Dónde Comprar</a>
+                    <a href="noticias.html">Noticias</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Soluciones</h4>
+                    <a href="soluciones.html#transmision">Transmisión de Potencia</a>
+                    <a href="soluciones.html#hidraulica">Soluciones Hidráulicas</a>
+                    <a href="soluciones.html#fluidos">Transporte de Fluidos</a>
+                    <a href="soluciones.html#herramientas">Herramientas Industriales</a>
+                    <a href="soluciones.html#rueda">Soluciones de Rueda</a>
+                    <a href="soluciones.html#motor">Partes de Motor</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p><i class="fa-solid fa-location-dot"></i>&nbsp; Cll. 30A #6-22, Bogotá</p>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp; (601) 743 6830</p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp; info@quinteros.co</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Quinteros S.A. Todos los derechos reservados. &nbsp;|&nbsp; Bogotá, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

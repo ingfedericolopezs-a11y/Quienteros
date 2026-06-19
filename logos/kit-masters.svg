@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" preserveAspectRatio="xMidYMid meet">
+  <g fill="#1a1c1e">
+    <!-- Fan/cooling icon -->
+    <circle cx="60" cy="65" r="32" fill="none" stroke="#1a1c1e" stroke-width="3"/>
+    <path d="M60 35 Q72 50 60 65 Q48 50 60 35" />
+    <path d="M85 65 Q70 77 60 65 Q70 53 85 65" />
+    <path d="M60 95 Q48 80 60 65 Q72 80 60 95" />
+    <path d="M35 65 Q50 53 60 65 Q50 77 35 65" />
+    <circle cx="60" cy="65" r="5" fill="white"/>
+    <!-- Text -->
+    <text x="105" y="60" font-family="Arial Black, sans-serif" font-weight="900" font-size="30" letter-spacing="-1">KIT</text>
+    <text x="105" y="95" font-family="Arial, sans-serif" font-weight="700" font-size="24" letter-spacing="2">MASTERS</text>
+  </g>
+</svg>

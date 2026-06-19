@@ -1,0 +1,452 @@
+﻿?<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinteros S.A. | Inicio</title>
+    <meta name="description" content="Quinteros S.A. - Más de 85 años de trayectoria industrial en Colombia. Expertos en transmisión de potencia, soluciones hidráulicas, transporte de fluidos y herramientas industriales.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="optimized/shutterstock_152129339.jpg" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <span data-i18n="home-topbar"><i class="fa-solid fa-industry"></i>&nbsp; Más de 85 años de trayectoria industrial en Colombia</span>
+            <div class="topbar-links">
+                <a href="mailto:info@quinteros.co"><i class="fa-solid fa-envelope"></i> info@quinteros.co</a>
+                <a href="tel:+576017436830"><i class="fa-solid fa-phone"></i> (601) 743 6830</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros S.A. Logo">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item" data-i18n="inicio">INICIO</a>
+
+                <!-- NUESTRA COMPAÑÍA dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="nuestra-compania">NUESTRA COMPAÑÍA <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="nuestra-compania.html" data-i18n="sobre-nosotros">SOBRE NOSOTROS</a>
+                        <a href="noticias.html" data-i18n="noticias">NOTICIAS</a>
+                        <a href="multimedia.html" data-i18n="multimedia">MULTIMEDIA</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ HACEMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-hacemos">QUÉ HACEMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="aliados.html" data-i18n="aliados">ALIADOS DE NEGOCIO</a>
+                        <a href="modelo-de-negocio.html" data-i18n="modelo-negocio">MODELO DE NEGOCIO</a>
+                        <a href="estudios-de-mercado.html" data-i18n="estudios-mercado">ESTUDIOS DE MERCADO</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ SOLUCIONAMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-solucionamos">QUÉ SOLUCIONAMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="segmentos-productivos.html" data-i18n="segmentos">SECTORES PRODUCTIVOS</a>
+                        <a href="campos-de-experiencia.html" data-i18n="campos">CAMPOS DE EXPERIENCIA</a>
+                        <a href="aliados.html" data-i18n="marcas">NUESTRAS MARCAS</a>
+                        <a href="soluciones.html" data-i18n="soluciones">NUESTRAS SOLUCIONES</a>
+                    </div>
+                </div>
+
+                <a href="donde-comprar.html" class="nav-item" data-i18n="donde-comprar">DÓNDE COMPRAR</a>
+                <a href="contacto.html" class="nav-item" data-i18n="contactenos">CONTÁCTENOS</a>
+
+                <!-- IDIOMA selector -->
+                <div class="nav-dropdown language-selector">
+                    <button class="nav-item dropdown-toggle"><span data-i18n="idioma">IDIOMA:</span> <span id="currentLang">🇪🇸</span> <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <button class="lang-btn" data-lang="es">🇪🇸 ESPAÑOL</button>
+                        <button class="lang-btn" data-lang="en">🇺🇸 ENGLISH</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===================== HERO SLIDER ===================== -->
+    <section id="inicio" class="hero-slider">
+        <div class="slider-wrapper" id="heroSlider">
+
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: url('optimized/shutterstock_152129339.jpg'); background-size: cover; background-position: center;">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1 data-i18n-html="slide1-h1">Impulsando la Industria<br>Colombiana por más de<br><span class="highlight-text">85 Años</span></h1>
+                    <p data-i18n="slide1-p">Representamos las mejores marcas mundiales en componentes y sistemas industriales para el sector productivo y automotriz.</p>
+                    <div class="slide-ctas">
+                        <a href="soluciones.html" class="btn-hero-primary" data-i18n="slide1-btn1">Nuestras Soluciones</a>
+                        <a href="contacto.html" class="btn-hero-secondary" data-i18n="slide1-btn2">Solicitar Cotización</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('optimized/shutterstock_94392268.jpg'); background-position: center;">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge" data-i18n="slide2-badge">Industria Pesada y Procesos Críticos</div>
+                    <h1 data-i18n-html="slide2-h1">Soluciones para la<br>Alta Industria y<br><span class="highlight-text">Maquinaria Pesada</span></h1>
+                    <p data-i18n="slide2-p">Componentes de alta precisión para procesos industriales de alto rendimiento, equipos pesados y maquinaria especializada del sector productivo.</p>
+                    <div class="slide-ctas">
+                        <a href="soluciones.html" class="btn-hero-primary" data-i18n="slide2-btn1">Ver Soluciones</a>
+                        <a href="nuestra-compania.html" class="btn-hero-secondary" data-i18n="slide2-btn2">Nuestra Historia</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: url('optimized/shutterstock_108306956.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge" data-i18n="slide3-badge">Transmisión de Potencia</div>
+                    <h1 data-i18n-html="slide3-h1">Precisión y Fuerza en<br>cada Componente<br><span class="highlight-text">Industrial</span></h1>
+                    <p data-i18n="slide3-p">Rodamientos, cardanes, correas y sistemas completos de transmisión para garantizar el máximo rendimiento de su maquinaria.</p>
+                    <div class="slide-ctas">
+                        <a href="aliados.html" class="btn-hero-primary" data-i18n="slide3-btn1">Marcas que Representamos</a>
+                        <a href="contacto.html" class="btn-hero-secondary" data-i18n="slide3-btn2">Contactar Asesor</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="hero-slide" style="background-image: url('optimized/shutterstock_244260913.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge" data-i18n="slide4-badge">Sector Automotriz Pesado</div>
+                    <h1 data-i18n-html="slide4-h1">Respaldo Técnico<br>Especializado para su<br><span class="highlight-text">Operación</span></h1>
+                    <p data-i18n="slide4-p">Asesoría técnica y soluciones integrales para el sector automotriz pesado y la industria nacional.</p>
+                    <div class="slide-ctas">
+                        <a href="contacto.html" class="btn-hero-primary" data-i18n="slide4-btn1">Hablar con un Experto</a>
+                        <a href="soluciones.html" class="btn-hero-secondary" data-i18n="slide4-btn2">Explorar Catálogo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="hero-slide" style="background-image: url('optimized/manguera-hidraulica-close.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge" data-i18n="slide5-badge">Mangueras y Conducción de Fluidos</div>
+                    <h1 data-i18n-html="slide5-h1">Mangueras Industriales<br>y Sistemas de<br><span class="highlight-text">Acoplamiento</span></h1>
+                    <p data-i18n="slide5-p">Mangueras industriales, hidráulicas y acoples especializados para el manejo seguro y eficiente de fluidos en procesos críticos.</p>
+                    <div class="slide-ctas">
+                        <a href="campos-de-experiencia.html#campo3" class="btn-hero-primary" data-i18n="slide5-btn1">Ver Línea</a>
+                        <a href="contacto.html" class="btn-hero-secondary" data-i18n="slide5-btn2">Solicitar Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6 — Línea de Herramientas y Metrología -->
+            <div class="hero-slide" style="background-image: url('optimized/herramientas-pro.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge" data-i18n="slide6-badge">Línea de Herramientas y Metrología</div>
+                    <h1 data-i18n-html="slide6-h1">Precisión Profesional<br>en cada Medición y<br><span class="highlight-text">Ensamble</span></h1>
+                    <p data-i18n="slide6-p">Herramientas manuales profesionales, instrumentos de medición de alta precisión y soluciones de metrología para taller industrial, mantenimiento y control de calidad.</p>
+                    <div class="slide-ctas">
+                        <a href="campos-de-experiencia.html#campo6" class="btn-hero-primary" data-i18n="slide6-btn1">Ver Línea</a>
+                        <a href="contacto.html" class="btn-hero-secondary" data-i18n="slide6-btn2">Contactar Asesor</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7 — Línea Arquitectura y Construcción -->
+            <div class="hero-slide" style="background-image: url('optimized/creanza-bath.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="slide-badge" data-i18n="slide7-badge">Línea de Arquitectura y Construcción</div>
+                    <h1 data-i18n-html="slide7-h1">Porcelanato y Grifería<br>Premium para tus<br><span class="highlight-text">Espacios</span></h1>
+                    <p data-i18n="slide7-p">Porcelanato vitrificado de gran formato y grifería de alta gama. Soluciones integrales para baños, cocinas y proyectos arquitectónicos residenciales, comerciales e institucionales.</p>
+                    <div class="slide-ctas">
+                        <a href="contacto.html" class="btn-hero-primary" data-i18n="slide7-btn1">Solicitar Información</a>
+                        <a href="contacto.html" class="btn-hero-secondary" data-i18n="slide7-btn2">Consultar Disponibilidad</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn slider-next" id="sliderNext" aria-label="Siguiente">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Dots -->
+        <div class="slider-dots" id="sliderDots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+            <button class="dot" data-index="3"></button>
+            <button class="dot" data-index="4"></button>
+            <button class="dot" data-index="5"></button>
+            <button class="dot" data-index="6"></button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="slider-progress"><div class="slider-progress-bar" id="progressBar"></div></div>
+    </section>
+
+    <!-- ===================== STATS BAR ===================== -->
+    <div class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <span class="stat-num">+85</span>
+                <span class="stat-label" data-i18n="stat-anos">Años de Experiencia</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">+100</span>
+                <span class="stat-label" data-i18n="stat-marcas">Marcas Representadas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">4</span>
+                <span class="stat-label" data-i18n="stat-lineas">Líneas de Producto</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">Colombia</span>
+                <span class="stat-label" data-i18n="stat-cobertura">Cobertura Nacional</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== COMPAÑÍA (RESUMEN) ===================== -->
+    <section class="historia">
+        <div class="container">
+            <div class="historia-grid">
+                <div class="historia-image">
+                    <div class="image-wrapper">
+                        <img src="optimized/shutterstock_122021911.jpg" alt="Historia de Quinteros - 85 años de ingeniería industrial" loading="lazy">
+                        <div class="image-badge-overlay">
+                            <span class="year-badge">Desde 1930</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="historia-text">
+                    <div class="section-badge">Quinteros S.A.</div>
+                    <h2 data-i18n="historia-titulo">Más de 85 años impulsando la industria colombiana</h2>
+                    <div class="divider-left"></div>
+                    <p data-i18n="historia-desc1">Fundada a finales de la década de 1930 en Bogotá, comenzamos nuestras operaciones bajo un modelo de agencia tradicional. Hoy somos referentes indiscutibles en consultoría y asesoría técnica para la alta industria y el sector automotriz pesado.</p>
+                    <p data-i18n="historia-desc2">Contamos con un portafolio de más de 100 marcas mundiales líderes y un equipo humano altamente especializado.</p>
+
+                    <a href="nuestra-compania.html" class="btn-primary" style="margin-top: 15px;" data-i18n="conoce-historia">Conoce Nuestra Historia <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SOLUCIONES (RESUMEN) ===================== -->
+    <section class="solutions">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge-center">Lo que hacemos</div>
+                <h2 data-i18n="soluciones-titulo">Nuestras Soluciones</h2>
+                <div class="divider-center"></div>
+                <p data-i18n="soluciones-desc">Ofrecemos altos estándares de innovación, servicio y respaldo para optimizar sus procesos productivos.</p>
+            </div>
+            <div class="solutions-grid">
+
+                <div class="sol-card" id="sol-1">
+                    <div class="sol-image-wrap">
+                        <img src="optimized/shutterstock_108306956.jpg" alt="Transmisión de Potencia - Rodamientos y Engranajes" loading="lazy">
+                        <div class="sol-image-overlay">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                    </div>
+                    <div class="sol-body">
+                        <h3 data-i18n="sol-transmision">Transmisión de Potencia</h3>
+                        <p data-i18n="sol-transmision-desc">Cardanes, rodamientos, correas y componentes para la eficiencia de la fuerza en su maquinaria.</p>
+                        <a href="soluciones.html" class="sol-link" data-i18n="sol-consultar">Consultar <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="sol-card" id="sol-2">
+                    <div class="sol-image-wrap">
+                        <img src="optimized/shutterstock_115685029.jpg" alt="Soluciones Hidráulicas - Sistemas de Alta Presión" loading="lazy">
+                        <div class="sol-image-overlay">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                    </div>
+                    <div class="sol-body">
+                        <h3 data-i18n="sol-hidraulica">Soluciones Hidráulicas</h3>
+                        <p data-i18n="sol-hidraulica-desc">Tecnología avanzada en sistemas de presión hidráulica y neumática industrial.</p>
+                        <a href="soluciones.html" class="sol-link" data-i18n="sol-consultar">Consultar <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="sol-card" id="sol-3">
+                    <div class="sol-image-wrap">
+                        <img src="optimized/shutterstock_134184635.jpg" alt="Transporte de Fluidos" loading="lazy">
+                        <div class="sol-image-overlay">
+                            <i class="fa-solid fa-faucet-drip"></i>
+                        </div>
+                    </div>
+                    <div class="sol-body">
+                        <h3 data-i18n="sol-fluidos">Transporte de Fluidos</h3>
+                        <p data-i18n="sol-fluidos-desc">Mangueras y sistemas completos para el manejo seguro de recursos líquidos y gaseosos.</p>
+                        <a href="soluciones.html" class="sol-link" data-i18n="sol-consultar">Consultar <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="sol-card" id="sol-4">
+                    <div class="sol-image-wrap">
+                        <img src="optimized/shutterstock_157270661.jpg" alt="Herramientas Industriales - Metrología de Precisión" loading="lazy">
+                        <div class="sol-image-overlay">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                        </div>
+                    </div>
+                    <div class="sol-body">
+                        <h3 data-i18n="sol-herramientas">Herramientas Industriales</h3>
+                        <p data-i18n="sol-herramientas-desc">Equipos de corte y metrología de la más alta precisión para garantizar acabados exactos.</p>
+                        <a href="soluciones.html" class="sol-link" data-i18n="sol-consultar">Consultar <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="soluciones.html" class="btn-hero-secondary" style="border-color: var(--red); color: var(--red);" data-i18n="ver-catalogo">Ver Catálogo Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== MARCAS (RESUMEN) ===================== -->
+    <section class="marcas">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge-center" data-i18n="aliados-clase-mundial">Aliados de Clase Mundial</div>
+                <h2 data-i18n="representamos-mejores-marcas">Representamos las Mejores Marcas</h2>
+                <div class="divider-center"></div>
+                <p data-i18n="desc-aliados">Trabajamos solo con los mejores aliados de negocio para asegurar calidad superior.</p>
+            </div>
+
+        <div class="brand-track-wrap">
+            <div class="brand-track track-ltr" id="brandTrack1">
+                <div class="brand-slide"><a href="marca-amsted-rail.html" title="Amsted Rail" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/amsted-rail.png" alt="Amsted Rail" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-creanza.html" title="Creanza" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/creanza.png" alt="Creanza" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-donmez.html" title="Donmez" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/donmez.png" alt="Donmez" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-fss.html" title="F.S.S." style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/fss.png" alt="F.S.S." loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-gates.html" title="Gates" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/gates.jpg" alt="Gates" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-gedore.html" title="Gedore" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/gedore.png" alt="Gedore" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-hose-solutions.html" title="Hose Solutions" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/hose-solutions.jpg" alt="Hose Solutions" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-kettenwulf.html" title="Kettenwulf" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/kettenwulf.jpg" alt="Kettenwulf" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-kit-masters.html" title="Kit Masters" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/kit-masters.png" alt="Kit Masters" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-miner.html" title="Miner" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/miner.jpg" alt="Miner" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-mwe.html" title="MWE" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/mwe.png" alt="MWE" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-prestone.html" title="Prestone" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/prestone.png" alt="Prestone" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-ramsey-products.html" title="Ramsey" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/ramsey-products.png" alt="Ramsey" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-reliable.html" title="Reliable" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/reliable.png" alt="Reliable" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-spectroline.html" title="Spectroline" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/spectroline.png" alt="Spectroline" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-starrett.html" title="Starrett" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/starrett.png" alt="Starrett" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-stemco.html" title="Stemco" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/stemco.jpg" alt="Stemco" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-tudertechnica.html" title="Tuder Technica" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/tuder-technica.jpg" alt="Tuder Technica" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-zec.html" title="ZEC" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/zec.png" alt="ZEC" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-walker-products.html" title="Walker Products" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/walker-products.png" alt="Walker Products" loading="lazy" style="max-width: 150px; max-height: 55px; object-fit: contain;"></a></div>
+                <!-- Duplicado completo para loop continuo del carrusel -->
+                <div class="brand-slide"><a href="marca-amsted-rail.html" title="Amsted Rail" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/amsted-rail.png" alt="Amsted Rail" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-creanza.html" title="Creanza" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/creanza.png" alt="Creanza" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-donmez.html" title="Donmez" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/donmez.png" alt="Donmez" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-fss.html" title="F.S.S." style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/fss.png" alt="F.S.S." loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-gates.html" title="Gates" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/gates.jpg" alt="Gates" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-gedore.html" title="Gedore" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/gedore.png" alt="Gedore" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-hose-solutions.html" title="Hose Solutions" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/hose-solutions.jpg" alt="Hose Solutions" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-kettenwulf.html" title="Kettenwulf" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/kettenwulf.jpg" alt="Kettenwulf" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-kit-masters.html" title="Kit Masters" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/kit-masters.png" alt="Kit Masters" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-miner.html" title="Miner" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/miner.jpg" alt="Miner" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-mwe.html" title="MWE" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/mwe.png" alt="MWE" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-prestone.html" title="Prestone" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/prestone.png" alt="Prestone" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-ramsey-products.html" title="Ramsey" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/ramsey-products.png" alt="Ramsey" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-reliable.html" title="Reliable" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/reliable.png" alt="Reliable" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-spectroline.html" title="Spectroline" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/spectroline.png" alt="Spectroline" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-starrett.html" title="Starrett" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/starrett.png" alt="Starrett" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-stemco.html" title="Stemco" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/stemco.jpg" alt="Stemco" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-tudertechnica.html" title="Tuder Technica" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/tuder-technica.jpg" alt="Tuder Technica" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-zec.html" title="ZEC" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/zec.png" alt="ZEC" loading="lazy" style="max-width: 130px; max-height: 55px; object-fit: contain;"></a></div>
+                <div class="brand-slide"><a href="marca-walker-products.html" title="Walker Products" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;"><img src="logos/walker-products.png" alt="Walker Products" loading="lazy" style="max-width: 150px; max-height: 55px; object-fit: contain;"></a></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="aliados.html" class="btn-primary" data-i18n="conoce-aliados">Conoce a todos nuestros Aliados</a>
+        </div>
+    </section>
+
+    <!-- ===================== CTA BAND ===================== -->
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_186766919.jpg')">
+        <div class="cta-band-overlay"></div>
+        <div class="container cta-band-content">
+            <h2 data-i18n="cta-titulo">¿Necesita asesoría técnica especializada?</h2>
+            <p data-i18n="cta-desc">Nuestro equipo de expertos está listo para ayudarle a encontrar la solución ideal para su industria.</p>
+            <a href="contacto.html" class="btn-cta-band" data-i18n="cta-btn">Contactar Ahora <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros Logo" class="footer-logo" loading="lazy">
+                    <p data-i18n="footer-desc">Soluciones integrales para el sector productivo y automotriz. Más de 85 años de respaldo industrial en Colombia.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/QuinterosColombia/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/quinteros_sa/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/quinteros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UCI9B12Jei4zk40jR9xewqIg" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-nav">Navegación</h4>
+                    <a href="index.html" data-i18n="inicio">Inicio</a>
+                    <a href="nuestra-compania.html" data-i18n="nuestra-compania">Nuestra Compañía</a>
+                    <a href="soluciones.html" data-i18n="soluciones">Soluciones</a>
+                    <a href="aliados.html" data-i18n="marcas">Marcas y Aliados</a>
+                    <a href="contacto.html" data-i18n="contactenos">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-solutions">Soluciones</h4>
+                    <a href="soluciones.html" data-i18n="sol-transmision">Transmisión de Potencia</a>
+                    <a href="soluciones.html" data-i18n="sol-hidraulica">Soluciones Hidráulicas</a>
+                    <a href="soluciones.html" data-i18n="sol-fluidos">Transporte de Fluidos</a>
+                    <a href="soluciones.html" data-i18n="sol-herramientas">Herramientas Industriales</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-contact">Contacto</h4>
+                    <p><i class="fa-solid fa-location-dot"></i>&nbsp; <span data-i18n="footer-address">Cll. 30A #6-22, Bogotá</span></p>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp; <span data-i18n="footer-phone">(601) 743 6830</span></p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp; <span data-i18n="footer-email">info@quinteros.co</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p data-i18n="footer-copyright">&copy; 2025 Quinteros S.A. Todos los derechos reservados. &nbsp;|&nbsp; Bogotá, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

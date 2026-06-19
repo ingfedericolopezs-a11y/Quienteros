@@ -1,0 +1,868 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dónde Comprar | Quinteros S.A.</title>
+    <meta name="description" content="Encuentra nuestros distribuidores autorizados en toda Colombia. Red de distribución especializada que cubre la totalidad del territorio nacional.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <style>
+        /* ============ DÓNDE COMPRAR — DISEÑO MODERNO ============ */
+
+        /* HERO con efecto cinematográfico */
+        .dc-hero {
+            position: relative;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #0a0c0e;
+        }
+        .dc-hero-bg {
+            position: absolute; inset: 0;
+            background-image: url('optimized/shutterstock_260598251.jpg');
+            background-size: cover; background-position: center;
+            transform: scale(1.05);
+            filter: brightness(0.5) saturate(1.1);
+        }
+        .dc-hero::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(15,17,20,0.5) 0%, rgba(15,17,20,0.85) 100%);
+            z-index: 1;
+        }
+        .dc-hero-content {
+            position: relative; z-index: 2;
+            text-align: center; color: white;
+            width: 100%; padding: 60px 0;
+        }
+        .dc-hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(232,75,55,0.15); border: 1px solid rgba(232,75,55,0.4);
+            color: #ff8978; padding: 8px 18px; border-radius: 100px;
+            font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+            margin-bottom: 24px; backdrop-filter: blur(10px);
+        }
+        .dc-hero-eyebrow .pulse {
+            width: 8px; height: 8px; background: #e84b37; border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(232,75,55,0.7); }
+            50% { opacity: 0.8; transform: scale(1.2); box-shadow: 0 0 0 8px rgba(232,75,55,0); }
+        }
+        .dc-hero h1 {
+            font-size: clamp(36px, 5vw, 60px); font-weight: 900;
+            margin: 0 0 20px; letter-spacing: -1.5px; line-height: 1.05;
+            color: white;
+        }
+        .dc-hero h1 span {
+            display: block; margin-top: 8px;
+            background: linear-gradient(135deg, #ff8978 0%, #e84b37 60%, #c93b2a 100%);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dc-hero p {
+            font-size: 18px; max-width: 720px; margin: 0 auto;
+            color: rgba(255,255,255,0.8); line-height: 1.7;
+        }
+
+        /* STATS modernos con tarjetas glass */
+        .dc-stats {
+            background: linear-gradient(180deg, #0a0c0e 0%, #16191c 100%);
+            padding: 0 0 60px;
+            position: relative;
+        }
+        .dc-stats-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+            max-width: 1080px; margin: -60px auto 0;
+            position: relative; z-index: 3;
+        }
+        .dc-stat {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px; padding: 28px 20px; text-align: center;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s;
+        }
+        .dc-stat:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(232,75,55,0.3);
+        }
+        .dc-stat-icon {
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, rgba(232,75,55,0.18), rgba(232,75,55,0.06));
+            color: #ff8978; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; margin: 0 auto 14px;
+            border: 1px solid rgba(232,75,55,0.25);
+        }
+        .dc-stat-num {
+            font-size: 38px; font-weight: 900; color: white;
+            line-height: 1; margin-bottom: 6px; letter-spacing: -1px;
+        }
+        .dc-stat-lbl {
+            font-size: 12px; color: rgba(255,255,255,0.55);
+            text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600;
+        }
+
+        /* FILTROS modernos */
+        .dc-filters {
+            background: white; padding: 70px 0 30px;
+        }
+        .dc-filter-title {
+            font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em;
+            color: #999; font-weight: 700; margin-bottom: 14px; text-align: center;
+        }
+        .dc-search-box {
+            position: relative; max-width: 680px; margin: 0 auto 40px;
+        }
+        .dc-search-box input {
+            width: 100%; padding: 18px 56px 18px 56px;
+            border: 2px solid #ececec; border-radius: 100px;
+            font-size: 15px; outline: none; background: white;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-family: inherit;
+        }
+        .dc-search-box input:focus {
+            border-color: #e84b37;
+            box-shadow: 0 8px 30px rgba(232,75,55,0.15);
+        }
+        .dc-search-box .search-icon {
+            position: absolute; left: 22px; top: 50%; transform: translateY(-50%);
+            color: #bbb; font-size: 16px; pointer-events: none;
+        }
+        .dc-search-box .clear-search {
+            position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
+            background: #f0f0f0; border: none; color: #666;
+            width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+            display: none; align-items: center; justify-content: center;
+            font-size: 12px; transition: background 0.2s;
+        }
+        .dc-search-box input:not(:placeholder-shown) ~ .clear-search { display: inline-flex; }
+        .dc-search-box .clear-search:hover { background: #e0e0e0; }
+
+        .dc-brand-tabs {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto;
+        }
+        .dc-brand-tab {
+            background: white; border: 1.5px solid #ececec; color: #555;
+            padding: 9px 20px; border-radius: 100px; cursor: pointer;
+            font-weight: 600; font-size: 12.5px; transition: all 0.25s;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            font-family: inherit;
+        }
+        .dc-brand-tab:hover {
+            border-color: #1a1c1e; color: #1a1c1e;
+            transform: translateY(-1px);
+        }
+        .dc-brand-tab.active {
+            background: linear-gradient(135deg, #1a1c1e 0%, #2d3033 100%);
+            border-color: #1a1c1e; color: white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+        }
+        .dc-brand-tab.active.is-todas {
+            background: linear-gradient(135deg, #e84b37 0%, #c93b2a 100%);
+            border-color: #e84b37;
+            box-shadow: 0 6px 20px rgba(232,75,55,0.35);
+        }
+
+        .dc-city-tabs {
+            display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+            max-width: 1100px; margin: 0 auto 10px;
+        }
+        .dc-city-tab {
+            background: transparent; border: 1px solid #e0e0e0; color: #888;
+            padding: 6px 14px; border-radius: 100px; cursor: pointer;
+            font-size: 12px; transition: all 0.2s; font-family: inherit;
+        }
+        .dc-city-tab:hover { border-color: #1a1c1e; color: #1a1c1e; }
+        .dc-city-tab.active {
+            background: #1a1c1e; border-color: #1a1c1e; color: white;
+        }
+
+        /* RESULTADOS modernos */
+        .dc-results {
+            padding: 50px 0 80px;
+            background: linear-gradient(180deg, white 0%, #fafbfc 100%);
+        }
+        .dc-result-count {
+            text-align: center; margin-bottom: 36px; color: #888; font-size: 14px;
+        }
+        .dc-result-count strong { color: #1a1c1e; font-size: 18px; }
+
+        .dc-brand-section {
+            margin-bottom: 56px;
+            animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dc-brand-header {
+            display: flex; align-items: center; gap: 14px;
+            padding: 16px 22px; margin-bottom: 24px;
+            background: linear-gradient(135deg, #1a1c1e 0%, #2d3033 100%);
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative; overflow: hidden;
+        }
+        .dc-brand-header::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at top right, rgba(232,75,55,0.2), transparent 60%);
+            pointer-events: none;
+        }
+        .dc-brand-header > * { position: relative; z-index: 1; }
+        .dc-brand-logo {
+            width: 42px; height: 42px;
+            background: rgba(232,75,55,0.18); color: #ff8978;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+            border: 1px solid rgba(232,75,55,0.3);
+        }
+        .dc-brand-name {
+            font-size: 22px; font-weight: 900; color: white;
+            letter-spacing: 0.5px; flex: 1;
+        }
+        .dc-brand-count {
+            background: rgba(255,255,255,0.12);
+            color: white; padding: 6px 14px; border-radius: 100px;
+            font-size: 12px; font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .dc-city-group { margin-bottom: 28px; }
+        .dc-city-header {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 14px; padding-left: 4px;
+        }
+        .dc-city-header .city-pin {
+            width: 28px; height: 28px;
+            background: rgba(232,75,55,0.1); color: #e84b37;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px;
+        }
+        .dc-city-name {
+            font-size: 14px; font-weight: 800; color: #1a1c1e;
+            text-transform: uppercase; letter-spacing: 0.06em;
+        }
+        .dc-region-name {
+            color: #888; font-weight: 500; font-size: 12px;
+            background: #f0f0f1; padding: 3px 10px; border-radius: 10px;
+        }
+
+        .dc-dist-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 12px;
+        }
+        .dc-dist-card {
+            background: white;
+            border: 1px solid #ececec;
+            border-radius: 14px; padding: 16px 18px;
+            display: flex; align-items: center; gap: 14px;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            position: relative;
+        }
+        .dc-dist-card::before {
+            content: ''; position: absolute; left: 0; top: 14px; bottom: 14px;
+            width: 3px; background: transparent; border-radius: 0 3px 3px 0;
+            transition: background 0.25s;
+        }
+        .dc-dist-card:hover {
+            border-color: transparent;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+        .dc-dist-card:hover::before { background: #e84b37; }
+
+        .dc-dist-avatar {
+            width: 44px; height: 44px; flex-shrink: 0;
+            background: linear-gradient(135deg, #1a1c1e 0%, #2d3033 100%);
+            color: white; border-radius: 11px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 16px; letter-spacing: -0.5px;
+        }
+        .dc-dist-info { flex: 1; min-width: 0; }
+        .dc-dist-name {
+            font-weight: 700; color: #1a1c1e; font-size: 14px;
+            line-height: 1.3; margin-bottom: 4px;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        }
+        .dc-dist-phone {
+            font-size: 12.5px; color: #777;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .dc-dist-phone i { color: #e84b37; font-size: 11px; }
+        .dc-dist-call {
+            background: linear-gradient(135deg, #e84b37 0%, #c93b2a 100%);
+            color: white; width: 38px; height: 38px;
+            border-radius: 11px;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; flex-shrink: 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(232,75,55,0.3);
+        }
+        .dc-dist-call:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 16px rgba(232,75,55,0.45);
+        }
+
+        /* Vista por nombre (GATES) */
+        .dc-byname-grid {
+            display: flex; flex-direction: column; gap: 14px;
+        }
+        .dc-byname-card {
+            background: white; border: 1px solid #ececec; border-radius: 14px;
+            padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start;
+            transition: box-shadow 0.25s, border-color 0.25s;
+        }
+        .dc-byname-card:hover {
+            border-color: transparent; box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+        }
+        .dc-byname-body { flex: 1; min-width: 0; }
+        .dc-byname-name {
+            font-weight: 700; color: #1a1c1e; font-size: 15px;
+            margin-bottom: 10px; line-height: 1.3;
+        }
+        .dc-byname-locations { display: flex; flex-direction: column; gap: 6px; }
+        .dc-byname-location {
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+            padding: 6px 10px; background: #f8f9fa; border-radius: 8px;
+            font-size: 13px;
+        }
+        .dc-byname-city { color: #1a1c1e; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+        .dc-byname-city i { color: #e84b37; font-size: 11px; }
+        .dc-byname-region { color: #999; font-size: 12px; flex: 1; }
+        .dc-byname-phone {
+            color: #e84b37; font-weight: 600; text-decoration: none;
+            display: flex; align-items: center; gap: 5px;
+            transition: color 0.2s;
+        }
+        .dc-byname-phone:hover { color: #c93b2a; }
+        .dc-byname-phone i { font-size: 11px; }
+
+        .dc-no-results {
+            text-align: center; padding: 80px 20px; color: #888;
+            background: white; border-radius: 16px;
+            border: 1px dashed #ddd;
+        }
+        .dc-no-results i { font-size: 48px; color: #ddd; margin-bottom: 16px; }
+        .dc-no-results h3 { font-size: 22px; color: #555; margin-bottom: 10px; }
+
+        /* DESCARGAS modernas */
+        .dc-downloads {
+            background: linear-gradient(180deg, #fafbfc 0%, white 100%);
+            padding: 80px 0;
+        }
+        .dc-downloads-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px; max-width: 1000px; margin: 40px auto 0;
+        }
+        .dc-download-card {
+            background: white; border-radius: 18px; padding: 32px 28px;
+            text-align: center;
+            border: 1px solid #ececec;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s;
+            position: relative; overflow: hidden;
+        }
+        .dc-download-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #e84b37 0%, transparent 100%);
+            transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+        }
+        .dc-download-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.10);
+            border-color: transparent;
+        }
+        .dc-download-card:hover::before { transform: scaleX(1); }
+        .dc-download-icon {
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, rgba(232,75,55,0.12), rgba(232,75,55,0.04));
+            color: #e84b37; border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px; margin: 0 auto 18px;
+            border: 1px solid rgba(232,75,55,0.15);
+        }
+        .dc-download-card h4 {
+            font-size: 17px; color: #1a1c1e; margin-bottom: 8px; font-weight: 800;
+        }
+        .dc-download-card p {
+            font-size: 13px; color: #888; margin-bottom: 22px; line-height: 1.5;
+        }
+        .dc-download-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #1a1c1e; color: white;
+            padding: 11px 22px; border-radius: 100px;
+            text-decoration: none; font-size: 13px; font-weight: 700;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .dc-download-btn:hover {
+            background: #e84b37; transform: translateY(-1px);
+        }
+
+        /* AYUDA moderna */
+        .dc-help {
+            background: linear-gradient(135deg, #e84b37 0%, #c93b2a 100%);
+            padding: 80px 0; color: white; text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .dc-help::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1), transparent 60%);
+        }
+        .dc-help > .container { position: relative; z-index: 1; }
+        .dc-help h2 {
+            font-size: clamp(28px, 4vw, 38px); font-weight: 900;
+            margin: 0 0 14px; letter-spacing: -0.5px;
+        }
+        .dc-help p {
+            font-size: 17px; opacity: 0.95;
+            max-width: 560px; margin: 0 auto 30px; line-height: 1.65;
+        }
+        .dc-help-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: white; color: #e84b37;
+            padding: 16px 36px; border-radius: 100px;
+            text-decoration: none; font-weight: 800;
+            transition: transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .dc-help-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+        }
+
+        /* ============ MAPA INTERACTIVO DE COLOMBIA ============ */
+        .dc-map-section {
+            background: linear-gradient(180deg, white 0%, #f5f7fa 100%);
+            padding: 30px 0 80px;
+        }
+        .dc-map-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+            gap: 32px;
+            align-items: start;
+        }
+        .dc-map-card {
+            background: white;
+            border-radius: 22px;
+            padding: 28px 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid #ececec;
+            position: sticky; top: 100px;
+        }
+        .dc-map-title {
+            font-size: 14px; font-weight: 700; color: #1a1c1e;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            margin: 0 0 6px;
+        }
+        .dc-map-sub {
+            font-size: 12px; color: #888;
+            margin-bottom: 18px;
+        }
+        .dc-map-svg-wrap {
+            position: relative;
+            background: linear-gradient(180deg, #f8f9fa 0%, #eef0f3 100%);
+            border-radius: 16px;
+            padding: 16px 10px 10px;
+            border: 1px solid #ececec;
+        }
+        .dc-map-svg {
+            width: 100%; height: auto; display: block;
+            max-height: 580px;
+        }
+        .dc-map-svg .country-fill {
+            fill: #d6dde6; stroke: #adb5bd; stroke-width: 1.2;
+            stroke-linejoin: round;
+            transition: fill 0.4s;
+        }
+        .dc-map-svg .country-fill:hover { fill: #ced4da; }
+        .dc-map-svg .city-pin { cursor: pointer; }
+        .dc-map-svg .city-pin .pin-pulse {
+            opacity: 0; fill: #e84b37;
+            transform-origin: center;
+            transform-box: fill-box;
+        }
+        .dc-map-svg .city-pin:hover .pin-pulse,
+        .dc-map-svg .city-pin.active .pin-pulse {
+            animation: pinPulse 1.5s ease-out infinite;
+        }
+        @keyframes pinPulse {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2.5); }
+        }
+        .dc-map-svg .city-pin .pin-dot {
+            fill: #e84b37; stroke: white; stroke-width: 2;
+            transition: r 0.25s, fill 0.25s;
+        }
+        .dc-map-svg .city-pin:hover .pin-dot {
+            fill: #1a1c1e;
+        }
+        .dc-map-svg .city-pin.active .pin-dot {
+            fill: #1a1c1e; stroke: #e84b37; stroke-width: 3;
+        }
+        .dc-map-svg .city-pin .pin-label {
+            font-size: 9px; font-weight: 700; fill: #1a1c1e;
+            text-anchor: middle; pointer-events: none;
+            opacity: 0; transition: opacity 0.2s;
+            paint-order: stroke; stroke: white; stroke-width: 3;
+        }
+        .dc-map-svg .city-pin:hover .pin-label,
+        .dc-map-svg .city-pin.active .pin-label {
+            opacity: 1;
+        }
+        .dc-map-svg .city-pin.has-count .pin-count {
+            font-size: 8px; font-weight: 800; fill: white;
+            text-anchor: middle; pointer-events: none;
+        }
+
+        .dc-map-legend {
+            margin-top: 18px; padding-top: 16px; border-top: 1px solid #ececec;
+            display: flex; align-items: center; gap: 14px;
+            font-size: 11px; color: #888;
+            flex-wrap: wrap;
+        }
+        .dc-map-legend-item { display: flex; align-items: center; gap: 6px; }
+        .dc-map-legend-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: #e84b37; border: 2px solid white;
+            box-shadow: 0 0 0 1px #e84b37;
+        }
+        .dc-map-legend-dot.active { background: #1a1c1e; box-shadow: 0 0 0 1px #1a1c1e; }
+
+        /* PANEL DE RESULTADOS LATERAL */
+        .dc-map-panel {
+            background: white;
+            border-radius: 22px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid #ececec;
+            min-height: 600px;
+        }
+        .dc-panel-header {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 16px; padding-bottom: 22px; margin-bottom: 24px;
+            border-bottom: 2px solid #f0f2f5;
+        }
+        .dc-panel-city {
+            display: flex; align-items: center; gap: 14px;
+        }
+        .dc-panel-pin {
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, #e84b37 0%, #c93b2a 100%);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 20px;
+            box-shadow: 0 6px 16px rgba(232,75,55,0.3);
+        }
+        .dc-panel-city-info h3 {
+            margin: 0 0 4px; font-size: 22px; font-weight: 900;
+            color: #1a1c1e; letter-spacing: -0.5px;
+        }
+        .dc-panel-city-info .region {
+            font-size: 13px; color: #888; font-weight: 500;
+        }
+        .dc-panel-count {
+            background: #f0f2f5;
+            padding: 8px 16px; border-radius: 100px;
+            font-size: 13px; font-weight: 700; color: #1a1c1e;
+            white-space: nowrap;
+        }
+        .dc-panel-count strong { color: #e84b37; font-size: 16px; }
+        .dc-panel-back {
+            background: transparent; border: 1.5px solid #ececec;
+            color: #555; padding: 8px 16px; border-radius: 100px;
+            cursor: pointer; font-size: 12px; font-weight: 600;
+            display: inline-flex; align-items: center; gap: 6px;
+            transition: all 0.2s; font-family: inherit;
+            margin-bottom: 20px;
+        }
+        .dc-panel-back:hover { border-color: #1a1c1e; color: #1a1c1e; }
+
+        .dc-panel-brands { display: flex; flex-direction: column; gap: 20px; }
+        .dc-panel-brand-group { }
+        .dc-panel-brand-header {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 12px;
+            font-size: 12px; font-weight: 800; color: #1a1c1e;
+            text-transform: uppercase; letter-spacing: 0.1em;
+        }
+        .dc-panel-brand-icon {
+            width: 28px; height: 28px;
+            background: rgba(232,75,55,0.1); color: #e84b37;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px;
+        }
+        .dc-panel-brand-count {
+            margin-left: auto; background: #f0f2f5;
+            padding: 2px 10px; border-radius: 100px;
+            font-size: 11px; color: #666; font-weight: 600;
+        }
+        .dc-panel-empty {
+            text-align: center; padding: 80px 20px; color: #888;
+        }
+        .dc-panel-empty .empty-icon {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, rgba(232,75,55,0.1), rgba(232,75,55,0.02));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; font-size: 32px; color: #e84b37;
+        }
+        .dc-panel-empty h3 {
+            font-size: 20px; color: #1a1c1e; margin-bottom: 8px; font-weight: 800;
+        }
+        .dc-panel-empty p { font-size: 14px; line-height: 1.6; max-width: 400px; margin: 0 auto; }
+
+        @media (max-width: 968px) {
+            .dc-map-layout { grid-template-columns: 1fr; }
+            .dc-map-card { position: static; }
+        }
+        @media (max-width: 768px) {
+            .dc-hero { min-height: 380px; }
+            .dc-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: -50px; }
+            .dc-stat { padding: 22px 14px; }
+            .dc-stat-num { font-size: 30px; }
+            .dc-brand-header { padding: 14px 16px; }
+            .dc-brand-name { font-size: 18px; }
+            .dc-dist-grid { grid-template-columns: 1fr; }
+            .dc-panel-header { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <span data-i18n="home-topbar"><i class="fa-solid fa-industry"></i>&nbsp; Más de 85 años de trayectoria industrial en Colombia</span>
+            <div class="topbar-links">
+                <a href="mailto:info@quinteros.co"><i class="fa-solid fa-envelope"></i> info@quinteros.co</a>
+                <a href="tel:+576017436830"><i class="fa-solid fa-phone"></i> (601) 743 6830</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros S.A. Logo" loading="lazy">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item" data-i18n="inicio">INICIO</a>
+
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="nuestra-compania">NUESTRA COMPAÑÍA <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="nuestra-compania.html" data-i18n="sobre-nosotros">SOBRE NOSOTROS</a>
+                        <a href="noticias.html" data-i18n="noticias">NOTICIAS</a>
+                        <a href="multimedia.html" data-i18n="multimedia">MULTIMEDIA</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-hacemos">QUÉ HACEMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="aliados.html" data-i18n="aliados">ALIADOS DE NEGOCIO</a>
+                        <a href="modelo-de-negocio.html" data-i18n="modelo-negocio">MODELO DE NEGOCIO</a>
+                        <a href="estudios-de-mercado.html" data-i18n="estudios-mercado">ESTUDIOS DE MERCADO</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle" data-i18n="que-solucionamos">QUÉ SOLUCIONAMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="segmentos-productivos.html" data-i18n="segmentos">SECTORES PRODUCTIVOS</a>
+                        <a href="campos-de-experiencia.html" data-i18n="campos">CAMPOS DE EXPERIENCIA</a>
+                        <a href="aliados.html" data-i18n="marcas">NUESTRAS MARCAS</a>
+                        <a href="soluciones.html" data-i18n="soluciones">NUESTRAS SOLUCIONES</a>
+                    </div>
+                </div>
+
+                <a href="donde-comprar.html" class="nav-item active" data-i18n="donde-comprar">DÓNDE COMPRAR</a>
+                <a href="contacto.html" class="nav-item" data-i18n="contactenos">CONTÁCTENOS</a>
+
+                <div class="nav-dropdown language-selector">
+                    <button class="nav-item dropdown-toggle"><span data-i18n="idioma">IDIOMA:</span> <span id="currentLang">🇪🇸</span> <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <button class="lang-btn" data-lang="es">🇪🇸 ESPAÑOL</button>
+                        <button class="lang-btn" data-lang="en">🇺🇸 ENGLISH</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="dc-hero">
+        <div class="dc-hero-bg"></div>
+        <div class="container dc-hero-content">
+            <div class="dc-hero-eyebrow"><span class="pulse"></span> <span data-i18n="dc-hero-eyebrow">Red Nacional de Distribución</span></div>
+            <h1 data-i18n-html="dc-hero-title">¿Dónde Comprar?<span>Nuestros Distribuidores</span></h1>
+            <p data-i18n="dc-hero-desc">Nuestro modelo de negocio es soportado por nuestro equipo de expertos y nuestros canales de distribución especializados que cubren la totalidad del territorio nacional.</p>
+        </div>
+    </section>
+
+    <!-- Stats con tarjetas glass flotantes -->
+    <section class="dc-stats">
+        <div class="container">
+            <div class="dc-stats-grid">
+                <div class="dc-stat">
+                    <div class="dc-stat-icon"><i class="fa-solid fa-store"></i></div>
+                    <div class="dc-stat-num" id="statDist">+150</div>
+                    <div class="dc-stat-lbl" data-i18n="dc-stat-dist">Distribuidores</div>
+                </div>
+                <div class="dc-stat">
+                    <div class="dc-stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="dc-stat-num" id="statCity">+25</div>
+                    <div class="dc-stat-lbl" data-i18n="dc-stat-city">Ciudades</div>
+                </div>
+                <div class="dc-stat">
+                    <div class="dc-stat-icon"><i class="fa-solid fa-tags"></i></div>
+                    <div class="dc-stat-num" id="statBrand">10</div>
+                    <div class="dc-stat-lbl" data-i18n="dc-stat-brand">Marcas</div>
+                </div>
+                <div class="dc-stat">
+                    <div class="dc-stat-icon"><i class="fa-solid fa-globe-americas"></i></div>
+                    <div class="dc-stat-num">2</div>
+                    <div class="dc-stat-lbl" data-i18n="dc-stat-countries">Países</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="dc-filters">
+        <div class="container">
+            <div class="dc-search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Buscar distribuidor por nombre o teléfono..." data-i18n-placeholder="dc-search-placeholder">
+                <button type="button" class="clear-search" id="clearSearch" aria-label="Limpiar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="dc-filter-title" style="text-align:center;" data-i18n="dc-filter-brand">Filtrar por Marca</div>
+            <div class="dc-brand-tabs" id="brandTabs"></div>
+
+            <div class="dc-filter-title" style="text-align:center; margin-top:20px;" data-i18n="dc-filter-city">Filtrar por Ciudad</div>
+            <div class="dc-city-tabs" id="cityTabs"></div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="dc-results">
+        <div class="container">
+            <div class="dc-result-count" id="resultCount"></div>
+            <div id="distributorsContainer"></div>
+        </div>
+    </section>
+
+    <!-- Downloads -->
+    <section class="dc-downloads">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <div class="section-badge-center" data-i18n="dc-downloads-badge">Recursos</div>
+                <h2 data-i18n="dc-downloads-title">Listados de Distribuidores Autorizados</h2>
+                <div class="divider-center"></div>
+                <p style="color:#666; margin-top:14px;" data-i18n="dc-downloads-desc">Descarga las listas completas de distribuidores por departamento y país</p>
+            </div>
+            <div class="dc-downloads-grid">
+                <div class="dc-download-card">
+                    <div class="dc-download-icon"><i class="fa-solid fa-car"></i></div>
+                    <h4 data-i18n="dc-dl1-title">Departamento Automotriz</h4>
+                    <p data-i18n="dc-dl1-desc">Distribuidores autorizados en Colombia</p>
+                    <a href="#" class="dc-download-btn"><i class="fa-solid fa-download"></i> <span data-i18n="dc-dl-btn">Descargar PDF</span></a>
+                </div>
+                <div class="dc-download-card">
+                    <div class="dc-download-icon"><i class="fa-solid fa-industry"></i></div>
+                    <h4 data-i18n="dc-dl2-title">Departamento Industrial</h4>
+                    <p data-i18n="dc-dl2-desc">Distribuidores autorizados en Colombia</p>
+                    <a href="#" class="dc-download-btn"><i class="fa-solid fa-download"></i> <span data-i18n="dc-dl-btn">Descargar PDF</span></a>
+                </div>
+                <div class="dc-download-card">
+                    <div class="dc-download-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                    <h4 data-i18n="dc-dl3-title">Departamento de Corte y Metrología</h4>
+                    <p data-i18n="dc-dl3-desc">Distribuidores autorizados en Colombia</p>
+                    <a href="#" class="dc-download-btn"><i class="fa-solid fa-download"></i> <span data-i18n="dc-dl-btn">Descargar PDF</span></a>
+                </div>
+                <div class="dc-download-card">
+                    <div class="dc-download-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+                    <h4 data-i18n="dc-dl4-title">Departamento de Construcción</h4>
+                    <p data-i18n="dc-dl4-desc">Distribuidores autorizados en Colombia</p>
+                    <a href="#" class="dc-download-btn"><i class="fa-solid fa-download"></i> <span data-i18n="dc-dl-btn">Descargar PDF</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help -->
+    <section class="dc-help">
+        <div class="container">
+            <h2 data-i18n="dc-help-title">¿No encuentras un distribuidor cercano?</h2>
+            <p data-i18n="dc-help-desc">Nuestro equipo comercial puede ayudarte a encontrar el distribuidor más adecuado para tus necesidades específicas.</p>
+            <a href="contacto.html" class="dc-help-btn" data-i18n="dc-help-btn"><i class="fa-solid fa-headset"></i> Contactar a un Asesor</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros Logo" class="footer-logo" loading="lazy">
+                    <p data-i18n="footer-desc">Soluciones integrales para el sector productivo y automotriz. Más de 85 años de respaldo industrial en Colombia.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/QuinterosColombia/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/quinteros_sa/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/quinteros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UCI9B12Jei4zk40jR9xewqIg" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-nav">Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="nuestra-compania.html">Nuestra Compañía</a>
+                    <a href="soluciones.html">Soluciones</a>
+                    <a href="aliados.html">Marcas y Aliados</a>
+                    <a href="donde-comprar.html">Dónde Comprar</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-solutions">Soluciones</h4>
+                    <a href="campos-de-experiencia.html">Transmisión de Potencia</a>
+                    <a href="campos-de-experiencia.html">Soluciones Hidráulicas</a>
+                    <a href="campos-de-experiencia.html">Transferencia de Fluidos</a>
+                    <a href="campos-de-experiencia.html">Herramientas Industriales</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-contact">Contacto</h4>
+                    <p><i class="fa-solid fa-location-dot"></i>&nbsp; Cll. 30A #6-22, Bogotá</p>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp; (601) 743 6830</p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp; info@quinteros.co</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Quinteros S.A. Todos los derechos reservados. &nbsp;|&nbsp; Bogotá, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="donde-comprar-data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

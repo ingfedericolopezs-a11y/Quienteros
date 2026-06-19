@@ -1,0 +1,216 @@
+﻿?<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Sucursales | Quinteros S.A.</title>
+    <meta name="description" content="Póngase en contacto con Quinteros S.A. Asesoría técnica especializada a su disposición.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <span><i class="fa-solid fa-industry"></i>&nbsp; Más de 85 años de trayectoria industrial en Colombia</span>
+            <div class="topbar-links">
+                <a href="mailto:info@quinteros.co"><i class="fa-solid fa-envelope"></i> info@quinteros.co</a>
+                <a href="tel:+576017436830"><i class="fa-solid fa-phone"></i> (601) 743 6830</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png" alt="Quinteros S.A. Logo">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">INICIO</a>
+
+                <!-- NUESTRA COMPAÑÍA dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle">NUESTRA COMPAÑÍA <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="nuestra-compania.html">SOBRE NOSOTROS</a>
+                        <a href="noticias.html">NOTICIAS</a>
+                        <a href="multimedia.html">MULTIMEDIA</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ HACEMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle">QUÉ HACEMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="aliados.html">ALIADOS DE NEGOCIO</a>
+                        <a href="modelo-de-negocio.html">MODELO DE NEGOCIO</a>
+                        <a href="estudios-de-mercado.html">ESTUDIOS DE MERCADO</a>
+                    </div>
+                </div>
+
+                <!-- QUÉ SOLUCIONAMOS dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-item dropdown-toggle">QUÉ SOLUCIONAMOS <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <a href="segmentos-productivos.html">SECTORES PRODUCTIVOS</a>
+                        <a href="campos-de-experiencia.html">CAMPOS DE EXPERIENCIA</a>
+                        <a href="aliados.html">NUESTRAS MARCAS</a>
+                        <a href="soluciones.html">NUESTRAS SOLUCIONES</a>
+                    </div>
+                </div>
+
+                <a href="donde-comprar.html" class="nav-item">DÓNDE COMPRAR</a>
+                <a href="contacto.html" class="nav-item">CONTÁCTENOS</a>
+
+                <!-- IDIOMA selector -->
+                <div class="nav-dropdown language-selector">
+                    <button class="nav-item dropdown-toggle">IDIOMA: <span id="currentLang">🇪🇸</span> <span class="dropdown-icon">+</span></button>
+                    <div class="dropdown-menu">
+                        <button class="lang-btn" data-lang="es">🇪🇸 ESPAÑOL</button>
+                        <button class="lang-btn" data-lang="en">🇺🇸 ENGLISH</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="cta-band" style="background-image: url('optimized/shutterstock_141409537.jpg'); padding: 100px 0;">
+        <div class="cta-band-overlay" style="background: rgba(26,78,122,0.85);"></div>
+        <div class="container cta-band-content">
+            <h1 style="font-size: 48px; color: white; margin-bottom: 15px;" data-i18n="contacto-title">Contacto y Sucursales</h1>
+            <p style="font-size: 20px; color: #ccc;" data-i18n="contacto-subtitle">Estamos aquí para brindarle asesoría técnica especializada.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section" style="padding-top: 80px;">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Form -->
+                <div class="contact-form-panel">
+                    <h3 data-i18n="form-title">Envíenos un mensaje</h3>
+                    <p style="margin-bottom: 30px; font-size: 14px;" data-i18n="form-desc">Complete el siguiente formulario y uno de nuestros asesores comerciales se pondrá en contacto con usted a la mayor brevedad posible.</p>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="label-nombre">Nombre completo</label>
+                                <input type="text" placeholder="Su nombre" data-i18n-placeholder="placeholder-nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="label-empresa">Empresa</label>
+                                <input type="text" placeholder="Su empresa" data-i18n-placeholder="placeholder-empresa">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="label-email">Correo electrónico</label>
+                                <input type="email" placeholder="correo@empresa.com" data-i18n-placeholder="placeholder-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="label-telefono">Teléfono</label>
+                                <input type="tel" placeholder="+57 300 000 0000" data-i18n-placeholder="placeholder-telefono">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="label-linea">Línea de Interés</label>
+                            <select style="padding: 13px 16px; border: 1.5px solid var(--gray-mid); border-radius: 8px; font-family: 'Open Sans', sans-serif; background: #fafbfc; color: var(--text-dark);" id="interesSelect">
+                                <option value="" data-i18n="select-option">Seleccione una opción...</option>
+                                <option value="transmision" data-i18n="transmision">Transmisión de Potencia</option>
+                                <option value="hidraulica" data-i18n="hidraulica">Soluciones Hidráulicas</option>
+                                <option value="fluidos" data-i18n="fluidos">Transporte de Fluidos</option>
+                                <option value="herramientas" data-i18n="herramientas">Herramientas Industriales</option>
+                                <option value="otro" data-i18n="otro">Otra consulta</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="label-mensaje">¿En qué podemos ayudarle?</label>
+                            <textarea rows="5" placeholder="Describa su necesidad o producto de interés..." data-i18n-placeholder="placeholder-mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full" id="submitBtn">
+                            <span data-i18n="btn-enviar">Enviar Mensaje</span> &nbsp;<i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info -->
+                <div class="contact-info-panel">
+                    <h3 data-i18n="info-title">Información de Contacto</h3>
+                    <p class="contact-subtitle" data-i18n="info-sede">Sede Principal �?? Bogotá, Colombia</p>
+
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <strong data-i18n="info-direccion">Dirección Principal</strong>
+                                <span data-i18n="info-direccion-text">Calle 30A No. 6-22, Piso 32<br>Edificio San Martín, Bogotá D.C.</span>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <strong data-i18n="info-telefono">Líneas de Atención Nacional</strong>
+                                <span data-i18n="info-telefono-text">PBX: (+57) 601 743 6830<br>Móvil / WhatsApp: (+57) 300 631 3359</span>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <strong data-i18n="info-email">Correos Corporativos</strong>
+                                <span data-i18n="info-email-text">Comercial: <a href="mailto:ventas@quinteros.co">ventas@quinteros.co</a><br>General: <a href="mailto:info@quinteros.co">info@quinteros.co</a></span>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <strong data-i18n="info-horario">Horario de Atención</strong>
+                                <span data-i18n="info-horario-text">Lunes a Viernes: 8:00am �?? 5:30pm<br>Sábados: 8:00am �?? 12:00pm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="https://www.linkedin.com/company/quinteros" target="_blank" class="social-btn" title="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCI9B12Jei4zk40jR9xewqIg" target="_blank" class="social-btn" title="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://www.facebook.com/QuinterosColombia/" target="_blank" class="social-btn" title="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full-Width Map -->
+        <div class="map-wrap">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9248238711824!2d-74.072212!3d4.613693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f999cf3ebf37b%3A0xc3464dc2d1b72e50!2sEdificio%20San%20Mart%C3%ADn!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Quinteros S.A. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

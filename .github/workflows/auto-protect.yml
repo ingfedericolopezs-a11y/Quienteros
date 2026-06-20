@@ -40,10 +40,10 @@ jobs:
             fi
           done
 
-          # 2) Garantizar .nojekyll
-          if [ ! -f ".nojekyll" ]; then
-            touch .nojekyll
-            echo "Creado .nojekyll"
+          # 2) Garantizar .nojekyll VACIO (si tiene contenido, rompe Pages)
+          if [ ! -f ".nojekyll" ] || [ -s ".nojekyll" ]; then
+            > .nojekyll   # crear vacio o vaciar si tiene contenido
+            echo "Reseteado .nojekyll a vacio"
             FIXED=$((FIXED+1))
           fi
 

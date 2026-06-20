@@ -1,0 +1,33 @@
+name: ✅ Validate
+# Verifica salud del sitio en cada push (sin bloquear deploy)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check
+        run: |
+          # HTML mal formados
+          BAD=0
+          for f in *.html; do
+            [ -f "$f" ] || continue
+            head -1 "$f" | grep -qi '<!doctype' || BAD=$((BAD+1))
+          done
+
+          # Archivos criticos
+          MISSING=""
+          for f in .nojekyll CNAME style.css main.js; do
+            [ ! -f "$f" ] && MISSING="$MISSING $f"
+          done
+
+          echo "### Validacion del sitio" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Resultado |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| HTML mal formados | $BAD |" >> $GITHUB_STEP_SUMMARY
+          echo "| Archivos faltantes |${MISSING:- ninguno} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Sitio | https://ingfedericolopez.com/ |" >> $GITHUB_STEP_SUMMARY

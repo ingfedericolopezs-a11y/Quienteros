@@ -1,7 +1,6 @@
 name: 🛡️ Auto-Protect
-# BOT GUARDIAN: en cada push, asegura que el sitio tenga TODO lo que
-# necesita para ser seguro y funcional. Si algo falta, lo agrega.
-# Si algo esta mal, lo arregla. Garantiza una baseline minima.
+# BOT GUARDIAN: en cada push asegura el sitio.
+# Inyecta security headers, repara Mixed Content, mantiene .nojekyll/CNAME.
 
 on:
   push:
@@ -19,127 +18,89 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
 
-      - name: 🛡️ Aplicar todas las protecciones
+      - name: Aplicar protecciones
         id: fix
         run: |
           set +e
           FIXED=0
 
-          # ============================================================
-          # 1) Limpiar bytes basura/BOM al inicio de TODOS los HTML
-          # ============================================================
+          # 1) Limpiar bytes basura/BOM al inicio
           for f in *.html; do
             [ -f "$f" ] || continue
-            first_byte=$(head -c 1 "$f" | xxd -p)
-            if [ "$first_byte" != "3c" ]; then
-              if [ "$first_byte" = "ef" ]; then
-                tail -c +4 "$f" > "${f}.tmp" && mv "${f}.tmp" "$f"
+            FB=$(head -c 1 "$f" | xxd -p)
+            if [ "$FB" != "3c" ]; then
+              if [ "$FB" = "ef" ]; then
+                tail -c +4 "$f" > "$f.t" && mv "$f.t" "$f"
               else
-                tail -c +2 "$f" > "${f}.tmp" && mv "${f}.tmp" "$f"
+                tail -c +2 "$f" > "$f.t" && mv "$f.t" "$f"
               fi
-              echo "🧹 Limpiado byte basura: $f"
+              echo "Cleaned: $f"
               FIXED=$((FIXED+1))
             fi
           done
 
-          # ============================================================
-          # 2) INYECTAR security headers en TODOS los HTML que no los tengan
-          # Esto incluye CSP (upgrade-insecure-requests), X-Content-Type-Options
-          # y Referrer-Policy. Si el cliente sube un archivo sin esto, lo agregamos.
-          # ============================================================
+          # 2) Inyectar security headers donde falten (usando sed con marca)
           for f in *.html; do
             [ -f "$f" ] || continue
             if ! grep -q "Content-Security-Policy" "$f"; then
-              python3 << PYEOF
-          with open("$f", "rb") as fp:
-              content = fp.read().decode("utf-8", errors="ignore")
-          security = '''    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-              <meta http-equiv="X-Content-Type-Options" content="nosniff">
-              <meta name="referrer" content="strict-origin-when-cross-origin">
-          '''.replace("              ", "    ")
-          # Insertar despues del meta viewport (siempre presente)
-          if '<meta name="viewport"' in content:
-              content = content.replace(
-                  content[content.find('<meta name="viewport"'):content.find('>', content.find('<meta name="viewport"'))+1],
-                  content[content.find('<meta name="viewport"'):content.find('>', content.find('<meta name="viewport"'))+1] + "\n" + security.rstrip()
-              )
-              with open("$f", "w", encoding="utf-8", newline="") as fp:
-                  fp.write(content)
-              print(f"🔒 Security headers agregados: $f")
-          PYEOF
+              # Insertar 3 meta tags despues del viewport
+              sed -i 's|<meta name="viewport"[^>]*>|&\n    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">\n    <meta http-equiv="X-Content-Type-Options" content="nosniff">\n    <meta name="referrer" content="strict-origin-when-cross-origin">|' "$f"
+              echo "Security headers added: $f"
               FIXED=$((FIXED+1))
             fi
           done
 
-          # ============================================================
-          # 3) FIX Mixed Content: HTTP del logo de WordPress -> local
-          # ============================================================
+          # 3) Mixed Content: HTTP del logo de WordPress a local
+          LOGO_PATH="logos/logo.png"
+          [ -f "logos/logo.svg" ] && LOGO_PATH="logos/logo.svg"
+          [ ! -f "logos/logo.png" ] && [ ! -f "logos/logo.svg" ] && [ -f "logos/quinteros-logo.png" ] && LOGO_PATH="logos/quinteros-logo.png"
           MIXED=$(grep -rl 'http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png' --include='*.html' . 2>/dev/null | wc -l)
           if [ "$MIXED" -gt 0 ]; then
-            # El cliente usa logos/logo.png, lo respetamos
-            LOGO_PATH="logos/logo.png"
-            [ -f "logos/quinteros-logo.png" ] && [ ! -f "logos/logo.png" ] && LOGO_PATH="logos/quinteros-logo.png"
             find . -name "*.html" -not -path "./.github/*" -exec sed -i "s|http://quinteros.co/wp-content/uploads/2015/10/quinteros-logotipo.png|$LOGO_PATH|g" {} +
-            echo "🌐 Mixed Content arreglado en $MIXED archivos"
+            echo "Mixed Content fixed in $MIXED files"
             FIXED=$((FIXED+MIXED))
           fi
 
-          # ============================================================
-          # 4) Garantizar .nojekyll VACIO (con contenido rompe Pages)
-          # ============================================================
+          # 4) .nojekyll vacio
           if [ ! -f ".nojekyll" ] || [ -s ".nojekyll" ]; then
             > .nojekyll
-            echo "📄 .nojekyll vaciado/creado"
+            echo ".nojekyll fixed"
             FIXED=$((FIXED+1))
           fi
 
-          # ============================================================
-          # 5) Garantizar CNAME = ingfedericolopez.com
-          # ============================================================
+          # 5) CNAME correcto
           if [ ! -f "CNAME" ] || ! grep -q "ingfedericolopez.com" CNAME; then
             echo "ingfedericolopez.com" > CNAME
-            echo "🌍 CNAME restaurado"
+            echo "CNAME fixed"
             FIXED=$((FIXED+1))
           fi
 
-          # ============================================================
-          # 6) Eliminar archivos legacy peligrosos (HTTP, sin .legacy)
-          # ============================================================
+          # 6) Eliminar archivos legacy peligrosos
           if [ -f "quinteros_home.html" ]; then
             rm -f quinteros_home.html
-            echo "🗑️ Eliminado quinteros_home.html (legacy con Mixed Content)"
+            echo "Removed quinteros_home.html"
             FIXED=$((FIXED+1))
           fi
 
           echo "fixed=$FIXED" >> $GITHUB_OUTPUT
-          echo ""
-          echo "📊 TOTAL DE ARREGLOS: $FIXED"
+          echo "TOTAL: $FIXED"
 
-      - name: 💾 Commit & push
+      - name: Commit & push
         if: steps.fix.outputs.fixed != '0'
         run: |
           git config user.name "Auto-Protect Bot"
           git config user.email "bot@quinteros.local"
           git add -A
           if ! git diff --staged --quiet; then
-            git commit -m "🛡️ Auto-Protect: aplicar baseline de seguridad y reparaciones
-
-          Arreglos aplicados: ${{ steps.fix.outputs.fixed }}
-          - Security headers (CSP, X-Content-Type, Referrer)
-          - Mixed Content fix (HTTP -> local)
-          - .nojekyll vacio
-          - CNAME correcto
-          - Limpieza de bytes basura
-          - Eliminacion de archivos legacy"
+            git commit -m "🛡️ Auto-Protect: aplicar baseline ($FIXED arreglos)"
             git push
-            echo "✅ Cambios protegidos publicados"
           fi
+        env:
+          FIXED: ${{ steps.fix.outputs.fixed }}
 
-      - name: 📋 Summary
+      - name: Summary
         run: |
-          echo "### 🛡️ Auto-Protect Report" >> $GITHUB_STEP_SUMMARY
-          echo "Arreglos aplicados: **${{ steps.fix.outputs.fixed }}**" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Sitio publicado: https://ingfedericolopez.com/" >> $GITHUB_STEP_SUMMARY
+          echo "### Auto-Protect" >> $GITHUB_STEP_SUMMARY
+          echo "Arreglos: ${{ steps.fix.outputs.fixed }}" >> $GITHUB_STEP_SUMMARY
+          echo "Sitio: https://ingfedericolopez.com/" >> $GITHUB_STEP_SUMMARY
